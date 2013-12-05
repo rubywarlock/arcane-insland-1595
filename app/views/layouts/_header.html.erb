@@ -14,12 +14,7 @@
           <li><%= link_to "About", about_path %></li>
         </ul>
 
-        <div class="btn-group">
-          <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Menu<span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li><%= link_to "Sub 1", "#" %></li>
-          </ul>
-        </div>
+        <%= render 'layouts/genmenu' %>
 
       </nav>
     </div>

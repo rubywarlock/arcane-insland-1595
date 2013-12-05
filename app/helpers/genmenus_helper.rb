@@ -1,0 +1,2 @@
+module GenmenusHelper
+end
