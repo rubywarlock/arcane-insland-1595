@@ -1,6 +1,10 @@
 crumb :root do
-  link "Home", root_path
+	link "Home", root_path
 end
+
+#crumb :home do
+#  link "Home", home_path
+#end
 
 crumb :help do
 	link "Help", help_path
