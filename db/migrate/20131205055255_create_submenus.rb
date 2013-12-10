@@ -6,5 +6,6 @@ class CreateSubmenus < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :submenus, [:genmenu_id, :created_at]
   end
 end

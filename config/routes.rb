@@ -1,10 +1,12 @@
 Testapp::Application.routes.draw do
-  get "submenus/create"
-  get "submenus/destroy"
-  get "submenus/edit"
-  get "submenus/transfer"
-	resources :genmenus
-  resources :submenus
+  #get "submenus/create"
+  #get "submenus/destroy"
+  #get "submenus/edit"
+  #get "submenus/transfer"
+	resources :genmenus do
+		resources :submenus
+	end
+
   #get "genmenus/index"
   #get "genmenus/create"
   #get "genmenus/destroy"
@@ -19,7 +21,6 @@ Testapp::Application.routes.draw do
 	match '/about',   to: 'static_pages#about',   via: 'get'
 	match '/contact', to: 'static_pages#contact', via: 'get'
 	match '/admintools', to: 'static_pages#cnm',  via: 'get'
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

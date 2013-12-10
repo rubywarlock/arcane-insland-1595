@@ -7,7 +7,26 @@
       <!-- </li> -->
     <%# end %>
 
-			<div class="row">
+
+    <div class="row">
+
+      <div class="menu-block">
+        <ul class="nav-list my-sub-menu">
+	        <% @main_menu_items.each do |menu| %>
+          <li class="nav-header my-gen-menu-name"><%= menu.genmenuname %></li>
+		        <% @smenus.each do |smenu| %>
+              <li><a href="#"><%= smenu.sname %></a></li>
+		        <% end %>
+	        <% end %>
+          <li class="divider my-gen-menu-name"></li>
+          <li>Help</li>
+        </ul>
+      </div>
+
+    </div>
+
+
+			<!-- <div class="row">
 
 			  <div class="menu-block">
 				  <ul class="nav-list my-sub-menu">
@@ -18,24 +37,11 @@
 				    <li><a href="#">Profile</a></li>
 				    <li><a href="#">Settings</a></li>
 				    <li class="divider my-gen-menu-name"></li>
-				    <li><%= link_to "Help", help_path %></li>
+				    <li>Help</li>
 				  </ul>
 				</div>
 
-			  <div class="menu-block">
-			    <ul class="nav-list my-sub-menu">
-			      <li class="nav-header my-gen-menu-name">Another list header</li>
-			      <li><a href="#">Library</a></li>
-			      <li><a href="#">Applications</a></li>
-			      <li class="nav-header my-gen-menu-name">Another list header</li>
-			      <li><a href="#">Profile</a></li>
-			      <li><a href="#">Settings</a></li>
-			      <li class="divider my-gen-menu-name"></li>
-			      <li><%= link_to "Help", help_path %></li>
-			    </ul>
-			  </div>
-
-			</div>
+			</div> -->
 
 
 

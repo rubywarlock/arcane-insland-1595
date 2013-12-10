@@ -1,0 +1,15 @@
+<h1><%= @gmenu.genmenuname %> Show</h1>
+
+<ul class="unstyled">
+<li><%= @gmenu.genmenuname %> <span class="badge"><%= link_to "Edit", edit_genmenu_path(@gmenu), class: "my-link" %></span> <span class="badge"><%= link_to "Destroy", @gmenu ,:method => :delete , class: "my-link", :confirm => 'Are you sure ?' %></span></li>
+</ul>
+
+<ul class="unstyled">
+	<p>
+		List
+	</p>
+
+  <% @gmenu.submenus.each do |smenu| %>
+		<li><%= smenu.sname %> <span class="badge"><%= link_to "Edit", edit_genmenu_submenu_path(@gmenu,smenu), class: "my-link" %></span> <span class="badge"><%= link_to "Destroy", [@gmenu, smenu] ,:method => :delete , class: "my-link", :confirm => 'Are you sure ?' %></span></li>
+  <% end %>
+</ul>

@@ -1,3 +1,15 @@
 // Place all the styles related to the Submenus controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.my-link{
+  color:#FFF;
+  &:hover{
+    color:#FFF;
+
+
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+
+    text-decoration:none;
+  }
+}
