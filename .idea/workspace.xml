@@ -41,7 +41,7 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/genmenus/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="161" selection-end="161" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="450">
+            <state line="7" column="13" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="450">
               <folding />
             </state>
           </provider>
@@ -59,7 +59,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="1" selection-start="390" selection-end="390" vertical-scroll-proportion="0.49399656" vertical-offset="0" max-vertical-offset="630">
+            <state line="18" column="9" selection-start="406" selection-end="406" vertical-scroll-proportion="0.38343194" vertical-offset="0" max-vertical-offset="845">
               <folding />
             </state>
           </provider>
@@ -68,7 +68,7 @@
       <file leaf-file-name="genmenus_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/genmenus_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="9" selection-start="1422" selection-end="1422" vertical-scroll-proportion="0.0" vertical-offset="695" max-vertical-offset="1476">
+            <state line="73" column="9" selection-start="1422" selection-end="1422" vertical-scroll-proportion="0.0" vertical-offset="1314" max-vertical-offset="1476">
               <folding />
             </state>
           </provider>
@@ -152,7 +152,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -321,8 +321,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="RailsProjectView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -499,11 +499,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19155447" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19400245" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29942858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.298441" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -532,6 +532,13 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/controllers/genmenus_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="9" selection-start="1422" selection-end="1422" vertical-scroll-proportion="0.0" vertical-offset="1314" max-vertical-offset="1476">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="2" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1602">
@@ -793,7 +800,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/genmenus/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="161" selection-end="161" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="450">
+        <state line="7" column="13" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="450">
           <folding />
         </state>
       </provider>
@@ -807,7 +814,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="1" selection-start="390" selection-end="390" vertical-scroll-proportion="0.49399656" vertical-offset="0" max-vertical-offset="630">
+        <state line="18" column="9" selection-start="406" selection-end="406" vertical-scroll-proportion="0.38343194" vertical-offset="0" max-vertical-offset="845">
           <folding />
         </state>
       </provider>
