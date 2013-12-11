@@ -15,7 +15,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/testapp@Development__testapp.coverage" NAME="Development: testapp Coverage Results" MODIFIED="1386750192843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="testapp" />
+    <SUITE FILE_PATH="coverage/testapp@Development__testapp.coverage" NAME="Development: testapp Coverage Results" MODIFIED="1386755260980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="testapp" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -47,10 +47,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="submenus_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="submenus_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/submenus_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="5" selection-start="660" selection-end="660" vertical-scroll-proportion="0.19053255" vertical-offset="469" max-vertical-offset="1314">
+            <state line="36" column="0" selection-start="661" selection-end="661" vertical-scroll-proportion="0.0" vertical-offset="361" max-vertical-offset="1314">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="1" selection-start="411" selection-end="411" vertical-scroll-proportion="0.5368782" vertical-offset="11" max-vertical-offset="594">
               <folding />
             </state>
           </provider>
@@ -494,7 +503,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29942858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29942858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -763,7 +772,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/submenu.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="3" selection-start="37" selection-end="37" vertical-scroll-proportion="0.032258064" vertical-offset="0" max-vertical-offset="558" />
+        <state line="1" column="3" selection-start="37" selection-end="37" vertical-scroll-proportion="0.032258064" vertical-offset="0" max-vertical-offset="558">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
@@ -787,16 +798,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/app/controllers/submenus_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="19" selection-start="409" selection-end="409" vertical-scroll-proportion="0.36213017" vertical-offset="0" max-vertical-offset="845">
+        <state line="36" column="0" selection-start="661" selection-end="661" vertical-scroll-proportion="0.0" vertical-offset="361" max-vertical-offset="1314">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/submenus_controller.rb">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="5" selection-start="660" selection-end="660" vertical-scroll-proportion="0.19053255" vertical-offset="469" max-vertical-offset="1314">
+        <state line="18" column="1" selection-start="411" selection-end="411" vertical-scroll-proportion="0.5368782" vertical-offset="11" max-vertical-offset="594">
           <folding />
         </state>
       </provider>
