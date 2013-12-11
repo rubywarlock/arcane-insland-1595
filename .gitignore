@@ -14,9 +14,11 @@
 idea/
 /idea
 idea
+*.idea
 
 .idea/workspace.xml
 /.idea/workspace.xml
+
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
