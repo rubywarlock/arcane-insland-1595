@@ -7,6 +7,10 @@ Testapp::Application.routes.draw do
 		resources :submenus
 	end
 
+	#resources :submenus
+	#resources :genmenus
+
+
   #get "genmenus/index"
   #get "genmenus/create"
   #get "genmenus/destroy"

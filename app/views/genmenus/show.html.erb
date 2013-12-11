@@ -1,15 +1,20 @@
 <h1><%= @gmenu.genmenuname %> Show</h1>
 
 <ul class="unstyled">
-<li><%= @gmenu.genmenuname %> <span class="badge"><%= link_to "Edit", edit_genmenu_path(@gmenu), class: "my-link" %></span> <span class="badge"><%= link_to "Destroy", @gmenu ,:method => :delete , class: "my-link", :confirm => 'Are you sure ?' %></span></li>
+	<li><%= @gmenu.genmenuname %> <%= render "menu" %></li>
 </ul>
 
 <ul class="unstyled">
-	<p>
-		List
-	</p>
+	<p>List</p>
 
   <% @gmenu.submenus.each do |smenu| %>
-		<li><%= smenu.sname %> <span class="badge"><%= link_to "Edit", edit_genmenu_submenu_path(@gmenu,smenu), class: "my-link" %></span> <span class="badge"><%= link_to "Destroy", [@gmenu, smenu] ,:method => :delete , class: "my-link", :confirm => 'Are you sure ?' %></span></li>
+		<li><%= smenu.sname %> <%= render "smenu", { :gmenu => @gmenu, :smenu => smenu } %></li>
   <% end %>
 </ul>
+
+<%= form_for [@gmenu, @gmenu.submenus.build] do |f| %>
+  <div class="input-append actions">
+    <%= f.text_field :sname, placeholder: "Sub menu name", class: "span2" %>
+    <%= f.submit "Create", class: "btn" %>
+  </div>
+<% end %>
