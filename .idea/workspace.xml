@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e002fa29-247c-4e1f-955d-a6598a236fd5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_genmenu.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_genmenu.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/genmenus_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/genmenus_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/genmenus/index.html.erb" afterPath="$PROJECT_DIR$/app/views/genmenus/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/genmenus/show.html.erb" afterPath="$PROJECT_DIR$/app/views/genmenus/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/submenus/show.html.erb" afterPath="$PROJECT_DIR$/app/views/submenus/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/submenus_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/submenus_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="e002fa29-247c-4e1f-955d-a6598a236fd5" name="Default" comment="" />
     <ignored path="testapp.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,19 +44,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_smenu.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_smenu.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/genmenus/_smenu.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="34" selection-start="168" selection-end="168" vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="342">
+            <state line="4" column="34" selection-start="168" selection-end="168" vertical-scroll-proportion="0.1294964" vertical-offset="0" max-vertical-offset="556">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="submenus_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="submenus_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/submenus_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="5" selection-start="660" selection-end="660" vertical-scroll-proportion="0.6603774" vertical-offset="245" max-vertical-offset="1314">
+            <state line="35" column="5" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="245" max-vertical-offset="1314">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="0" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468">
               <folding />
             </state>
           </provider>
@@ -713,13 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="7" selection-start="364" selection-end="364" vertical-scroll-proportion="0.33962265" vertical-offset="0" max-vertical-offset="583">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/genmenus/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="13" selection-start="543" selection-end="543" vertical-scroll-proportion="0.6949807" vertical-offset="0" max-vertical-offset="518">
@@ -825,9 +816,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/genmenus/_smenu.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/submenus_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="34" selection-start="168" selection-end="168" vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="342">
+        <state line="35" column="5" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="245" max-vertical-offset="1314">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468">
           <folding />
         </state>
       </provider>
@@ -839,9 +837,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/submenus_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/genmenus/_smenu.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="5" selection-start="660" selection-end="660" vertical-scroll-proportion="0.6603774" vertical-offset="245" max-vertical-offset="1314">
+        <state line="4" column="34" selection-start="168" selection-end="168" vertical-scroll-proportion="0.1294964" vertical-offset="0" max-vertical-offset="556">
           <folding />
         </state>
       </provider>
