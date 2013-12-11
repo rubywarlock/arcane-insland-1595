@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
 	def main_menu
 		@main_menu_items = Genmenu.all
-		@smenus = Submenu.all
+		#@smenus = Submenu.all
 	end
 
 

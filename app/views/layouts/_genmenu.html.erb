@@ -1,12 +1,6 @@
 <div class="btn-group">
   <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Menu<span class="caret"></span></button>
   <ul class="dropdown-menu">
-    <%# @main_menu_items.each do |item_menu| %>
-      <!-- <li> -->
-        <%#= link_to item_menu.genmenuname, "#" %>
-      <!-- </li> -->
-    <%# end %>
-
 
     <div class="row">
 
@@ -14,7 +8,7 @@
         <ul class="nav-list my-sub-menu">
 	        <% @main_menu_items.each do |menu| %>
           <li class="nav-header my-gen-menu-name"><%= menu.genmenuname %></li>
-		        <% @smenus.each do |smenu| %>
+		        <% menu.submenus.each do |smenu| %>
               <li><a href="#"><%= smenu.sname %></a></li>
 		        <% end %>
 	        <% end %>
