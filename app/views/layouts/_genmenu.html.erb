@@ -1,19 +1,30 @@
 <div class="btn-group">
   <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Menu<span class="caret"></span></button>
-  <ul class="dropdown-menu">
+  <ul class="dropdown-menu" style="max-width:400px;">
 
-	  <%= mainmenubuild(@main_menu_items) %>
+	  <%#= mainmenubuild(@main_menu_items) %>
 
-    <!-- <div class="row">
-      <div class="menu-block">
-        <ul class="nav-list my-sub-menu">
-          <li class="nav-header my-gen-menu-name">main menu 06</li>
-          <li><a href="#">mm06sm01</a></li>
-          <li class="divider my-gen-menu-name"></li>
-          <li>Help</li>
-        </ul>
-      </div>
-    </div> -->
+
+    <div class="row">
+      <% @main_menu_items.each do |menu| %>
+        <div class="menu-block" style="vertical-align:top; display:inline-block;">
+          <ul class="nav-list my-sub-menu">
+            <li class="nav-header my-gen-menu-name"><%= menu.genmenuname %></li>
+            <% menu.submenus.each do |smenu| %>
+              <li><a href="#"><%= smenu.sname %></a></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+	    <ul>
+      <li class="divider my-gen-menu-name"></li>
+      <li>Help</li>
+		  </ul>
+
+    </div>
+
+
 
   </ul>
 </div>
