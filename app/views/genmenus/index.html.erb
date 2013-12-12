@@ -1,22 +1,27 @@
-<!-- <h1>Main menu</h1>
+<% breadcrumb :mainmenuindex, genmenus_path %>
 
-<ul class="unstyled">
-	<%# @main_menu_items.each do |item_menu| %>
-		<li>
-			<%#= link_to item_menu.genmenuname, "#" %>
-			<%#  %>
-		</li>
-	<%# end %>
-</ul> -->
-
-<dl>
+<table class="table table-bordered" style="max-width:600px;">
+  <caption><h5>Main menu list</h5></caption>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Options</th>
+  </tr>
+  </thead>
+  <tbody>
   <% @gmenus.each do |gmenu| %>
-    <dt>
-      <%= link_to gmenu.genmenuname, gmenu %> <span class="badge"><%= link_to "Edit", edit_genmenu_path(gmenu), class: "my-link" %></span> <span class="badge"><%= link_to "Destroy", gmenu ,:method => :delete , class: "my-link", :confirm => 'Are you sure ?' %></span>
-
-    </dt>
+    <tr>
+      <td style="min-width:150px"><%= link_to gmenu.genmenuname, gmenu %></td><td><%= render "menu", { :gmenu => gmenu } %></td>
+    </tr>
   <% end %>
-</dl>
+  </tbody>
+</table>
 
 <p>Create new main menu</p>
-<%= link_to "New main menu", new_genmenu_path %>
+
+<%= form_for Genmenu.new do |f| %>
+  <div class="input-append actions">
+    <%= f.text_field :genmenuname, placeholder: "main menu name", class: "span2", style: "min-width:200px" %>
+    <%= f.submit "Create", class: "btn" %>
+  </div>
+<% end %>

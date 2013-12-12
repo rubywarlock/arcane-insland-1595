@@ -22,6 +22,12 @@ crumb :admt do
 	link "Admin tools", admintools_path
 end
 
+crumb :mainmenuindex do
+	link "Main menu list", genmenus_path
+	parent :admt
+end
+
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

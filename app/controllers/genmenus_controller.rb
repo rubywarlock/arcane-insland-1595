@@ -1,5 +1,5 @@
 class GenmenusController < ApplicationController
-	before_action :set_mmenu, only: [:show, :edit, :update, :destroy]
+	before_action :set_mmenu, :new_main_menu, only: [:show, :edit, :update, :destroy]
 
   def index
 		@gmenus = Genmenu.all
@@ -33,7 +33,7 @@ class GenmenusController < ApplicationController
 	  @gmenu = Genmenu.new(main_menu_params)
 	  if @gmenu.save
 		  flash[:success] = "Main menu created!"
-		  redirect_to admintools_path
+		  redirect_to genmenus_path
 	  else
 		  render 'static_pages/home'
 	  end
@@ -65,6 +65,10 @@ class GenmenusController < ApplicationController
 
 
   private
+
+	def new_main_menu
+		@new_main_menu = Genmenu.new
+	end
 
 	def set_mmenu
 		@gmenu = Genmenu.find(params[:id])

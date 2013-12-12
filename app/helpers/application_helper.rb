@@ -7,4 +7,39 @@ module ApplicationHelper
 			"#{base_title} | #{page_title}"
 		end
 	end
+
+	def mainmenubuild(main_menu_items)
+		row_html_start = '<div class="row"><div class="menu-block"><ul class="nav-list my-sub-menu">'
+		row_html_end   = '</ul></div></div>'
+		row_html = ''
+
+		menu_html_ready = ''
+		menu_html = ''
+
+		mm_text_html = ''
+		main_menu_items.each_with_index do |mmenu, n|
+
+			mm_text_html = mm_text_html + '<li class="nav-header my-gen-menu-name">' + mmenu.genmenuname + '</li>'
+			sm_text_html = ''
+			mmenu.submenus.each do |smenu|
+				sm_text_html = sm_text_html + '<li><a href="#">' + smenu.sname + '</a></li>'
+			end
+			mm_text_html = mm_text_html + '<li class="divider my-gen-menu-name"></li><li>Help</li>'
+
+			
+			if n == 2
+				menu_html = '<div class="row"><div class="menu-block"><ul class="nav-list my-sub-menu">'
+				mm_text_html = mm_text_html + sm_text_html + '<li class="divider my-gen-menu-name"></li><li>Help</li></ul></div></div>'
+			else
+
+			end
+
+			#mm_text_html = mm_text_html + sm_text_html
+			menu_html_ready = menu_html_ready + menu_html
+		end
+
+		row_html = row_html + mm_text_html + '<li class="divider my-gen-menu-name"></li><li>Help</li></ul></div></div>'
+		row_html.html_safe
+	end
+
 end

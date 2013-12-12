@@ -1,20 +1,42 @@
+<% breadcrumb :mainmenuindex, genmenus_path %>
+
 <h1><%= @gmenu.genmenuname %> Show</h1>
 
-<ul class="unstyled">
-	<li><%= @gmenu.genmenuname %> <%= render "menu" %></li>
-</ul>
+<table class="table table-bordered" style="max-width:600px;">
+  <caption><h5>Main menu</h5></caption>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Options</th>
+  </tr>
+  </thead>
+  <tbody>
+   <tr>
+     <td style="min-width:150px"><%= @gmenu.genmenuname %></td><td><%= render "menu", { :gmenu => @gmenu } %></td>
+   </tr>
+  </tbody>
+</table>
 
-<ul class="unstyled">
-	<p>List</p>
-
+<table class="table table-bordered" style="max-width:600px;">
+  <caption>&#8226 &#8226 &#8226</caption>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Options</th>
+  </tr>
+  </thead>
+  <tbody>
   <% @gmenu.submenus.each do |smenu| %>
-		<li><%= smenu.sname %> <%= render "smenu", { :gmenu => @gmenu, :smenu => smenu } %></li>
+    <tr>
+      <td style="min-width:150px"><%= smenu.sname %></td><td><%= render "smenu", { :gmenu => @gmenu, :smenu => smenu } %></td>
+    </tr>
   <% end %>
-</ul>
+  </tbody>
+</table>
 
 <%= form_for [@gmenu, @gmenu.submenus.build] do |f| %>
   <div class="input-append actions">
-    <%= f.text_field :sname, placeholder: "Sub menu name", class: "span2" %>
+    <%= f.text_field :sname, placeholder: "Secondary menu name", class: "span2", style: "min-width:200px" %>
     <%= f.submit "Create", class: "btn" %>
   </div>
 <% end %>
