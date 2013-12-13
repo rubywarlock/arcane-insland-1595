@@ -15,8 +15,22 @@
   right: 10px;
 }
 
-.menu-block {
+.menu-stack{
+  width: 635px;
+}
 
+.menu-box {
+  display:block;
+  width:635px;
+}
+
+.menu-block {
+  background-color: #EEE;
+
+  width: 305px;
+  display:block;
+  margin: 5px;
+  float:left;
 }
 
 .my-typography span{
