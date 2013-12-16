@@ -1,23 +1,79 @@
-<div class="btn-group">
+<div class="btn-group"><!-- <div class="btn-group"> -->
+  <!-- <button class="btn btn-primary">Menu<span class="caret"></span></button> -->
   <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Menu<span class="caret"></span></button>
 
-  <div class="dropdown-menu">
-    <!-- <div class="menu-stack"> -->
-      <div class="menu-box">
 
-        <% @main_menu_items.each do |menu| %>
-          <div class="menu-block">
-            <ul class="my-sub-menu">
-              <li class="nav-header my-gen-menu-name"><%= menu.genmenuname %></li>
-              <% menu.submenus.each do |smenu| %>
-              <li><a href="#"><%= smenu.sname %></a></li>
-              <% end %>
-            </ul>
-          </div>
+<ul class="dropdown-menu span6">
+
+    <li class="column-menu span3">
+      <ul>
+        <% @main_menu_items.each_with_index do |menu,n| %>
+  <% if n % 2 == 0 %>
+        <li class="nav-header my-gen-menu-name"><%= menu.genmenuname %></li>
+        <% menu.submenus.each do |smenu| %>
+          <li><a href="#"><%= smenu.sname %></a></li>
         <% end %>
+  <% end %>
+<% end %>
+      </ul>
+    </li>
 
-      </div>
-    <!-- </div> -->
-  </div>
+    <li class="column-menu span3">
+      <ul>
+        <% @main_menu_items.each_with_index do |menu,n| %>
+  <% if n % 2 != 0 %>
+            <li class="nav-header my-gen-menu-name"><%= menu.genmenuname %></li>
+            <% menu.submenus.each do |smenu| %>
+              <li><a href="#"><%= smenu.sname %></a></li>
+            <% end %>
+  <% end %>
+<% end %>
+      </ul>
+    </li>
+
+  </ul>
 
 </div>
+
+
+<!--
+<div class="dropdown-menu" style="">
+  <div class="" style="position:absolute;">
+  <div class="menu-stack">
+  <div class="menu-box" style="margin-right:-0px;">
+    <%# @main_menu_items.each_with_index do |menu,n| %>
+      <%# if n % 2 == 0 %>
+        <div class="menu-block">
+        <div class="my-sub-menu">
+          <div class="nav-header my-gen-menu-name"><%#= n %> | <%#= menu.genmenuname %></div>
+          <%# menu.submenus.each do |smenu| %>
+            <div><a href="#"><%#= smenu.sname %></a></div>
+          <%# end %>
+        </div>
+        </div>
+      <%# end %>
+    <%# end %>
+  </div>
+
+  <div class="menu-box">
+    <%# @main_menu_items.each_with_index do |menu,n| %>
+      <%# if n % 2 != 0 %>
+        <div class="menu-block">
+        <div class="my-sub-menu">
+          <div class="nav-header my-gen-menu-name"><%#= n %> | <%#= menu.genmenuname %></div>
+          <%# menu.submenus.each do |smenu| %>
+            <div><a href="#"><%#= smenu.sname %></a></div>
+          <%# end %>
+        </div>
+        </div>
+      <%# end %>
+    <%# end %>
+  </div>
+
+  <div style="clear:right;"></div>
+
+
+  </div>
+</div> -->
+
+
