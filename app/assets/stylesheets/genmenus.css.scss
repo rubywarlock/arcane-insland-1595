@@ -89,7 +89,21 @@
   margin-left: 0;
 }
 
-.column-menu ul li a{
+.column-menu ul li a, .column-menu ul li{
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  //word-break:break-all;
+  overflow-wrap: break-word;
+  //line-break: auto;
+  //hyphens: manual;
+
+  //white-space: pre;
+
+}
+
+.column-menu ul li span{
+  width:100px;
+  white-space:pre-line;
   word-wrap: break-word;
 }
 

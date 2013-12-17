@@ -8,26 +8,26 @@
     <li class="column-menu span3">
       <ul>
         <% @main_menu_items.each_with_index do |menu,n| %>
-  <% if n % 2 == 0 %>
-        <li class="nav-header my-gen-menu-name"><%= menu.genmenuname %></li>
-        <% menu.submenus.each do |smenu| %>
-          <li><a href="#"><%= smenu.sname %></a></li>
-        <% end %>
-  <% end %>
-<% end %>
+          <% if n % 2 == 0 %>
+            <li class="nav-header my-gen-menu-name"><span><%= menu.genmenuname %></span></li>
+            <% menu.submenus.each do |smenu| %>
+            <li><a href="#"><%= smenu.sname %></a></li>
+            <% end %>
+          <% end %>
+				<% end %>
       </ul>
     </li>
 
     <li class="column-menu span3">
       <ul>
         <% @main_menu_items.each_with_index do |menu,n| %>
-  <% if n % 2 != 0 %>
-            <li class="nav-header my-gen-menu-name"><%= menu.genmenuname %></li>
+          <% if n % 2 != 0 %>
+            <li class="nav-header my-gen-menu-name"><span><%= menu.genmenuname %></span></li>
             <% menu.submenus.each do |smenu| %>
               <li><a href="#"><%= smenu.sname %></a></li>
             <% end %>
-  <% end %>
-<% end %>
+          <% end %>
+				<% end %>
       </ul>
     </li>
 

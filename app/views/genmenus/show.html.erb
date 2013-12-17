@@ -28,7 +28,7 @@
   <tbody>
   <% @gmenu.submenus.each do |smenu| %>
     <tr>
-      <td style="min-width:150px"><%= smenu.sname %></td><td><%= render "smenu", { :gmenu => @gmenu, :smenu => smenu } %></td>
+      <td style="min-width:150px;"><%= smenu.sname %></td><td><%= render "smenu", { :gmenu => @gmenu, :smenu => smenu } %></td>
     </tr>
   <% end %>
   </tbody>
