@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131205055255) do
+ActiveRecord::Schema.define(version: 20131217091050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20131205055255) do
     t.string   "genmenuname"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "sm_contents", force: true do |t|
+    t.string   "content"
+    t.integer  "submenu_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
   end
 
   create_table "submenus", force: true do |t|

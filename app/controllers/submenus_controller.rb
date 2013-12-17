@@ -42,8 +42,8 @@ class SubmenusController < ApplicationController
 	def update
 		@smenu = Submenu.find(params[:id])
 		respond_to do |format|
-			if @comment.update_attributes(params[:submenu])
-				format.html { redirect_to @smenu.genmenu, notice: 'Comment was successfully updated.' }
+			if @smenu.update_attributes(params[:submenu])
+				format.html { redirect_to @smenu.genmenu, notice: 'Second menu was successfully updated.' }
 			else
 				format.html { render action: "edit" }
 			end

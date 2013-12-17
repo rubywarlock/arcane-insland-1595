@@ -1,10 +1,19 @@
 Testapp::Application.routes.draw do
+  #get "sm_contents/index"
+  #get "sm_contents/show"
+  #get "sm_contents/create"
+  #get "sm_contents/destroy"
+  #get "sm_contents/edit"
   #get "submenus/create"
   #get "submenus/destroy"
   #get "submenus/edit"
   #get "submenus/transfer"
 	resources :genmenus do
 		resources :submenus
+	end
+
+	resources :submenus do
+		resources :sm_contents
 	end
 
 	#resources :submenus
