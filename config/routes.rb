@@ -9,10 +9,10 @@ Testapp::Application.routes.draw do
   #get "submenus/edit"
   #get "submenus/transfer"
 	resources :genmenus do
-		resources :submenus do
-			resources :sm_contents
-		end
+		resources :submenus
 	end
+
+	resources :sm_contents
 
 
 

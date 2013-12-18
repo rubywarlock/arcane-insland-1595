@@ -1,5 +1,5 @@
 class SubmenusController < ApplicationController
-	before_action :set_smenu, only: [:show, :edit, :update, :destroy]
+	before_action :set_smenu, :set_contents, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@smenus = Submenu.find_by_genmenu_id(:genmenu_id)
@@ -60,8 +60,19 @@ class SubmenusController < ApplicationController
 		@smenu = Submenu.find(params[:id])
 	end
 
+	def set_contents
+		@smenu = Submenu.find(params[:id])
+		@content = @smenu.sm_contents.build(params[:submenu_id])
+		@content.save
+		redirect_to @content
+	end
+
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def smenu_params
 		params.require(:submenu).permit(:sname, :genmenu_id)
+	end
+
+	def content_params
+		#params.require(:sm_content).permit(:title,:content, :submenu_id)
 	end
 end

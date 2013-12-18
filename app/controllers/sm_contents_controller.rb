@@ -12,10 +12,22 @@ class SmContentsController < ApplicationController
   end
 
   def create
-	  @smenu = Submenu.find(params[:submenu_id])
-	  @content = @smenu.sm_contents.build(content_params)
-	  @content.save
-	  redirect_to @smenu
+	  #@smenu = Submenu.find(params[:submenu_id])
+	  #@content = @smenu.sm_contents.build(content_params)
+	  #@content.save
+	  #redirect_to @smenu
+
+
+	  @content = Submenu.sm_contents.build(content_params)
+	  if @content.save
+		  flash[:success] = "Micropost created!"
+		  redirect_to @content
+	  else
+		  render 'static_pages/home'
+	  end
+
+
+
   end
 
   def destroy

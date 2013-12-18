@@ -1,2 +1,15 @@
 <h1>SmContents#show</h1>
 <p>Find me in app/views/sm_contents/show.html.erb</p>
+
+<div class="well">
+	<p><%= @content.title %></p>
+  <p><%= @content.content %></p>
+</div>
+
+<%= form_for(@content) do |f| %>
+  <div>
+    <p><%= f.text_field :title, placeholder: "Post name", class: "span8", style: "min-width:200px" %></p>
+    <p><%= f.text_area :content, placeholder: "Post content", class: "span8", rows: "10" %></p>
+    <p><%= f.submit "Post", class: "btn" %></p>
+  </div>
+<% end %>
