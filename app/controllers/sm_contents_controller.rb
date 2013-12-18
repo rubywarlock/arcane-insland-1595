@@ -15,7 +15,7 @@ class SmContentsController < ApplicationController
 	  @smenu = Submenu.find(params[:submenu_id])
 	  @content = @smenu.sm_contents.build(content_params)
 	  @content.save
-	  redirect_to @content
+	  redirect_to @smenu
   end
 
   def destroy
