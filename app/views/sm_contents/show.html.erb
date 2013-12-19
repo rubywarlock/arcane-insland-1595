@@ -2,11 +2,11 @@
 <p>Find me in app/views/sm_contents/show.html.erb</p>
 
 <div class="well">
-	<p><%= @content.title %></p>
-  <p><%= @content.content %></p>
+	<p><%= @smc.title %></p>
+  <p><%= @smc.content %></p>
 </div>
 
-<%= form_for(@content) do |f| %>
+<%= form_for(genmenu_submenu_sm_contents_path(@mmenu,@smenu,@smc)) do |f| %>
   <div>
     <p><%= f.text_field :title, placeholder: "Post name", class: "span8", style: "min-width:200px" %></p>
     <p><%= f.text_area :content, placeholder: "Post content", class: "span8", rows: "10" %></p>

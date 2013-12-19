@@ -1,7 +1,7 @@
 <h1><%= @smenu.sname %> Show</h1>
 <p><%= @smenu.sname %> <%= render "menu" %></p>
 
-<%= form_for(@content) do |f| %>
+<%= form_for(genmenu_submenu_sm_contents_path(@mmenu,@smenu,@smc)) do |f| %>
   <div>
     <p><%= f.text_field :title, placeholder: "Post name", class: "span8", style: "min-width:200px" %></p>
     <p><%= f.text_area :content, placeholder: "Post content", class: "span8", rows: "10" %></p>

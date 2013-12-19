@@ -8,11 +8,12 @@ Testapp::Application.routes.draw do
   #get "submenus/destroy"
   #get "submenus/edit"
   #get "submenus/transfer"
-	resources :genmenus do
-		resources :submenus
-	end
 
-	resources :sm_contents
+	resources :genmenus do
+		resources :submenus do
+			resources :sm_contents, only: [:create]
+		end
+	end
 
 
 

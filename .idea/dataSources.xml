@@ -4,9 +4,9 @@
     <data-source source="LOCAL" name="Rails testapp: development" uuid="133a4c0a-d7bf-4de0-868d-1407fd824735">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:testapp_development</jdbc-url>
+      <jdbc-url>jdbc:mysql://127.0.0.1/testapp_development</jdbc-url>
       <user-name>rails_user</user-name>
-      <user-password>dfccdf9adfdfdfcedfc6df9ddfd0df9cdfeb</user-password>
+      <user-password>dfd8dfcbdfc3dfc6dfd9dff5dfdfdfd9dfcfdfd8</user-password>
       <libraries>
         <library>
           <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/postgresql-9.1-901.jdbc3.jar</url>
@@ -16,9 +16,9 @@
     <data-source source="LOCAL" name="Rails testapp: test" uuid="c7a7522d-4e6c-4214-9b0b-1dae39a6f945">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:testapp_test</jdbc-url>
+      <jdbc-url>jdbc:mysql://127.0.0.1/testapp_test</jdbc-url>
       <user-name>rails_user</user-name>
-      <user-password>dfccdf9adfdfdfcedfc6df9ddfd0df9cdfeb</user-password>
+      <user-password>dfd8dfcbdfc3dfc6dfd9dff5dfdfdfd9dfcfdfd8</user-password>
       <libraries>
         <library>
           <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/postgresql-9.1-901.jdbc3.jar</url>
@@ -30,7 +30,7 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:testapp_production</jdbc-url>
       <user-name>rails_user</user-name>
-      <user-password>dfccdf9adfdfdfcedfc6df9ddfd0df9cdfeb</user-password>
+      <user-password>dfd8dfcbdfc3dfc6dfd9dff5dfdfdfd9dfcfdfd8</user-password>
       <libraries>
         <library>
           <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/postgresql-9.1-901.jdbc3.jar</url>

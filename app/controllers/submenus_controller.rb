@@ -11,10 +11,23 @@ class SubmenusController < ApplicationController
 	end
 
 	def show
+		#@mmenu = Genmenu.find(params[:genmenu_id])
+		#@smenu = Submenu.find(params[:id])
+		#@smc = @smenu.sm_contents.build(:submenu_id => params[:id])
+
+		#@mmenu = Genmenu.find(params[:genmenu_id])
+		#@smenu = @mmenu.submenus.build(:genmenu_id => params[:submenu_id])
+		#@smc = @smenu.sm_contents.build(:submenu_id => params[:submenu_id])
+
+		#respond_to do |format|
+			#format.html # index.html.erb
+			#format.json { render json: @smenu }
+		#end
+
 		@smenu = Submenu.find(params[:id])
 
 		respond_to do |format|
-			format.html # index.html.erb
+			format.html # show.html.erb
 			format.json { render json: @smenu }
 		end
 	end
@@ -27,7 +40,7 @@ class SubmenusController < ApplicationController
 	  @gmenu = Genmenu.find(params[:genmenu_id])
 	  @submenu = @gmenu.submenus.build(smenu_params)
 	  @submenu.save
-	  redirect_to @gmenu
+	  redirect_to @submenu
   end
 
 
@@ -61,10 +74,18 @@ class SubmenusController < ApplicationController
 	end
 
 	def set_contents
-		@smenu = Submenu.find(params[:id])
-		@content = @smenu.sm_contents.build(params[:submenu_id])
-		@content.save
-		redirect_to @content
+		@mmenu = Genmenu.find(params[:id])
+		@smc = @smenu.sm_contents.build(:submenu_id => params[:id])
+
+		#@smenu = Submenu.find(params[:id])
+		#@content = @gmenu.submenus.sm_contents.build(params[:submenu_id])
+		#@content = @smenu.sm_contents.build(params[:submenu_id])
+		#if @content.save
+		#	flash[:success] = "Content created!"
+		#	redirect_to [@gmenu, @smenu, @content]
+		#else
+		#	render 'static_pages/home'
+		#end
 	end
 
 	# Never trust parameters from the scary internet, only allow the white list through.
@@ -73,6 +94,6 @@ class SubmenusController < ApplicationController
 	end
 
 	def content_params
-		#params.require(:sm_content).permit(:title,:content, :submenu_id)
+		#params.require(:submenu_id).permit(:title,:content, :submenu_id)
 	end
 end
