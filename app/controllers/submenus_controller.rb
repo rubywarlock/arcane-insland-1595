@@ -61,8 +61,8 @@ class SubmenusController < ApplicationController
 	end
 
 	def set_contents
-		@mmenu = Genmenu.find(params[:id])
-		@smc = @smenu.sm_contents.build(:submenu_id => params[:id])
+		#@mmenu = Genmenu.find(params[:id])
+		#@smc = @smenu.sm_contents.build(:submenu_id => params[:id])
 
 		#@smenu = Submenu.find(params[:id])
 		#@content = @gmenu.submenus.sm_contents.build(params[:submenu_id])

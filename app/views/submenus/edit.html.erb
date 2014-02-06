@@ -1,1 +1,23 @@
 <h1><%= @smenu.sname %> Edit</h1>
+
+<%= form_for(@smenu) do |f| %>
+  <% if @smenu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@smenu.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% @smenu.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "sname", "Sub Menu name" %><br />
+    <%= f.text_field :sname, :text => @smenu.sname %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
