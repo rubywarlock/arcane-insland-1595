@@ -8,10 +8,8 @@ class ApplicationController < ActionController::Base
 
 	def main_menu
 		@main_menu_items = Genmenu.all
-		#@smenus = Submenu.all
+		@a_submenus = Submenu.all
 	end
-
-
 
 
   # FOR FULL FIRST LOAD APP

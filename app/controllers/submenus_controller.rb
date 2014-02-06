@@ -11,19 +11,6 @@ class SubmenusController < ApplicationController
 	end
 
 	def show
-		#@mmenu = Genmenu.find(params[:genmenu_id])
-		#@smenu = Submenu.find(params[:id])
-		#@smc = @smenu.sm_contents.build(:submenu_id => params[:id])
-
-		#@mmenu = Genmenu.find(params[:genmenu_id])
-		#@smenu = @mmenu.submenus.build(:genmenu_id => params[:submenu_id])
-		#@smc = @smenu.sm_contents.build(:submenu_id => params[:submenu_id])
-
-		#respond_to do |format|
-			#format.html # index.html.erb
-			#format.json { render json: @smenu }
-		#end
-
 		@smenu = Submenu.find(params[:id])
 
 		respond_to do |format|

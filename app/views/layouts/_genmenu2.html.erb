@@ -3,7 +3,7 @@
   <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Menu<span class="caret"></span></button>
 
 
-	<ul class="dropdown-menu span6">
+  <ul class="dropdown-menu span6">
 
     <li class="column-menu span3">
       <ul>
@@ -11,10 +11,10 @@
           <% if n % 2 == 0 %>
             <li class="nav-header my-gen-menu-name"><span><%= menu.genmenuname %></span></li>
             <% menu.submenus.each do |smenu| %>
-            <li><%= link_to smenu.sname, [menu, smenu] %></li>
+              <li><%= link_to smenu.sname, smenu %></li>
             <% end %>
           <% end %>
-				<% end %>
+        <% end %>
       </ul>
     </li>
 
@@ -24,15 +24,13 @@
           <% if n % 2 != 0 %>
             <li class="nav-header my-gen-menu-name"><span><%= menu.genmenuname %></span></li>
             <% menu.submenus.each do |smenu| %>
-              <li><%= link_to smenu.sname, [menu, smenu] %></li>
+              <li><%= link_to smenu.sname, smenu %></li>
             <% end %>
           <% end %>
-				<% end %>
+        <% end %>
       </ul>
     </li>
 
   </ul>
 
 </div>
-
-
