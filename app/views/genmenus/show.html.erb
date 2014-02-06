@@ -34,7 +34,7 @@
   </tbody>
 </table>
 
-<%= form_for [@gmenu, @gmenu.submenus.build] do |f| %>
+<%= form_for (@gmenu.submenus.build) do |f| %>
   <div class="input-append actions">
     <%= f.text_field :sname, placeholder: "Secondary menu name", class: "span2", style: "min-width:200px" %>
     <%= f.submit "Create", class: "btn" %>

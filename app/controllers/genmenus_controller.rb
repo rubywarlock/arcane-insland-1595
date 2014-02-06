@@ -1,9 +1,10 @@
 class GenmenusController < ApplicationController
-	before_action :set_mmenu, :new_main_menu, only: [:show, :edit, :update, :destroy]
+	before_action :set_mmenu, :get_submenu, :new_main_menu, only: [:show, :edit, :update, :destroy]
 
   def index
 		@gmenus = Genmenu.all
 		#@submenus = Submenu.all(params[:genmenu])
+		@gm_submenus = Submenu.new(:genmenu_id => params[:id])
 
 		respond_to do |format|
 			format.html # index.html.erb
@@ -72,6 +73,11 @@ class GenmenusController < ApplicationController
 
 	def set_mmenu
 		@gmenu = Genmenu.find(params[:id])
+	end
+
+	def get_submenu
+		#@gm_submenus = @gmenu.submenus.new(params[:id])
+		#@gm_submenus = Submenu.new(:genmenu_id => params[:id])
 	end
 
   def main_menu_params

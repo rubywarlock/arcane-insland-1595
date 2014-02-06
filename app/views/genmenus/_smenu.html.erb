@@ -1,8 +1,8 @@
 <span class="badge">
-  <%= link_to "Edit", edit_genmenu_submenu_path(@gmenu, smenu), class: "my-link" %>
+  <%= link_to "Edit", edit_submenu_path(smenu), class: "my-link" %>
 </span>
 <span class="badge">
-  <%= link_to "Destroy", [@gmenu, smenu] ,:method => :delete , class: "my-link", :confirm => 'Are you sure ?' %>
+  <%= link_to "Destroy", smenu ,:method => :delete , class: "my-link", :confirm => 'Are you sure ?' %>
 </span>
 
 <!--
