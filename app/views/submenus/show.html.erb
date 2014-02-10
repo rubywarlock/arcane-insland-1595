@@ -1,27 +1,18 @@
-<h1><%= @smenu.sname %> Show</h1>
+<!--<h1><#%= @smenu.sname %> Show</h1>-->
 <p><%= @smenu.sname %> <%= render "menu" %></p>
 
-
-<h1>Content</h1>
-
+<h1><%= @smenu.sname %></h1>
 
 <% @smenu.sm_contents.each do |c| %>
-	<div class="hero-unit">
-    <h2><%= c.title %></h2>
-    <p><%= c.content %></p>
-    <p><%= link_to "learn more", sm_content_path(c), class: "btn btn-primary btn-large", :method => :get %></p>
+	<div class="well-box-my">
+    <div class="well-head-my"><h2><%= c.title %></h2></div>
+	  <div class="well-center-my">
+      <p class="tweet-text"><%= c.content %></p>
+      <p><%= link_to "learn more", sm_content_path(c), class: "btn btn-primary", :method => :get %></p>
+		</div>
+		<div class="well-foot-my"><%= time_ago_in_words c.updated_at %></div>
 	</div>
 <% end %>
-
-
-<%#= form_for(genmenu_submenu_sm_contents_path(@mmenu,@smenu,@smc)) do |f| %>
-<%#= form_for(@smc, :url => genmenu_submenu_sm_contents_path(@mmenu, @smenu, @smc)) do |f| %>
-  <!--<div>
-    <p><%#= f.text_field :title, placeholder: "Post name", class: "span8", style: "min-width:200px" %></p>
-    <p><%#= f.text_area :content, placeholder: "Post content", class: "span8", rows: "10" %></p>
-    <p><%#= f.submit "Post", class: "btn" %></p>
-  </div> -->
-<%# end %>
 
 <div>
 	<%= form_for (:contents) do |f| %>
