@@ -1,2 +1,32 @@
-<h1>SmContents#edit</h1>
+<h3>SmContents#edit</h3>
 <p>Find me in app/views/sm_contents/edit.html.erb</p>
+
+
+<h3><%= @smc.title %> Edit</h3>
+
+<%= form_for(@smc) do |f| %>
+  <% if @smc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@smc.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% @smc.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "title", "Title" %><br />
+    <%= f.text_field :title, :text => @smc.title %>
+  </div>
+  <div class="field">
+    <%= f.label "content", "Content" %><br />
+    <%= f.text_area :content, :text => @smc.content %>
+  </div>
+
+  <div class="">
+    <%= f.submit "Update", class: "btn" %>
+  </div>
+<% end %>

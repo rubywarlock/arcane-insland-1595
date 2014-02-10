@@ -3,3 +3,15 @@
 
 <h1>StaticPages#Home</h1>
 <p>Find me in app/views/static_pages/Home.html.erb</p>
+
+
+<% @allcontent.each do |c| %>
+  <div class="well-box-my">
+    <div class="well-head-my"><h2><%= c.title %></h2></div>
+    <div class="well-center-my">
+      <p class="tweet-text"><%= c.content %></p>
+      <p><%= link_to "learn more", sm_content_path(c), class: "btn btn-primary", :method => :get %></p>
+    </div>
+    <div class="well-foot-my"><%= time_ago_in_words c.updated_at %></div>
+  </div>
+<% end %>
