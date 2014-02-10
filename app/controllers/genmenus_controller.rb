@@ -70,6 +70,7 @@ class GenmenusController < ApplicationController
   end
 
 
+
   private
 
 	def new_main_menu
