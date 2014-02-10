@@ -27,6 +27,22 @@ crumb :mainmenuindex do
 	parent :admt
 end
 
+crumb :submenu do
+	link "Subs", submenu_path
+end
+
+#crumb :content do
+#	link "Content", sm_content_path
+#	parent :submenu
+#end
+
+
+crumb :submenus do |submenu|
+   link submenu.sm_contents, submenu_path(submenu)
+   parent :submenus
+end
+
+
 
 # crumb :projects do
 #   link "Projects", projects_path

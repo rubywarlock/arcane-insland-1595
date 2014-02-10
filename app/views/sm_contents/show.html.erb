@@ -1,15 +1,14 @@
-<h1>SmContents#show</h1>
-<p>Find me in app/views/sm_contents/show.html.erb</p>
+<!--<h1>SmContents#show</h1>
+<p>Find me in app/views/sm_contents/show.html.erb</p> -->
 
-<div class="well well-small">
-	<p><%= @smc.title %></p>
-  <p><%= @smc.content %></p>
-</div>
+<%# breadcrumb :submenus, @submenus_path %>
 
-<%#= form_for (@nsmc) do |f| %>
-  <div>
-    <p><%#= f.text_field :title, placeholder: "Post name", class: "span8", style: "min-width:200px" %></p>
-    <p><%#= f.text_area :content, placeholder: "Post content", class: "span8", rows: "10" %></p>
-    <p><%#= f.submit "Post", class: "btn" %></p>
+<div class="well-head-my"><h2><%= @smc.title %></h2></div>
+
+<div class="well-box-my">
+  <div class="well-center-my">
+    <p class="tweet-text"><%= @smc.content %></p>
+    <p><%= link_to "edit", edit_sm_content_path, class: "btn btn-primary", :method => :get %></p>
   </div>
-<%# end %>
+  <div class="well-foot-my"><%= time_ago_in_words @smc.updated_at %></div>
+</div>
