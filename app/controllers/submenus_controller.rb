@@ -1,5 +1,5 @@
 class SubmenusController < ApplicationController
-	before_action :set_smenu, :set_contents, only: [:show, :edit, :update, :destroy]
+	before_action :set_smenu, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@smenus = Submenu.find_by_genmenu_id(:genmenu_id)
@@ -12,7 +12,7 @@ class SubmenusController < ApplicationController
 
 	def show
 		@smenu = Submenu.find(params[:id])
-
+		@contents = SmContent.new(get_smenu_id)
 		respond_to do |format|
 			format.html # show.html.erb
 			format.json { render json: @smenu }
@@ -57,15 +57,28 @@ class SubmenusController < ApplicationController
   def transfer
   end
 
+	def SmContentAdd
+		@smenu = Submenu.find(params[:id])
+		@content = @smenu.sm_contents.build(get_content)
+		if @content.save
+			@content = SmContent.new
+		end
+		render :action => :show
+	end
+
 
 	private
   # Use callbacks to share common setup or constraints between actions.
-	def set_smenu
-		@smenu = Submenu.find(params[:id])
+	def get_content
+		params.require(:contents).permit(:title,:content)
 	end
 
-	def set_contents
+	def get_smenu_id
+		params.permit(:id)
+	end
 
+	def set_smenu
+		@smenu = Submenu.find(params[:id])
 	end
 
 	# Never trust parameters from the scary internet, only allow the white list through.
@@ -77,7 +90,4 @@ class SubmenusController < ApplicationController
 		params.require(:submenu).permit(:sname)
 	end
 
-	def content_params
-
-	end
 end
