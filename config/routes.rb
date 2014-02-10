@@ -13,6 +13,7 @@ Testapp::Application.routes.draw do
 	match "/genmenus/:id" => "genmenus#submenuadd", via: :post
 
 	resources :submenus
+	match "/submenus/:id" => "submenus#SmContentAdd", via: :post
 	#end
 
 	resources :sm_contents
