@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210070329) do
+ActiveRecord::Schema.define(version: 20140211084709) do
+
+  create_table "attaches", force: true do |t|
+    t.integer  "sm_content_id"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "filename"
+  end
 
   create_table "genmenus", force: true do |t|
     t.string   "genmenuname"
