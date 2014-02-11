@@ -12,7 +12,6 @@ class SubmenusController < ApplicationController
 
 	def show
 		@smenu = Submenu.find(params[:id])
-		#@smenu.sm_contents = @smenu.sm_contents.paginate(page: params[:page],:per_page => 2)
 		@contents = SmContent.new(get_smenu_id)
 		respond_to do |format|
 			format.html # show.html.erb
@@ -71,7 +70,7 @@ class SubmenusController < ApplicationController
 	private
   # Use callbacks to share common setup or constraints between actions.
 	def get_content
-		params.require(:contents).permit(:title,:content)
+		params.require(:contents).permit(:title,:content,:attache)
 	end
 
 	def get_smenu_id

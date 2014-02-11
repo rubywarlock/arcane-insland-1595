@@ -11,23 +11,30 @@
     <div class="actions">
       <%= f.text_area :content, placeholder: "Content text", class: "span13", style: "min-width:200px" %>
     </div>
+
+    <div class="actions">
+      <%= f.file_field :attache %>
+    </div>
+
     <div class="actions">
       <%= f.submit "Create", class: "btn" %>
     </div>
   <% end %>
 </div>
 
-<%= will_paginate @smenu.sm_contents.paginate(page: params[:page],:per_page => 2) %>
+<%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 2) %>
 
-<% @smenu.sm_contents.paginate(page: params[:page],:per_page => 2).each do |c| %>
+<% @smenu.sm_contents.paginate(page: params[:page], :per_page => 2).each do |c| %>
 	<div class="well-box-my">
     <div class="well-head-my"><h2><%= c.title %></h2></div>
 	  <div class="well-center-my">
       <p class="tweet-text"><%= c.content %></p>
+
+		  <p><%= c.attache %></p>
       <p><%= link_to "learn more", sm_content_path(c), class: "btn btn-primary", :method => :get %></p>
 		</div>
 		<div class="well-foot-my"><%= time_ago_in_words c.updated_at %></div>
 	</div>
 <% end %>
 
-<%= will_paginate @smenu.sm_contents.paginate(page: params[:page],:per_page => 2) %>
+<%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 2) %>
