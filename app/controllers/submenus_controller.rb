@@ -70,7 +70,7 @@ class SubmenusController < ApplicationController
 	private
   # Use callbacks to share common setup or constraints between actions.
 	def get_content
-		params.require(:contents).permit(:title,:content,:attache_file_name)
+		params.require(:contents).permit(:title,:content,:attache)
 	end
 
 	def get_smenu_id
