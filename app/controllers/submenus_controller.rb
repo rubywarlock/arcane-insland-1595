@@ -12,6 +12,7 @@ class SubmenusController < ApplicationController
 
 	def show
 		@smenu = Submenu.find(params[:id])
+		#@smenu.sm_contents = @smenu.sm_contents.paginate(page: params[:page],:per_page => 2)
 		@contents = SmContent.new(get_smenu_id)
 		respond_to do |format|
 			format.html # show.html.erb
