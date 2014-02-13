@@ -10,15 +10,6 @@ class SubmenusController < ApplicationController
 		end
 	end
 
-	def show
-		@smenu = Submenu.find(params[:id])
-		@contents = SmContent.new(get_smenu_id)
-		respond_to do |format|
-			format.html # show.html.erb
-			format.json { render json: @smenu }
-		end
-	end
-
 	def new
 		@smenu = Submenu.new
 		respond_to do |format|
@@ -33,8 +24,6 @@ class SubmenusController < ApplicationController
 	  @submenu.save
 	  redirect_to @submenu
   end
-
-
 
   def destroy
   end
@@ -54,8 +43,14 @@ class SubmenusController < ApplicationController
 		end
 	end
 
-  def transfer
-  end
+	def show
+		@smenu = Submenu.find(params[:id])
+		@contents = SmContent.new(get_smenu_id)
+		respond_to do |format|
+			format.html # show.html.erb
+			format.json { render json: @smenu }
+		end
+	end
 
 	def SmContentAdd
 		@smenu = Submenu.find(params[:id])
@@ -66,11 +61,13 @@ class SubmenusController < ApplicationController
 		render :action => :show
 	end
 
-
 	private
   # Use callbacks to share common setup or constraints between actions.
 	def get_content
-		params.require(:contents).permit(:title,:content,:attache)
+		#params.require(:contents).permit(:title,:content,:attache)
+
+		params.require(:contents).permit(:title,:content, attache_attributes: [:content_id, :attache])
+		#params.require(:survey).permit(:name, questions_attributes: [:survey_id, :content])
 	end
 
 	def get_smenu_id

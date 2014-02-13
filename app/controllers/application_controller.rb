@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
 	private
 
 	def main_menu
-		@main_menu_items = Genmenu.all
-		@a_submenus = Submenu.all
-		@allcontent = SmContent.order("updated_at desc").all
+		@main_menu_items = Genmenu.order("created_at desc")
+		@a_submenus = Submenu.order("created_at desc")
+		@allcontent = SmContent.order("updated_at desc")
 	end
 
 

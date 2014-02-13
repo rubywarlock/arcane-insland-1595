@@ -29,6 +29,11 @@ class SmContentsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@smc = SmContent.find(params[:id])
+		@smc.destroy
+	end
+
 
 	private
 	# Use callbacks to share common setup or constraints between actions.
