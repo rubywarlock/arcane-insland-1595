@@ -10,15 +10,6 @@ class SubmenusController < ApplicationController
 		end
 	end
 
-	def show
-		@smenu = Submenu.find(params[:id])
-		@contents = SmContent.new(get_smenu_id)
-		respond_to do |format|
-			format.html # show.html.erb
-			format.json { render json: @smenu }
-		end
-	end
-
 	def new
 		@smenu = Submenu.new
 		respond_to do |format|
@@ -33,8 +24,6 @@ class SubmenusController < ApplicationController
 	  @submenu.save
 	  redirect_to @submenu
   end
-
-
 
   def destroy
   end
@@ -54,23 +43,57 @@ class SubmenusController < ApplicationController
 		end
 	end
 
-  def transfer
-  end
+	def show
+		@smenu = Submenu.find(params[:id])
+		#@sm_content = SmContent.new
+
+		#3.times { @sm_content.testoptions.build }
+
+		@smenu.sm_contents.build(get_smenu_id)
+
+		#@testoptions = @sm_content.testoptions.build
+
+		#3.times { @sm_content.testoptions.build }
+
+
+		#@smenu.sm_contents.build
+
+
+		#3.times { @content.attaches.build }
+
+		respond_to do |format|
+			format.html # show.html.erb
+			format.json { render json: @smenu }
+		end
+	end
 
 	def SmContentAdd
 		@smenu = Submenu.find(params[:id])
 		@content = @smenu.sm_contents.build(get_content)
-		if @content.save
-			@content = SmContent.new
-		end
-		render :action => :show
-	end
 
+		#@content = SmContent.new(get_content)
+
+
+		respond_to do |format|
+			if @content.save
+				format.html { redirect_to @content, notice: 'Survey was successfully created.' }
+				format.json { render action: 'show', status: :created, location: @content }
+			else
+				format.html { render action: 'new' }
+				format.json { render json: @content.errors, status: :unprocessable_entity }
+			end
+		end
+
+
+	end
 
 	private
   # Use callbacks to share common setup or constraints between actions.
 	def get_content
-		params.require(:contents).permit(:title,:content,:attache)
+		#params.require(:contents).permit(:title,:content,:attache)
+
+		params.require(:sm_content).permit(:title, :content, :id, :option)
+		#params.require(:survey).permit(:name, questions_attributes: [:survey_id, :content])
 	end
 
 	def get_smenu_id

@@ -8,7 +8,10 @@
 <div class="well-box-my">
   <div class="well-center-my">
     <p class="tweet-text"><%= @smc.content %></p>
-    <p><%= link_to "edit", edit_sm_content_path, class: "btn btn-primary", :method => :get %></p>
+    <p>
+      <%= link_to "edit", edit_sm_content_path, class: "btn btn-primary", :method => :get %>
+      <%= link_to "delete", sm_content_path, class: "btn btn-primary", :method => :delete %>
+    </p>
   </div>
   <div class="well-foot-my"><%= time_ago_in_words @smc.updated_at %></div>
 </div>
