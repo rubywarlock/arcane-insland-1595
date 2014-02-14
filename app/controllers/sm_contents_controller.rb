@@ -1,5 +1,5 @@
 class SmContentsController < ApplicationController
-	before_action :set_content, :create_params, only: [:show, :update, :destroy]
+	#before_action only: [:show, :update, :destroy]
 
   def index
 	  @smc = SmContent.find_by_submenu_id(:submenu_id)
@@ -34,20 +34,31 @@ class SmContentsController < ApplicationController
 		@smc.destroy
 	end
 
+	def create
+		@content = SmContent.new(get_content)
+
+
+		respond_to do |format|
+			if @content.save
+				format.html { redirect_to @content, notice: 'Survey was successfully created.' }
+				format.json { render action: 'show', status: :created, location: @content }
+			else
+				format.html { render action: 'new' }
+				format.json { render json: @content.errors, status: :unprocessable_entity }
+			end
+		end
+	end
+
 
 	private
-	# Use callbacks to share common setup or constraints between actions.
+  def get_content
+	  params.require(:sm_contentd).permit(:title, :content, :id, :option)
+	  #params.require(:survey).permit(:name, questions_attributes: [:survey_id, :content])
+  end
 
 	def content_update_params
 		params.require(:sm_content).permit(:title,:content)
 	end
 
-	def set_content
-	end
-
-	# Never trust parameters from the scary internet, only allow the white list through.
-
-	def create_params
-	end
 
 end

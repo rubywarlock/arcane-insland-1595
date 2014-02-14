@@ -45,7 +45,22 @@ class SubmenusController < ApplicationController
 
 	def show
 		@smenu = Submenu.find(params[:id])
-		@contents = SmContent.new(get_smenu_id)
+		#@sm_content = SmContent.new
+
+		#3.times { @sm_content.testoptions.build }
+
+		@smenu.sm_contents.build(get_smenu_id)
+
+		#@testoptions = @sm_content.testoptions.build
+
+		#3.times { @sm_content.testoptions.build }
+
+
+		#@smenu.sm_contents.build
+
+
+		#3.times { @content.attaches.build }
+
 		respond_to do |format|
 			format.html # show.html.erb
 			format.json { render json: @smenu }
@@ -55,10 +70,21 @@ class SubmenusController < ApplicationController
 	def SmContentAdd
 		@smenu = Submenu.find(params[:id])
 		@content = @smenu.sm_contents.build(get_content)
-		if @content.save
-			@content = SmContent.new
+
+		#@content = SmContent.new(get_content)
+
+
+		respond_to do |format|
+			if @content.save
+				format.html { redirect_to @content, notice: 'Survey was successfully created.' }
+				format.json { render action: 'show', status: :created, location: @content }
+			else
+				format.html { render action: 'new' }
+				format.json { render json: @content.errors, status: :unprocessable_entity }
+			end
 		end
-		render :action => :show
+
+
 	end
 
 	private
@@ -66,7 +92,7 @@ class SubmenusController < ApplicationController
 	def get_content
 		#params.require(:contents).permit(:title,:content,:attache)
 
-		params.require(:contents).permit(:title,:content, attache_attributes: [:content_id, :attache])
+		params.require(:sm_content).permit(:title, :content, :id, :option)
 		#params.require(:survey).permit(:name, questions_attributes: [:survey_id, :content])
 	end
 

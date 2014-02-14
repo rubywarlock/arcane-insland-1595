@@ -10,18 +10,18 @@ Testapp::Application.routes.draw do
   #get "submenus/transfer"
 
 	resources :genmenus
-	match "/genmenus/:id" => "genmenus#submenuadd", via: :post
+	#match "/genmenus/:id" => "genmenus#submenuadd", via: :post
 
 	resources :submenus
 	match "/submenus/:id" => "submenus#SmContentAdd", via: :post
-	#end
+
 
 	resources :sm_contents
+	#resources :testoptions
+	#resources :attaches
+
 	#end
 
-
-	#resources :submenus
-	#resources :genmenus
 
 
   #get "genmenus/index"
