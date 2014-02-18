@@ -35,8 +35,8 @@ class SmContentsController < ApplicationController
 	end
 
 	def create
-		@content = SmContent.new(get_content)
-
+		@content = SmContent.new
+		@content.testoptions.build(get_options)
 
 		respond_to do |format|
 			if @content.save
@@ -52,7 +52,7 @@ class SmContentsController < ApplicationController
 
 	private
   def get_content
-	  params.require(:sm_contentd).permit(:title, :content, :id, :option)
+	  params.require(:sm_content).permit(:title, :content, testoption:[:option])
 	  #params.require(:survey).permit(:name, questions_attributes: [:survey_id, :content])
   end
 
