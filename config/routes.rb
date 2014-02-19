@@ -15,8 +15,8 @@ Testapp::Application.routes.draw do
 	resources :submenus
 	match "/submenus/:id" => "submenus#SmContentAdd", via: :post
 
-
 	resources :sm_contents
+
 	#resources :testoptions
 	#resources :attaches
 

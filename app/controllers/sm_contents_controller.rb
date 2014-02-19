@@ -31,6 +31,7 @@ class SmContentsController < ApplicationController
 
 	def destroy
 		@smc = SmContent.find(params[:id])
+		#@smc.testoptions.destroy(params[:sm_content_id])
 		@smc.destroy
 	end
 
@@ -52,7 +53,7 @@ class SmContentsController < ApplicationController
 
 	private
   def get_content
-	  params.require(:sm_content).permit(:title, :content, testoption:[:option])
+	  params.require(:sm_content).permit(:title, :content, testoptions:[:option])
 	  #params.require(:survey).permit(:name, questions_attributes: [:survey_id, :content])
   end
 
