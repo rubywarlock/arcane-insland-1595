@@ -4,8 +4,7 @@ TEST START
 <h1><%= @smenu.sname %></h1>
 
 <div>
-  <%#= form_for (:contents) do |f| %>
-  <%= form_for (:sm_content) do |f| %>
+  <%= form_for (:sm_contents) do |f| %>
     <div class="actions">
       <%= f.text_field :title, placeholder: "Title", class: "span13", style: "min-width:200px" %>
     </div>
@@ -13,10 +12,10 @@ TEST START
       <%= f.text_area :content, placeholder: "Content text", class: "span13", style: "min-width:200px" %>
     </div>
 
-		<%= f.fields_for (:testoptions) do |af| %>
+		<%= f.fields_for :testoptions do |testoptions_fields| %>
       <div class="actions">
         <%#= af.file_field :option %>
-        <%= af.text_field :option %>
+        <%= testoptions_fields.text_field :option %>
       </div>
 		<% end %>
 

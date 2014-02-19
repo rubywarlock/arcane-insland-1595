@@ -46,8 +46,8 @@ class SubmenusController < ApplicationController
 	def show
 		@smenu = Submenu.find(params[:id])
 
-		#@sm_content = @smenu.sm_contents.build
-		#@testoptions = @sm_content.testoptions.build
+		@sm_contents = SmContent.new
+		@sm_contents.testoptions.build
 
 
 		#@smenu.sm_contents.build(get_smenu_id)
@@ -66,14 +66,11 @@ class SubmenusController < ApplicationController
 
 	def SmContentAdd
 		@smenu = Submenu.find(params[:id])
-		@content = @smenu.sm_contents.build(get_content)
-		@opt = @content.testoptions.build(get_options)
-
-		#@content = SmContent.new(get_content)
-
+		@content = SmContent.new(get_content)
+		@content.testoptions.build
 
 		respond_to do |format|
-			if @content.save and @opt.save
+			if @content.save
 				format.html { redirect_to @content, notice: 'Survey was successfully created.' }
 				format.json { render action: 'show', status: :created, location: @content }
 			else
@@ -90,14 +87,14 @@ class SubmenusController < ApplicationController
 
 	def get_content
 		#params.require(:contents).permit(:title,:content,:attache)
-		params.require(:sm_content).permit(:id, :title, :content, testoptions_attributes: [:option])
+		params.require(:sm_contents).permit(:id, :title, :content, :testoptions => [:option])
 
 		#params.require(:survey).permit(:name,questions_attributes: [:content, :id, :survey_id,answers_attributes: [:content, :id, :questions_id]])
 	end
 
-	def get_options
+	def get_opt
 		#params.require(:contents).permit(:title,:content,:attache)
-		params.require(:sm_content).permit(testoptions_attributes: [:option])
+		params.require(:sm_contents).permit(:id, testoptions: [:option])
 
 		#params.require(:survey).permit(:name,questions_attributes: [:content, :id, :survey_id,answers_attributes: [:content, :id, :questions_id]])
 	end
