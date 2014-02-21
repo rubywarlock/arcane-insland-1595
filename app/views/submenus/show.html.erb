@@ -26,8 +26,8 @@ TEST START
   <%# end %>
 	-->
   <div class="actions">
-    <%= link_to "Add Content", new_sm_content_path(:submenu_id => @smenu.id) %>
-    <%#= link_to "Add Content", new_sm_content_path(:sm_content => { :submenu_id => @account.id } ) %>
+    <%#= link_to "Add Content", new_sm_content_path(:submenu_id => @smenu.id) %>
+    <%= link_to "Add Content", new_sm_content_path(:sm_content => { :submenu_id => @smenu.id } ) %>
     <%#= link_to "Add Content", new_sm_content_path, data: { params: { submenu_id: @smenu.id }.to_param } %>
     <!-- link_to "Add to cart", cart_path, data: { method: post, remote: true, params: { product_id: 123 }.to_param } -->
   </div>
