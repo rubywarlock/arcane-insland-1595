@@ -13,10 +13,12 @@ Testapp::Application.routes.draw do
 	#match "/genmenus/:id" => "genmenus#submenuadd", via: :post
 
 	resources :submenus
-	match "/submenus/:id" => "submenus#SmContentAdd", via: :post
 
 	resources :sm_contents
+	get 'sm_contents/new/:id' => 'sm_contents#new', :as => 'smcontent_new'
 	#match "/sm_contents/new/:id" => "sm_contents#new", via: :get
+	#match "/sm_contents/new?sm_content[submenu_id]:id" => "smc#new", via: :get
+	#http://localhost:3000/sm_contents/new?sm_contentsubmenu_id=2
 
 	#resources :testoptions
 	#resources :attaches

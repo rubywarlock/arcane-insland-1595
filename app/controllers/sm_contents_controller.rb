@@ -2,7 +2,9 @@ class SmContentsController < ApplicationController
 	#before_action only: [:show, :update, :destroy]
 
 	def new
-		@smc = SmContent.new
+		@smc = SmContent.new(:submenu_id => params[:id])
+		@smc.testoptions.build
+		@submenu_id = get_submenu_id
 
 		respond_to do |format|
 			format.html # index.html.erb
@@ -45,8 +47,8 @@ class SmContentsController < ApplicationController
 	end
 
 	def create
-		@content = SmContent.new
-		@content.testoptions.build(get_options)
+		@content = SmContent.new(get_content)
+		#@content.testoptions.build
 
 		respond_to do |format|
 			if @content.save
@@ -62,9 +64,14 @@ class SmContentsController < ApplicationController
 
 	private
   def get_content
-	  params.require(:sm_content).permit(:title, :content, testoptions:[:option])
+	  params.require(:sm_content).permit(:title, :content, :submenu_id, testoptions_attributes:[:option])
 	  #params.require(:survey).permit(:name, questions_attributes: [:survey_id, :content])
   end
+
+	def get_submenu_id
+		params[:id]
+		#params.require(:sm_content).permit(:submenu_id)
+	end
 
 	def content_update_params
 		params.require(:sm_content).permit(:title,:content)

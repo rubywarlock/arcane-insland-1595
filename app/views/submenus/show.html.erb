@@ -26,10 +26,12 @@ TEST START
   <%# end %>
 	-->
   <div class="actions">
+    <%= link_to "Add Content", smcontent_new_path(:id => @smenu) %>
+	  <%#= link_to "Add Content", sm_content_path, data: { method: "get", remote: true, params: { submenu_id: @smenu }.to_param } %>
     <%#= link_to "Add Content", new_sm_content_path(:submenu_id => @smenu.id) %>
-    <%= link_to "Add Content", new_sm_content_path(:sm_content => { :submenu_id => @smenu.id } ) %>
+    <%#= link_to "Add Content", sm_content_path(@smenu.id), :action => "new" %>
     <%#= link_to "Add Content", new_sm_content_path, data: { params: { submenu_id: @smenu.id }.to_param } %>
-    <!-- link_to "Add to cart", cart_path, data: { method: post, remote: true, params: { product_id: 123 }.to_param } -->
+    <%#= link_to "Add to cart", cart_path, data: { method: post, remote: true, params: { product_id: 123 }.to_param } %>
   </div>
 </div>
 
@@ -37,11 +39,16 @@ TEST START
 
 <% @smenu.sm_contents.paginate(page: params[:page], :per_page => 2).each do |c| %>
 	<div class="well-box-my">
-    <div class="well-head-my"><h2><%= c.title %></h2></div>
+    <div class="well-head-my"><h4><%= c.title %></h4></div>
 	  <div class="well-center-my">
       <p class="tweet-text"><%= c.content %></p>
 
-		  <p><%= c.attache %></p>
+		  <h5>Options</h5>
+		    <ol>
+		    <% c.testoptions.each do |o| %>
+		      <li><%= o.option %></li>
+		    <% end %>
+			</ol>
       <p><%= link_to "learn more", sm_content_path(c), class: "btn btn-primary", :method => :get %></p>
 		</div>
 		<div class="well-foot-my"><%= time_ago_in_words c.updated_at %></div>

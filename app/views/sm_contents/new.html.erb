@@ -1,5 +1,6 @@
-<%= form_for (:sm_contents) do |f| %>
+<%= form_for @smc do |f| %>
 <div class="actions">
+  <%= f.text_field :submenu_id, type: "hidden" %>
   <%= f.text_field :title, placeholder: "Title", class: "span13", style: "min-width:200px" %>
 </div>
 <div class="actions">
