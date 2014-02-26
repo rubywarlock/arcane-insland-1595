@@ -5,7 +5,10 @@ gem 'rails', '4.0.1'
 gem 'sass-rails', '~> 4.0.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
+
 gem 'jquery-rails'
+#gem 'jquery-fileupload-rails'
+
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 #gem 'bootstrap-sass', '~> 3.0.2.1'
@@ -14,7 +17,8 @@ gem 'bcrypt-ruby', '3.1.2'
 gem 'gretel'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 
 group :doc do
 	# bundle exec rake doc:rails generates the API under doc/api.
