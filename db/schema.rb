@@ -11,14 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140214050202) do
+ActiveRecord::Schema.define(version: 20140227091425) do
 
   create_table "attaches", force: true do |t|
     t.integer  "sm_content_id"
-    t.string   "file"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "filename"
+    t.string   "attache_file_name"
+    t.string   "attache_content_type"
+    t.integer  "attache_file_size"
+    t.datetime "attache_updated_at"
   end
 
   create_table "genmenus", force: true do |t|
@@ -49,6 +51,10 @@ ActiveRecord::Schema.define(version: 20140214050202) do
     t.integer  "sm_content_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "smcfile_file_name"
+    t.string   "smcfile_content_type"
+    t.integer  "smcfile_file_size"
+    t.datetime "smcfile_updated_at"
   end
 
 end

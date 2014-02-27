@@ -1,4 +1,4 @@
-<%= form_for @smc do |f| %>
+<%= form_for @smc, :html => { :multipart => true } do |f| %>
 <div class="actions">
   <%= f.text_field :submenu_id, type: "hidden" %>
   <%= f.text_field :title, placeholder: "Title", class: "span13", style: "min-width:200px" %>
@@ -10,7 +10,7 @@
 <%= f.fields_for :testoptions do |testoptions_fields| %>
 <div class="actions">
   <%#= af.file_field :option %>
-  <%= testoptions_fields.text_field :option %>
+  <%= testoptions_fields.file_field :testoption %>
 </div>
 <% end %>
 

@@ -64,7 +64,7 @@ class SmContentsController < ApplicationController
 
 	private
   def get_content
-	  params.require(:sm_content).permit(:title, :content, :submenu_id, testoptions_attributes:[:option])
+	  params.require(:sm_content).permit(:title, :content, :submenu_id, testoptions_attributes:[:tempfile, :original_filename, :content_type, :headers])
 	  #params.require(:survey).permit(:name, questions_attributes: [:survey_id, :content])
   end
 

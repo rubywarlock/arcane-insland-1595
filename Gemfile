@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 gem 'rails', '4.0.1'
+#gem 'rails', '4.1.0.rc1' #paper clip not work on this version
 
 gem 'sass-rails', '~> 4.0.1'
 gem 'uglifier', '>= 1.3.0'

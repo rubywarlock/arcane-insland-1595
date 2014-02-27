@@ -45,9 +45,9 @@ TEST START
 
 		  <h5>Options</h5>
 		    <ol>
-		    <% c.testoptions.each do |o| %>
-		      <li><%= o.option %></li>
-		    <% end %>
+		    <%# c.testoptions.each do |o| %>
+		      <li><%#= o.option %></li>
+		    <%# end %>
 			</ol>
       <p><%= link_to "learn more", sm_content_path(c), class: "btn btn-primary", :method => :get %></p>
 		</div>

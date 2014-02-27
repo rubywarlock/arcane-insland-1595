@@ -46,8 +46,8 @@ class SubmenusController < ApplicationController
 	def show
 		@smenu = Submenu.find(params[:id])
 
-		@sm_contents = SmContent.new
-		@sm_contents.testoptions.build
+		#@sm_contents = SmContent.new
+		#@sm_contents.testoptions.build
 
 
 		#@smenu.sm_contents.build(get_smenu_id)
@@ -67,7 +67,7 @@ class SubmenusController < ApplicationController
 	def SmContentAdd
 		@smenu = Submenu.find(params[:id])
 		@content = SmContent.new(get_content)
-		@content.testoptions.build
+		#@content.testoptions.build
 
 		respond_to do |format|
 			if @content.save
