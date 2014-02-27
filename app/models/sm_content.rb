@@ -4,7 +4,7 @@ class SmContent < ActiveRecord::Base
 	#has_many :attaches
 
 	has_many :testoptions, :dependent => :destroy
-	has_attached_file :testoption
+	has_attached_file :upload
 
 
 
