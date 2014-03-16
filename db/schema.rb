@@ -11,16 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227091425) do
+ActiveRecord::Schema.define(version: 20140316085032) do
 
-  create_table "attaches", force: true do |t|
+  create_table "assets", force: true do |t|
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
     t.integer  "sm_content_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "attache_file_name"
-    t.string   "attache_content_type"
-    t.integer  "attache_file_size"
-    t.datetime "attache_updated_at"
+  end
+
+  create_table "attaches", force: true do |t|
+    t.integer  "sm_content_id"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "filename"
   end
 
   create_table "genmenus", force: true do |t|
@@ -45,16 +53,5 @@ ActiveRecord::Schema.define(version: 20140227091425) do
   end
 
   add_index "submenus", ["genmenu_id", "created_at"], name: "index_submenus_on_genmenu_id_and_created_at", using: :btree
-
-  create_table "testoptions", force: true do |t|
-    t.string   "option"
-    t.integer  "sm_content_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "smcfile_file_name"
-    t.string   "smcfile_content_type"
-    t.integer  "smcfile_file_size"
-    t.datetime "smcfile_updated_at"
-  end
 
 end

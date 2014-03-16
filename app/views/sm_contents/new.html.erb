@@ -7,10 +7,10 @@
   <%= f.text_area :content, placeholder: "Content text", class: "span13", style: "min-width:200px" %>
 </div>
 
-<%= f.fields_for :testoptions do |testoptions_fields| %>
+<%= f.fields_for :assets do |assets_fields| %>
 <div class="actions">
   <%#= af.file_field :option %>
-  <%= testoptions_fields.file_field :upload %>
+  <%= assets_fields.file_field :asset, multiple: true %>
 </div>
 <% end %>
 

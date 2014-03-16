@@ -14,8 +14,8 @@
     </p>
 	  <p>Options
 		  <ol>
-		    <% @smc.testoptions.each do |opt| %>
-		      <li><%= opt.smcfile_file_name %></li>
+		    <% @smc.assets.each do |opt| %>
+		      <li><%= opt.asset_file_name %></li>
 		    <% end %>
 			</ol>
 	  </p>
