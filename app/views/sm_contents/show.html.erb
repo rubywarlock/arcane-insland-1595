@@ -12,7 +12,7 @@
       <%= link_to "edit", edit_sm_content_path, class: "btn btn-primary", :method => :get %>
       <%= link_to "delete", sm_content_path, class: "btn btn-primary", :method => :delete %>
     </p>
-	  <p>Options
+	  <p>files
 		  <ol>
 		    <% @smc.assets.each do |opt| %>
 		      <li><%= opt.asset_file_name %></li>

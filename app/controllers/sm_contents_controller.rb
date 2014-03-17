@@ -2,9 +2,9 @@ class SmContentsController < ApplicationController
 	#before_action only: [:show, :update, :destroy]
 
 	def new
-		@smc = SmContent.new
+		@smc = SmContent.new#(:submenu_id => params[:id])
+		#@assets = Asset.new
 		@smc.assets.build
-		#@smc.assets.build
 		@submenu_id = get_submenu_id
 
 		respond_to do |format|
@@ -44,18 +44,25 @@ class SmContentsController < ApplicationController
 	def destroy
 		@smc = SmContent.find(params[:id])
 		#@smc.testoptions.destroy(params[:sm_content_id])
-		@smc.destroy
+		#@smc.destroy
+		respond_to do |format|
+			if @smc.destroy
+				format.html { redirect_to root_path, notice: 'Second menu was successfully updated.' }
+			else
+				format.html { render action: "edit" }
+			end
+		end
 	end
 
 	def create
 		@content = SmContent.new(get_content)
-		#@content.testoptions.build
 
 		respond_to do |format|
 			if @content.save
 
-				#params[:assets_attributes].each do |file|
-				#	@content.assets.create(:asset => file)
+				#params[:assets_attributes][:asset].each do |file|
+				#	@document = Document.new(:document => file)
+				#	@document.save
 				#end
 
 				format.html { redirect_to @content, notice: 'Survey was successfully created.' }
@@ -73,8 +80,13 @@ class SmContentsController < ApplicationController
 	  #params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:tempfile, :original_filename, :content_type, :headers])
 	  #params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:asset, :tempfile, :original_filename, :content_type, :headers])
 	  params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:asset])
+	  #params.require(:sm_content).permit(:title, :content, :submenu_id, :asset)
 	  #params.require(:survey).permit(:name, questions_attributes: [:survey_id, :content])
   end
+
+	def get_asset
+		params.require(:sm_content).permit(assets_attributes: [:asset])
+	end
 
 	def get_submenu_id
 		params[:id]

@@ -1,18 +1,44 @@
-<%= form_for @smc, :html => { :multipart => true } do |f| %>
+<%= form_for @smc, html: { multipart: true } do |f| %>
+  <% if @smc.errors.any? %>
+    <ul>
+      <% @smc.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
 <div class="actions">
-  <%= f.text_field :submenu_id, type: "hidden" %>
+  <%= f.text_field :submenu_id, type: "hidden", value: @submenu_id %>
   <%= f.text_field :title, placeholder: "Title", class: "span13", style: "min-width:200px" %>
 </div>
 <div class="actions">
   <%= f.text_area :content, placeholder: "Content text", class: "span13", style: "min-width:200px" %>
 </div>
 
-<%= f.fields_for :assets do |assets_fields| %>
-<div class="actions">
-  <%#= af.file_field :option %>
-  <%= assets_fields.file_field :asset, multiple: true %>
-</div>
-<% end %>
+
+  <%= f.fields_for :assets do |asset_fields| %>
+    <%# if asset_fields.object.new_record? %>
+      <%#= f.text_field :submenu_id, type: "hidden", value: @submenu_id %>
+      <div class="actions"><%= asset_fields.file_field :asset, :multiple => true %></div>
+    <%# end %>
+  <% end %>
+
+
+  <h6>Old Files</h6>
+  <div class="field">
+    <%#= f.fields_for :assets do |asset_fields| %>
+
+      <%# unless asset_fields.object.new_record? %>
+        <div class="actions">
+          <%#= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original) %>
+          <%#= asset_fields.check_box :_destroy %>
+        </div>
+      <%# end %>
+
+    <%# end %>
+  </div>
+
+
 
 <div class="actions">
   <%= f.submit "Create", class: "btn" %>
