@@ -11,7 +11,9 @@
 <%= render 'layouts/header' %>
 <div class="container">
 
-  <%= breadcrumbs style: :bootstrap, separator: " &rsaquo; " %>
+  <%#= breadcrumbs style: :bootstrap, separator: " &rsaquo; " %>
+
+  <ol class="breadcrumb"><li class="active">Home</li></ol>
 
   <%= yield %>
   <%= render 'layouts/footer' %>

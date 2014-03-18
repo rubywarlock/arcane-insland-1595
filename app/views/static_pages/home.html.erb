@@ -1,17 +1,52 @@
 <%# breadcrumb :home, @home_path %>
-<ol class="breadcrumb"><li class="active">Home</li></ol>
 
-<h1>StaticPages#Home</h1>
-<p>Find me in app/views/static_pages/Home.html.erb</p>
+<h1>Home page</h1>
+<!-- <p>Find me in app/views/static_pages/Home.html.erb</p> -->
 
 
-<% @allcontent.each do |c| %>
+<script type="text/javascript">
+	/*$(document).ready(function() {
+
+		var showText="Show";
+		var hideText="Hide";
+
+		$('.toggle').hide();
+
+		$('a.toggleLink').click(function() {
+
+			if ($(this).html()==showText) {
+				$(this).html(hideText);
+			}
+			else {
+				$(this).html(showText);
+			}
+
+			$(this).parent().prev('.toggle').toggle('slow');
+
+			return false;
+
+		});
+	}); */
+
+</script>
+
+
+<%= will_paginate @allcontent.paginate(page: params[:page], :per_page => 2) %>
+
+<% @allcontent.paginate(page: params[:page], :per_page => 2).each do |c| %>
   <div class="well-box-my">
     <div class="well-head-my"><h2><%= c.title %></h2></div>
     <div class="well-center-my">
-      <p class="tweet-text"><%= c.content %></p>
-      <p><%= link_to "learn more", sm_content_path(c), class: "btn btn-primary", :method => :get %></p>
+      <div class="tweet-text text-block"><%= c.content %></div>
+	    <p>
+	      <% c.assets.each_with_index do |a,n| %>
+          <li><%= n %> <%= link_to a.asset_file_name, a.asset.url %></li>
+        <% end %>
+	    </p>
+      <p><%= link_to "learn more", sm_content_path(c, submenu_id: c.submenu_id), class: "btn btn-primary", :method => :get %></p>
     </div>
     <div class="well-foot-my"><%= time_ago_in_words c.updated_at %></div>
   </div>
 <% end %>
+
+<%= will_paginate @allcontent.paginate(page: params[:page], :per_page => 2) %>

@@ -20,3 +20,15 @@
 //= require bootstrap-popover
 
 //= require_tree .
+
+$(document).ready(function() {
+
+	$(".text-block").shorten({
+		"showChars" : 150,              // - длина текста в символах.
+		"moreText"  : "Подробнее",      // - текст "читать далее".
+		"ellipsesText" : "...",         // - вместо многоточия можно вписать к примеру и "[...]".
+		"lessText"  : "Скрыть текст"   // - текст возврата в исходное состояние.
+	});
+
+});
+
