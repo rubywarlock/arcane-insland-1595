@@ -3,7 +3,6 @@ class SmContentsController < ApplicationController
 
 	def new
 		@smc = SmContent.new#(:submenu_id => params[:id])
-		#@assets = Asset.new
 		@smc.assets.build
 		@submenu_id = get_submenu_id
 
@@ -45,8 +44,6 @@ class SmContentsController < ApplicationController
 	def destroy
 		@smc = SmContent.find(params[:id])
 		@submenu_id = params[:submenu_id]
-		#@smc.testoptions.destroy(params[:sm_content_id])
-		#@smc.destroy
 		respond_to do |format|
 			if @smc.destroy
 				format.html { redirect_to submenu_path(@submenu_id), notice: 'Second menu was successfully updated.' }
@@ -77,23 +74,14 @@ class SmContentsController < ApplicationController
 		end
 	end
 
-
 	private
   def get_content
 	  #params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:tempfile, :original_filename, :content_type, :headers])
-	  #params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:asset, :tempfile, :original_filename, :content_type, :headers])
 	  params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:asset])
-	  #params.require(:sm_content).permit(:title, :content, :submenu_id, :asset)
-	  #params.require(:survey).permit(:name, questions_attributes: [:survey_id, :content])
   end
-
-	def get_asset
-		params.require(:sm_content).permit(assets_attributes: [:asset])
-	end
 
 	def get_submenu_id
 		params[:id]
-		#params.require(:sm_content).permit(:submenu_id)
 	end
 
 	def content_update_params
