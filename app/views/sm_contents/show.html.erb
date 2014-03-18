@@ -10,7 +10,7 @@
     <p class="tweet-text"><%= @smc.content %></p>
     <p>
       <%= link_to "edit", edit_sm_content_path, class: "btn btn-primary", :method => :get %>
-      <%= link_to "delete", sm_content_path, class: "btn btn-primary", :method => :delete %>
+      <%= link_to "delete", sm_content_path(:submenu_id => @submenu_id), class: "btn btn-primary", :method => :delete %>
     </p>
 	  <p>files
 		  <ol>

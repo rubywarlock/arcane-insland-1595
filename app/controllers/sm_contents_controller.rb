@@ -24,6 +24,7 @@ class SmContentsController < ApplicationController
 
   def show
 		@smc = SmContent.find(params[:id])
+		@submenu_id = params[:submenu_id]
   end
 
 	def edit
@@ -43,11 +44,12 @@ class SmContentsController < ApplicationController
 
 	def destroy
 		@smc = SmContent.find(params[:id])
+		@submenu_id = params[:submenu_id]
 		#@smc.testoptions.destroy(params[:sm_content_id])
 		#@smc.destroy
 		respond_to do |format|
 			if @smc.destroy
-				format.html { redirect_to root_path, notice: 'Second menu was successfully updated.' }
+				format.html { redirect_to submenu_path(@submenu_id), notice: 'Second menu was successfully updated.' }
 			else
 				format.html { render action: "edit" }
 			end
@@ -56,6 +58,7 @@ class SmContentsController < ApplicationController
 
 	def create
 		@content = SmContent.new(get_content)
+		@submenu_id = params[:submenu_id]
 
 		respond_to do |format|
 			if @content.save
@@ -65,7 +68,7 @@ class SmContentsController < ApplicationController
 				#	@document.save
 				#end
 
-				format.html { redirect_to @content, notice: 'Survey was successfully created.' }
+				format.html { redirect_to sm_content_path(@content, params: {submenu_id: @content.submenu_id} ), notice: 'Survey was successfully created.' }
 				format.json { render action: 'show', status: :created, location: @content }
 			else
 				format.html { render action: 'new' }
