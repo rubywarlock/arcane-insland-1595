@@ -18,27 +18,10 @@
 
   <%= f.fields_for :assets do |asset_fields| %>
     <%# if asset_fields.object.new_record? %>
-      <%#= f.text_field :submenu_id, type: "hidden", value: @submenu_id %>
+      <%= f.text_field :submenu_id, type: "hidden", value: @submenu_id %>
       <div class="actions"><%= asset_fields.file_field :asset, :multiple => true, :name => 'sm_content[assets_attributes][][asset]' %></div>
     <%# end %>
   <% end %>
-
-
-  <h6>Old Files</h6>
-  <div class="field">
-    <%#= f.fields_for :assets do |asset_fields| %>
-
-      <%# unless asset_fields.object.new_record? %>
-        <div class="actions">
-          <%#= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original) %>
-          <%#= asset_fields.check_box :_destroy %>
-        </div>
-      <%# end %>
-
-    <%# end %>
-  </div>
-
-
 
 <div class="actions">
   <%= f.submit "Create", class: "btn" %>
