@@ -63,7 +63,10 @@ class SmContentsController < ApplicationController
 				#params[:assets_attributes][:asset].each do |file|
 				#	@document = Document.new(:document => file)
 				#	@document.save
-				#end
+				#
+				#
+				#
+				# end
 
 				format.html { redirect_to sm_content_path(@content, params: {submenu_id: @content.submenu_id} ), notice: 'Survey was successfully created.' }
 				format.json { render action: 'show', status: :created, location: @content }

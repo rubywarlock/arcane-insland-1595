@@ -2,16 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.text-block{
-  height: 100px;
-  //overflow: hidden;
-  //box-shadow: inset 0px -5px 10px rgb(235, 235, 235);
-  //box-shadow: inset 0px -10px 10px rgba(255, 255, 255, 0.9);
-
-  white-space: nowrap;
+.text-block {
+  min-height: 100px;
+  max-height: 200px;
+  position:relative;
+  font:12px arial;
+  //padding:10px;
+  //margin:5px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-  //-moz-binding: url('ellipsis.xml#ellipsis');
-
+}
+.text-image-gradient {
+  position:absolute;
+  left:0;
+  bottom:0px;
+  width:100%;
+  background:url(zatemnenie-texsta.png) repeat-x left bottom;
+  height:35px;
+  border:none
+}
+.text-block-full {
+  //font-family: 12px "Helvetica Neue",Arial,sans-serif;
+  //white-space: pre-wrap;
+  //word-wrap: break-word;
+  //position:relative;
+  font:12px Arial;
 }

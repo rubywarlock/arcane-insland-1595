@@ -4,57 +4,33 @@ TEST START
 <h1><%= @smenu.sname %></h1>
 
 <div>
-  <!--
-  <%#= form_for (:sm_contents) do |f| %>
-    <div class="actions">
-      <%#= f.text_field :title, placeholder: "Title", class: "span13", style: "min-width:200px" %>
-    </div>
-    <div class="actions">
-      <%#= f.text_area :content, placeholder: "Content text", class: "span13", style: "min-width:200px" %>
-    </div>
-
-		<%#= f.fields_for :testoptions do |testoptions_fields| %>
-      <div class="actions">
-        <%#= af.file_field :option %>
-        <%#= testoptions_fields.text_field :option %>
-      </div>
-		<%# end %>
-
-    <div class="actions">
-      <%#= f.submit "Create", class: "btn" %>
-    </div>
-  <%# end %>
-	-->
   <div class="actions">
-    <%= link_to "Add Content", smcontent_new_path(:id => @smenu) %>
-	  <%#= link_to "Add Content", sm_content_path, data: { method: "get", remote: true, params: { submenu_id: @smenu }.to_param } %>
-    <%#= link_to "Add Content", new_sm_content_path(:submenu_id => @smenu.id) %>
-    <%#= link_to "Add Content", sm_content_path(@smenu.id), :action => "new" %>
-    <%#= link_to "Add Content", new_sm_content_path, data: { params: { submenu_id: @smenu.id }.to_param } %>
-    <%#= link_to "Add to cart", cart_path, data: { method: post, remote: true, params: { product_id: 123 }.to_param } %>
+    <p><%= link_to "Add Content", smcontent_new_path(:id => @smenu) %></p>
   </div>
 </div>
 
 <%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 2) %>
 
 <% @smenu.sm_contents.paginate(page: params[:page], :per_page => 2).each do |c| %>
-	<div class="well-box-my">
-    <div class="well-head-my"><h4><%= c.title %></h4></div>
-	  <div class="well-center-my">
-      <p class="tweet-text"><%= c.content %></p>
+ <div class="well-box-my">
+    <div class="well-center-my">
+      <div class="text-block">
+        <div class="text-image-gradient"></div>
+        <h3><%= c.title %></h3>
+        <%= c.content %>
+      </div>
 
-		    <ol>
-		    <% c.assets.each do |a| %>
-		      <li>
-		        <%#= a.asset_file_name %>
-		        <%= link_to a.asset_file_name, a.asset.url %>
-		      </li>
-		    <% end %>
-			</ol>
-      <p><%= link_to "learn more", sm_content_path(c, submenu_id: @smenu.id), class: "btn btn-primary", :method => :get %></p>
-		</div>
-		<div class="well-foot-my"><%= time_ago_in_words c.updated_at %></div>
-	</div>
+      <p>
+        <ol class="file-list">
+          <% c.assets.each_with_index do |a,n| %>
+            <li><%= link_to a.asset_file_name, a.asset.url %></li>
+          <% end %>
+        </ol>
+      </p>
+      <p><%= link_to "learn more", sm_content_path(c, submenu_id: c.submenu_id ), class: "btn btn-primary", :method => :get %></p>
+    </div>
+    <div class="well-foot-my"><%= time_ago_in_words c.updated_at %></div>
+  </div>
 <% end %>
 
 <%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 2) %>

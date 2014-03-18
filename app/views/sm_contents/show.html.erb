@@ -1,19 +1,15 @@
-<!--<h1>SmContents#show</h1>
-<p>Find me in app/views/sm_contents/show.html.erb</p> -->
-
 <%# breadcrumb :submenus, @submenus_path %>
-
-<div class="well-head-my"><h2><%= @smc.title %></h2></div>
 
 <div class="well-box-my">
   <div class="well-center-my">
-    <p class="tweet-text"><%= @smc.content %></p>
-    <p>
-      <%= link_to "edit", edit_sm_content_path, class: "btn btn-primary", :method => :get %>
-      <%= link_to "delete", sm_content_path(:submenu_id => @submenu_id), class: "btn btn-primary", :method => :delete %>
-    </p>
-	  <p>files
-		  <ol>
+    <div class="text-block-full">
+      <div class="text-image-gradient2"></div>
+      <h3><%= @smc.title %></h3>
+      <%= @smc.content %>
+    </div>
+
+	  <p>
+		  <ol class="file-list">
 		    <% @smc.assets.each do |opt| %>
 		      <li>
 		        <%#= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original) %>
@@ -22,6 +18,12 @@
 		    <% end %>
 			</ol>
 	  </p>
+
+    <p>
+      <%= link_to "edit", edit_sm_content_path(:submenu_id => @submenu_id), class: "btn btn-primary", :method => :get %>
+      <%= link_to "delete", sm_content_path(:submenu_id => @submenu_id), class: "btn btn-primary", :method => :delete %>
+    </p>
+
   </div>
   <div class="well-foot-my"><%= time_ago_in_words @smc.updated_at %></div>
 </div>
