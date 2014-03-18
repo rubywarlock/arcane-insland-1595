@@ -46,7 +46,10 @@ TEST START
 		  <h5>files</h5>
 		    <ol>
 		    <% c.assets.each do |a| %>
-		      <li><%= a.asset_file_name %></li>
+		      <li>
+		        <%#= a.asset_file_name %>
+		        <%= link_to a.asset_file_name, a.asset.url %>
+		      </li>
 		    <% end %>
 			</ol>
       <p><%= link_to "learn more", sm_content_path(c, submenu_id: @smenu.id), class: "btn btn-primary", :method => :get %></p>
