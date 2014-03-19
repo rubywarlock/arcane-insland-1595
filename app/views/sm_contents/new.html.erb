@@ -22,7 +22,6 @@
 	<p>
     <%= f.fields_for :assets do |asset_fields| %>
       <%# if asset_fields.object.new_record? %>
-      <%= f.text_field :submenu_id, type: "hidden", value: @submenu_id %>
       <div class="actions"><%= asset_fields.file_field :asset, :multiple => true, :name => 'sm_content[assets_attributes][][asset]' %></div>
       <%# end %>
   <% end %>

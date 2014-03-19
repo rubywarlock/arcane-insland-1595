@@ -2,9 +2,9 @@ class SmContentsController < ApplicationController
 	#before_action only: [:show, :update, :destroy]
 
 	def new
-		@smc = SmContent.new#(:submenu_id => params[:id])
+		@smc = SmContent.new#(:submenu_id => params[:id)
 		@smc.assets.build
-		@submenu_id = get_submenu_id
+		@submenu_id = params[:id]
 
 		respond_to do |format|
 			format.html # index.html.erb
@@ -28,7 +28,7 @@ class SmContentsController < ApplicationController
 
 	def edit
 		@smc = SmContent.find(params[:id])
-		#@smc.assets.build
+		@smc.assets.build
 		@submenu_id = get_submenu_id
 	end
 
@@ -81,7 +81,7 @@ class SmContentsController < ApplicationController
 	end
 
 	def content_update_params
-		params.require(:sm_content).permit(:title,:content, :submenu_id, assets_attributes: [:asset])
+		params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:asset])
 	end
 
 

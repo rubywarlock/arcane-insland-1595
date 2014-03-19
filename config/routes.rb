@@ -14,7 +14,12 @@ Testapp::Application.routes.draw do
 
 	resources :submenus
 
-	resources :sm_contents
+	resources :sm_contents do
+		resources :assets
+	end
+
+
+
 	get 'sm_contents/new/:id' => 'sm_contents#new', :as => 'smcontent_new'
 	#match "/sm_contents/new/:id" => "sm_contents#new", via: :get
 	#match "/sm_contents/new?sm_content[submenu_id]:id" => "smc#new", via: :get

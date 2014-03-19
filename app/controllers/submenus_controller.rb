@@ -46,18 +46,6 @@ class SubmenusController < ApplicationController
 	def show
 		@smenu = Submenu.find(params[:id])
 
-		#@sm_contents = SmContent.new
-		#@sm_contents.testoptions.build
-
-
-		#@smenu.sm_contents.build(get_smenu_id)
-		#@sm_content.build_submenu
-		#3.times { @sm_content.testoptions.build }
-		#@smenu.sm_contents.build(get_smenu_id)
-		#3.times { @sm_content.testoptions.build }
-		#@smenu.sm_contents.build
-		#3.times { @content.attaches.build }
-
 		respond_to do |format|
 			format.html # show.html.erb
 			format.json { render json: @smenu }
