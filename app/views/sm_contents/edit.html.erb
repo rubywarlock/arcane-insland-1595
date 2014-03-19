@@ -25,12 +25,41 @@
 
 
   <p>
+    <%#= f.fields_for :assets do |asset_fields| %>
+      <%#= f.text_field :submenu_id, type: "hidden", value: @smc.submenu_id %>
+    <!--<div class="actions"><%#= asset_fields.file_field :asset, :multiple => true, :name => 'sm_content[assets_attributes][][asset]' %></div> -->
+  <%# end %>
+
+
+
+  <h4>New Files</h4>
+  <div class="actions">
+
     <%= f.fields_for :assets do |asset_fields| %>
       <%# if asset_fields.object.new_record? %>
-      <%= f.text_field :submenu_id, type: "hidden", value: @smc.submenu_id %>
-    <div class="actions"><%= asset_fields.file_field :asset, :multiple => true, :name => 'sm_content[assets_attributes][]' %></div>
-    <%# end %>
-  <% end %>
+        <p><%= asset_fields.file_field :asset, multiple: true %></p>
+      <%# end %>
+    <% end %>
+
+  </div>
+
+  <h4>Old Files</h4>
+  <div class="actions">
+    <%= f.fields_for :assets do |asset_fields| %>
+      <% unless asset_fields.object.new_record? %>
+        <div class="thumb">
+          <%= asset_fields.text_field :submenu_id, type: "hidden", value: @smc.submenu_id %>
+          <%= link_to asset_fields.object.asset_file_name, asset_fields.object.asset.url %>
+          <%= asset_fields.check_box :_destroy %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+
+
+
+
   </p>
 
   <div class="actions">
