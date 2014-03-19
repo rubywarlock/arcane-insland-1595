@@ -9,15 +9,15 @@ TEST START
   </div>
 </div>
 
-<%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 2) %>
+<%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 6) %>
 
-<% @smenu.sm_contents.paginate(page: params[:page], :per_page => 2).each do |c| %>
+<% @smenu.sm_contents.paginate(page: params[:page], :per_page => 6).each do |c| %>
  <div class="well-box-my">
     <div class="well-center-my">
       <div class="text-block">
         <div class="text-image-gradient"></div>
         <h3><%= c.title %></h3>
-        <%= c.content %>
+        <%= raw c.content %>
       </div>
 
       <p>
@@ -33,4 +33,4 @@ TEST START
   </div>
 <% end %>
 
-<%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 2) %>
+<%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 6) %>

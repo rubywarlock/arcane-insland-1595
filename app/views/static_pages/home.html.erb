@@ -1,18 +1,20 @@
 <%# breadcrumb :home, @home_path %>
+<%= tinymce_assets %>
+<%= tinymce %>
+
 <h1>Home page</h1>
 
-<%= will_paginate @allcontent.paginate(page: params[:page], :per_page => 2) %>
+<%= will_paginate @allcontent.paginate(page: params[:page], :per_page => 6) %>
 
-<% @allcontent.paginate(page: params[:page], :per_page => 2).each do |c| %>
+<% @allcontent.paginate(page: params[:page], :per_page => 6).each do |c| %>
   <div class="well-box-my">
     <div class="well-center-my">
 
       <div class="text-block">
         <div class="text-image-gradient"></div>
         <h3><%= c.title %></h3>
-        <%= c.content %>
+        <%= raw c.content %>
       </div>
-
 
 	    <p>
 		    <ol class="file-list">
@@ -27,4 +29,4 @@
   </div>
 <% end %>
 
-<%= will_paginate @allcontent.paginate(page: params[:page], :per_page => 2) %>
+<%= will_paginate @allcontent.paginate(page: params[:page], :per_page => 6) %>

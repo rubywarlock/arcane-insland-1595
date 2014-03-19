@@ -28,6 +28,8 @@ class SmContentsController < ApplicationController
 
 	def edit
 		@smc = SmContent.find(params[:id])
+		#@smc.assets.build
+		@submenu_id = get_submenu_id
 	end
 
 	def update
@@ -59,15 +61,6 @@ class SmContentsController < ApplicationController
 
 		respond_to do |format|
 			if @content.save
-
-				#params[:assets_attributes][:asset].each do |file|
-				#	@document = Document.new(:document => file)
-				#	@document.save
-				#
-				#
-				#
-				# end
-
 				format.html { redirect_to sm_content_path(@content, params: {submenu_id: @content.submenu_id} ), notice: 'Survey was successfully created.' }
 				format.json { render action: 'show', status: :created, location: @content }
 			else
@@ -84,11 +77,11 @@ class SmContentsController < ApplicationController
   end
 
 	def get_submenu_id
-		params[:id]
+		params[:submenu_id]
 	end
 
 	def content_update_params
-		params.require(:sm_content).permit(:title,:content)
+		params.require(:sm_content).permit(:title,:content, :submenu_id, assets_attributes: [:asset])
 	end
 
 

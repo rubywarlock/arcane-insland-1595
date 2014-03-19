@@ -19,6 +19,8 @@ gem 'gretel'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
+gem 'tinymce-rails'
+
 gem 'paperclip', '~> 3'#:git => 'git://github.com/thoughtbot/paperclip.git'
 
 group :doc do

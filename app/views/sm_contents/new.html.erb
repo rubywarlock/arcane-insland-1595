@@ -1,3 +1,6 @@
+<%#= tinymce_assets %>
+<%= tinymce %>
+
 <%= form_for @smc, html: { multipart: true } do |f| %>
   <% if @smc.errors.any? %>
     <ul>
@@ -12,16 +15,18 @@
   <%= f.text_field :title, placeholder: "Title", class: "span13", style: "min-width:200px" %>
 </div>
 <div class="actions">
-  <%= f.text_area :content, placeholder: "Content text", class: "span13", style: "min-width:200px" %>
+  <%= f.text_area :content, placeholder: "Content text", :class => "span13 tinymce", style: "min-width:200px" %>
 </div>
 
 
-  <%= f.fields_for :assets do |asset_fields| %>
-    <%# if asset_fields.object.new_record? %>
+	<p>
+    <%= f.fields_for :assets do |asset_fields| %>
+      <%# if asset_fields.object.new_record? %>
       <%= f.text_field :submenu_id, type: "hidden", value: @submenu_id %>
       <div class="actions"><%= asset_fields.file_field :asset, :multiple => true, :name => 'sm_content[assets_attributes][][asset]' %></div>
-    <%# end %>
+      <%# end %>
   <% end %>
+	</p>
 
 <div class="actions">
   <%= f.submit "Create", class: "btn" %>

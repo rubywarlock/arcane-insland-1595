@@ -1,10 +1,8 @@
-<h3>SmContents#edit</h3>
-<p>Find me in app/views/sm_contents/edit.html.erb</p>
-
-
 <h3><%= @smc.title %> Edit</h3>
 
-<%= form_for(@smc) do |f| %>
+<%= tinymce %>
+
+<%= form_for @smc, html: { multipart: true } do |f| %>
   <% if @smc.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@smc.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -17,16 +15,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label "title", "Title" %><br />
-    <%= f.text_field :title, :text => @smc.title %>
+  <div class="actions">
+    <%= f.text_field :submenu_id, type: "hidden", value: @smc.submenu_id %>
+    <%= f.text_field :title, placeholder: "Title", class: "span13", style: "min-width:200px", :text => @smc.title %>
   </div>
-  <div class="field">
-    <%= f.label "content", "Content" %><br />
-    <%= f.text_area :content, :text => @smc.content %>
+  <div class="actions">
+    <%= f.text_area :content, placeholder: "Content text", :class => "span13 tinymce", style: "min-width:200px", :text => @smc.content %>
   </div>
 
-  <div class="">
+
+  <p>
+    <%= f.fields_for :assets do |asset_fields| %>
+      <%# if asset_fields.object.new_record? %>
+      <%= f.text_field :submenu_id, type: "hidden", value: @smc.submenu_id %>
+    <div class="actions"><%= asset_fields.file_field :asset, :multiple => true, :name => 'sm_content[assets_attributes][]' %></div>
+    <%# end %>
+  <% end %>
+  </p>
+
+  <div class="actions">
     <%= f.submit "Update", class: "btn" %>
   </div>
 <% end %>
