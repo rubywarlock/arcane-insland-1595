@@ -28,7 +28,7 @@ class SmContentsController < ApplicationController
 
 	def edit
 		@smc = SmContent.find(params[:id])
-		@smc.assets.build
+		#@smc.assets.build
 		@submenu_id = get_submenu_id
 	end
 
@@ -73,7 +73,7 @@ class SmContentsController < ApplicationController
 	private
   def get_content
 	  #params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:tempfile, :original_filename, :content_type, :headers])
-	  params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:asset])
+	  params.require(:sm_content_).permit(:title, :content, :submenu_id, assets_attributes: [:asset])
   end
 
 	def get_submenu_id
@@ -81,7 +81,7 @@ class SmContentsController < ApplicationController
 	end
 
 	def content_update_params
-		params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:asset])
+		params.require(:sm_content_).permit(:title, :content, :submenu_id, assets_attributes: [:asset])
 	end
 
 

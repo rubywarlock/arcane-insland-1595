@@ -15,7 +15,11 @@ Testapp::Application.routes.draw do
 	resources :submenus
 
 	resources :sm_contents do
-		resources :assets
+		#resources :assets
+		match '/assets/deleteassets' => 'assets#deleteassets', :as => 'delete_assets', via: :get
+		match '/assets/addassets' => 'assets#addassets', :as => 'add_assets', via: :get
+		match '/assets/addassets' => 'assets#create', :as => 'create_assets', via: :post
+		match '/assets/new' => 'assets#new', :as => 'new_assets', via: :get
 	end
 
 

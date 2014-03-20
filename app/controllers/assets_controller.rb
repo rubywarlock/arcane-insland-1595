@@ -1,21 +1,35 @@
 class AssetsController < ApplicationController
-  before_action :set_asset, only: [:show, :edit, :update, :destroy]
+  #before_action :set_asset, only: [:show, :edit, :update, :destroy]
 
   # GET /assets
   # GET /assets.json
   def index
     @assets = Asset.where(:sm_content_id => params[:sm_content_id])
-		#@smc = SmContent.where(params[:sm_content_id])
+		@smc = SmContent.find(params[:sm_content_id])
   end
 
   # GET /assets/1
   # GET /assets/1.json
-  def show
-  end
 
   # GET /assets/new
   def new
     @asset = Asset.new
+  end
+
+  def addassets
+	  @assets = Asset.where(:sm_content_id => params[:sm_content_id])
+	  @smc = SmContent.find(params[:sm_content_id])
+	  @smc.assets.build
+
+	  respond_to do |format|
+		  format.html # index.html.erb
+		  format.json { render json: @assets }
+	  end
+  end
+
+  def deleteassets
+	  @assets = Asset.where(:sm_content_id => params[:sm_content_id])
+	  @smc = SmContent.find(params[:sm_content_id])
   end
 
   # GET /assets/1/edit
@@ -26,10 +40,11 @@ class AssetsController < ApplicationController
   # POST /assets.json
   def create
     @asset = Asset.new(asset_params)
+    @smc = SmContent.find(params[:sm_content_id])
 
     respond_to do |format|
       if @asset.save
-        format.html { redirect_to @asset, notice: 'Asset was successfully created.' }
+        format.html { redirect_to @smc, notice: 'Asset was successfully created.' }
         format.json { render action: 'show', status: :created, location: @asset }
       else
         format.html { render action: 'new' }
@@ -69,7 +84,10 @@ class AssetsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def asset_params
-      params[:asset]
+    def asset_paramss
+	    #params.require(:sm_content).permit(:title, :content, :sm_content_id, :assets)
+	    params.require(:sm_content_assetss).permit(:sm_content_id, assets:[])
+      #params[:assets]
+      #params[:assets_attributes]
     end
 end

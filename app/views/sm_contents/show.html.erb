@@ -20,7 +20,8 @@
 	  </p>
 
     <p>
-      <%= link_to "Files", sm_content_assets_path(@smc), class: "btn btn-primary", :method => :get %>
+      <%= link_to "Add files", sm_content_add_assets_path(@smc), class: "btn btn-primary" %>
+      <%= link_to "Delete files", sm_content_delete_assets_path(@smc), class: "btn btn-primary" %>
       <%= link_to "edit", edit_sm_content_path(:submenu_id => @smc.submenu_id), class: "btn btn-primary", :method => :get %>
       <%= link_to "delete", sm_content_path(:submenu_id => @smc.submenu_id), class: "btn btn-primary", :method => :delete %>
     </p>

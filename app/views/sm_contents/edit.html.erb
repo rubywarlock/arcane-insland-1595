@@ -30,38 +30,54 @@
     <!--<div class="actions"><%#= asset_fields.file_field :asset, :multiple => true, :name => 'sm_content[assets_attributes][][asset]' %></div> -->
   <%# end %>
 
-
+<!--
 
   <h4>New Files</h4>
   <div class="actions">
 
-    <%= f.fields_for :assets do |asset_fields| %>
+    <%#= f.fields_for :assets do |asset_fields| %>
       <%# if asset_fields.object.new_record? %>
-        <p><%= asset_fields.file_field :asset, multiple: true %></p>
+        <p><%#= asset_fields.file_field :asset, multiple: true %></p>
       <%# end %>
-    <% end %>
+    <%# end %>
 
   </div>
 
   <h4>Old Files</h4>
   <div class="actions">
-    <%= f.fields_for :assets do |asset_fields| %>
-      <% unless asset_fields.object.new_record? %>
+    <%#= f.fields_for :assets do |asset_fields| %>
+      <%# unless asset_fields.object.new_record? %>
         <div class="thumb">
-          <%= link_to asset_fields.object.asset_file_name, asset_fields.object.asset.url %>
-          <%= asset_fields.check_box :_destroy %>
+          <%#= link_to asset_fields.object.asset_file_name, asset_fields.object.asset.url %>
+          <%#= asset_fields.check_box :_destroy %>
         </div>
-      <% end %>
-    <% end %>
-  </div>
-
-
-
+      <%# end %>
+    <%# end %>
+  </div> -->
 
 
   </p>
 
-  <div class="actions">
-    <%= f.submit "Update", class: "btn" %>
-  </div>
+	<p>
+    <div class="actions">
+      <%= f.submit "Update", class: "btn" %>
+    </div>
+	</p>
+
+  <p><h4>files</h4>
+    <ol class="file-list">
+      <% @smc.assets.each do |opt| %>
+        <li><%= link_to opt.asset_file_name, opt.asset.url %></li>
+      <% end %>
+    </ol>
+  </p>
+
+
+  <p>
+    <%= link_to "Add files", sm_content_add_assets_path(@smc), class: "btn btn-primary" %>
+    <%= link_to "Delete files", sm_content_delete_assets_path(@smc), class: "btn btn-primary" %>
+    <%= link_to "Delete", sm_content_path(:submenu_id => @smc.submenu_id), class: "btn btn-primary", :method => :delete %>
+  </p>
+
+
 <% end %>
