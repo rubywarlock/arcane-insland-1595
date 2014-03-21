@@ -1,5 +1,45 @@
-<h1>New asset</h1>
+<h4>New asset to <%#= link_to @smc.title, @smc %></h4>
 
-<%= render 'form' %>
+<p>
+	<ol class="file-list">
+    <%# @smc.assets.each do |opt| %>
+      <li>
+        <%#= link_to opt.asset_file_name, opt.asset.url %><%#= opt.asset_file_name %>
+      </li>
+    <%# end %>
+	</ol>
+</p>
 
-<%= link_to 'Back', assets_path %>
+  <!-- <%#= form_for @asset, :html => { :multipart => true } do |f| %>
+    <%#= f.text_field :sm_content_id, type: "hidden", value: @smc.id %>
+    <%#= f.text_field :sm_content_id, type: "hidden", value: @smc_id %>
+
+    <p>
+      <div class="actions">
+        <%#= f.file_field :asset, :multiple => true %>
+        <%#= f.file_field :asset, :multiple => true %>
+      <%#= f.file_field :asset, :multiple => true, :name => 'assets_attributes[][asset][]' %>
+      </div>
+    </p>
+
+    <div class="actions">
+      <%#= f.submit "Create files", class: "btn" %>
+    </div>
+	<%# end %> -->
+
+<%= form_for [@smc, @assets], :html => { :multipart => true } do |f| %>
+  <%#= f.text_field :sm_content_id, type: "hidden", value: @smc.id %>
+  <%#= f.text_field :sm_content_id, type: "hidden", value: @sm_id %>
+
+  <p>
+    <div class="actions">
+      <%#= f.file_field :asset, :multiple => true %>
+      <%= f.file_field :asset, :multiple => true %>
+      <%#= f.file_field :asset, :multiple => true, :name => 'assets_attributes[][asset][]' %>
+    </div>
+  </p>
+
+  <div class="actions">
+    <%= f.submit "Create files", class: "btn" %>
+  </div>
+<% end %>

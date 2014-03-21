@@ -18,9 +18,12 @@ Testapp::Application.routes.draw do
 		#resources :assets
 		match '/assets/deleteassets' => 'assets#deleteassets', :as => 'delete_assets', via: :get
 		match '/assets/addassets' => 'assets#addassets', :as => 'add_assets', via: :get
-		match '/assets/addassets' => 'assets#create', :as => 'create_assets', via: :post
+		#match '/assets/addassets' => 'assets#create', :as => 'create_assets', via: :post
 		match '/assets/new' => 'assets#new', :as => 'new_assets', via: :get
+		match '/assets/new' => 'assets#create', :as => 'assets', via: :post
 	end
+
+	#match '/assets/new' => 'assets#create', :as => 'assets', via: :post
 
 
 

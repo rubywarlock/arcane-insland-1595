@@ -4,28 +4,15 @@ class AssetsController < ApplicationController
   # GET /assets
   # GET /assets.json
   def index
-    @assets = Asset.where(:sm_content_id => params[:sm_content_id])
-		@smc = SmContent.find(params[:sm_content_id])
+    #@assets = Asset.where(:sm_content_id => params[:sm_content_id])
+		#@smc = SmContent.find(params[:sm_content_id])
   end
 
   # GET /assets/1
   # GET /assets/1.json
 
   # GET /assets/new
-  def new
-    @asset = Asset.new
-  end
 
-  def addassets
-	  @assets = Asset.where(:sm_content_id => params[:sm_content_id])
-	  @smc = SmContent.find(params[:sm_content_id])
-	  @smc.assets.build
-
-	  respond_to do |format|
-		  format.html # index.html.erb
-		  format.json { render json: @assets }
-	  end
-  end
 
   def deleteassets
 	  @assets = Asset.where(:sm_content_id => params[:sm_content_id])
@@ -34,23 +21,6 @@ class AssetsController < ApplicationController
 
   # GET /assets/1/edit
   def edit
-  end
-
-  # POST /assets
-  # POST /assets.json
-  def create
-    @asset = Asset.new(asset_params)
-    @smc = SmContent.find(params[:sm_content_id])
-
-    respond_to do |format|
-      if @asset.save
-        format.html { redirect_to @smc, notice: 'Asset was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @asset }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @asset.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /assets/1
@@ -77,17 +47,53 @@ class AssetsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_asset
-      @asset = Asset.find(params[:id])
-    end
+  def new
+	  @smc = SmContent.find(params[:sm_content_id])
+	  @assets = Asset.new
+	  #@allassets = Asset.where(:sm_content_id => params[:sm_content_id])
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def asset_paramss
-	    #params.require(:sm_content).permit(:title, :content, :sm_content_id, :assets)
-	    params.require(:sm_content_assetss).permit(:sm_content_id, assets:[])
-      #params[:assets]
-      #params[:assets_attributes]
-    end
+		#@sm_id = params[:sm_content_id]
+
+  end
+
+  # POST /assets
+  # POST /assets.json
+  def create
+	  @asset = Asset.new(asset_params)
+	  @smc = SmContent.find(params[:asset][:sm_content_id])
+
+
+	  #@smc = SmContent.find(asset_params)
+	  #@smc.assets.build
+
+	  respond_to do |format|
+		  if @asset.save
+			  format.html { redirect_to @smc, notice: 'Asset was successfully created.' }
+			  format.json { render action: 'show', status: :created, location: @asset }
+		  else
+			  format.html { render action: 'new' }
+			  format.json { render json: @asset.errors, status: :unprocessable_entity }
+		  end
+	  end
+  end
+
+  private
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def asset_params
+	  #params.require(:sm_content).permit(:title, :content, :sm_content_id, :assets)
+	  #params.require(:asset).permit(:sm_content_id, asset:[])
+	  params.require(:asset).permit(asset:{})
+	  #params[:assets]
+	  #params[:assets_attributes]
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_asset
+	  @asset = Asset.find(params[:id])
+  end
+
+	def sm_content_id
+		params.require(:asset).permit(:sm_content_id)
+	end
 end
