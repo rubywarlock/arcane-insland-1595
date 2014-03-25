@@ -12,7 +12,6 @@ class ApplicationController < ActionController::Base
 		@allcontent = SmContent.order("updated_at desc")
 	end
 
-
   # FOR FULL FIRST LOAD APP
 	#def initialize
 	#	foo

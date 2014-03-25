@@ -52,19 +52,24 @@ class AssetsController < ApplicationController
 	  @assets = Asset.new
 	  #@allassets = Asset.where(:sm_content_id => params[:sm_content_id])
 
-		#@sm_id = params[:sm_content_id]
+		@sm_id = params[:sm_content_id]
 
   end
 
   # POST /assets
   # POST /assets.json
   def create
-	  @asset = Asset.new(asset_params)
-	  @smc = SmContent.find(params[:asset][:sm_content_id])
+	  @asset = Asset.new(params.permit([:asset]))#(asset_params)
+	  @smc = SmContent.find(params[:sm_content_id])
 
 
 	  #@smc = SmContent.find(asset_params)
 	  #@smc.assets.build
+
+	  #params[:asset][:assets].each do |file|
+		#  @asset = Asset.new(file)
+		#  @asset.save
+	  #end
 
 	  respond_to do |format|
 		  if @asset.save
@@ -83,7 +88,8 @@ class AssetsController < ApplicationController
   def asset_params
 	  #params.require(:sm_content).permit(:title, :content, :sm_content_id, :assets)
 	  #params.require(:asset).permit(:sm_content_id, asset:[])
-	  params.require(:asset).permit(asset:{})
+		params.require(:sm_content).permit(:asset => [])
+		#params.permit([:asset])
 	  #params[:assets]
 	  #params[:assets_attributes]
   end
@@ -94,6 +100,6 @@ class AssetsController < ApplicationController
   end
 
 	def sm_content_id
-		params.require(:asset).permit(:sm_content_id)
+		params.require(:sm_content).permit(:sm_content_id)
 	end
 end

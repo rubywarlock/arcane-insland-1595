@@ -8,6 +8,10 @@ module ApplicationHelper
 		end
 	end
 
+	def get_assets(content)
+		@assets = Asset.where(:sm_content_id => content)
+	end
+
 	def mainmenubuild(main_menu_items)
 		row_html_start = '<div class="row"><div class="menu-block"><ul class="nav-list my-sub-menu">'
 		row_html_end   = '</ul></div></div>'

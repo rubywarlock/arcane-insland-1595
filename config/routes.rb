@@ -14,20 +14,24 @@ Testapp::Application.routes.draw do
 
 	resources :submenus
 
-	resources :sm_contents do
-		#resources :assets
-		match '/assets/deleteassets' => 'assets#deleteassets', :as => 'delete_assets', via: :get
-		match '/assets/addassets' => 'assets#addassets', :as => 'add_assets', via: :get
-		#match '/assets/addassets' => 'assets#create', :as => 'create_assets', via: :post
-		match '/assets/new' => 'assets#new', :as => 'new_assets', via: :get
-		match '/assets/new' => 'assets#create', :as => 'assets', via: :post
-	end
+	resources :sm_contents# do
+
+		#match '/assets/deleteassets' => 'assets#deleteassets', :as => 'delete_assets', via: :get
+		#match '/assets/addassets' => 'assets#addassets', :as => 'add_assets', via: :get
+		####match '/assets/addassets' => 'assets#create', :as => 'create_assets', via: :post
+		#match '/assets/new' => 'assets#new', :as => 'new_assets', via: :get
+		#match '/assets/new' => 'assets#create', :as => 'assets', via: :post
+	#end
+
+	resources :assets
 
 	#match '/assets/new' => 'assets#create', :as => 'assets', via: :post
 
 
 
 	get 'sm_contents/new/:id' => 'sm_contents#new', :as => 'smcontent_new'
+
+
 	#match "/sm_contents/new/:id" => "sm_contents#new", via: :get
 	#match "/sm_contents/new?sm_content[submenu_id]:id" => "smc#new", via: :get
 	#http://localhost:3000/sm_contents/new?sm_contentsubmenu_id=2
