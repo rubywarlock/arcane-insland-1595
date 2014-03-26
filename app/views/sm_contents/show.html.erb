@@ -10,16 +10,16 @@
 
 	  <p>
 		  <ol class="file-list">
-		    <% @smc.assets.each do |opt| %>
+		    <% @smc.attaches.each do |opt| %>
 		      <li>
 		        <%#= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original) %>
-		        <%= link_to opt.asset_file_name, opt.asset.url %><%#= opt.asset_file_name %>
+		        <%= link_to opt.attach_file_name, opt.attach.url %><%#= opt.asset_file_name %>
 		      </li>
 		    <% end %>
 			</ol>
 	  </p>
 
-    <!--<p>
+    <!-- <p>
       <%#= link_to "New files", sm_content_new_assets_path(@smc), class: "btn btn-primary" %>
       <%#= link_to "Add files", sm_content_path(@smc), :method => :path, class: "btn btn-primary" %>
       <%#= link_to "Delete files", sm_content_delete_assets_path(@smc), class: "btn btn-primary" %>
@@ -28,7 +28,15 @@
     </p> -->
 
     <p>
-      <%= link_to "Edit", edit_sm_content_path, class: "btn btn-primary" %>
+      <%#= link_to "Edit", edit_sm_content_path, class: "btn btn-primary" %>
+    </p>
+
+    <p>
+      <%#= link_to "New files", sm_content_new_assets_path(@smc), class: "btn btn-primary" %>
+      <%= link_to "Add files", new_attach_path(:sm_content_id => @smc), class: "btn btn-primary" %>
+      <%#= link_to "Delete files", sm_content_delete_assets_path(@smc), class: "btn btn-primary" %>
+      <%#= link_to "edit", edit_sm_content_path(:submenu_id => @smc.submenu_id), class: "btn btn-primary", :method => :get %>
+      <%= link_to "delete", sm_content_path(:submenu_id => @smc.submenu_id), class: "btn btn-primary", :method => :delete %>
     </p>
 
   </div>

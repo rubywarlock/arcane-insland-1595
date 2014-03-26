@@ -1,4 +1,11 @@
 Testapp::Application.routes.draw do
+  #get "attaches/index"
+  #get "attaches/edit"
+  #get "attaches/new"
+
+  resources :attaches
+
+
   #get "sm_contents/index"
   #get "sm_contents/show"
   #get "sm_contents/create"
@@ -23,7 +30,7 @@ Testapp::Application.routes.draw do
 		#match '/assets/new' => 'assets#create', :as => 'assets', via: :post
 	#end
 
-	resources :assets
+	#resources :assets
 
 	#match '/assets/new' => 'assets#create', :as => 'assets', via: :post
 

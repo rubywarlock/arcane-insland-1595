@@ -3,7 +3,7 @@ class SmContentsController < ApplicationController
 
 	def new
 		@smc = SmContent.new#(:submenu_id => params[:id)
-		@smc.assets.build
+		#@smc.attaches.build
 		@submenu_id = params[:id]
 
 		respond_to do |format|
@@ -71,9 +71,12 @@ class SmContentsController < ApplicationController
 	end
 
 	private
-  def get_content_
+  def get_content
 	  #params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:tempfile, :original_filename, :content_type, :headers])
-	  params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:asset])
+	  #params.require(:sm_content).permit(:title, :content, :submenu_id, attaches_attributes: [:attach])
+	  params.require(:sm_content).permit(:title, :content, :submenu_id)
+	  #params.permit(:sm_contents => [ :title, :content, :submenu_id ], :attaches => :attach)
+	  #params.permit(:name, {:emails => []}, :friends => [ :name, { :family => [ :name ], :hobbies => [] }])
   end
 
 	def get_submenu_id
@@ -81,7 +84,7 @@ class SmContentsController < ApplicationController
 	end
 
 	def content_update_params
-		params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:asset])
+		#params.require(:sm_content).permit(:title, :content, :submenu_id, attaches_attributes: [:attach])
 	end
 
 
