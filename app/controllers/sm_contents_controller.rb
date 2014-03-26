@@ -71,8 +71,9 @@ class SmContentsController < ApplicationController
 	end
 
 	private
-  def get_content_
+  def get_content
 	  #params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:tempfile, :original_filename, :content_type, :headers])
+	  #params.require(:sm_content).permit(:title, :content, :submenu_id)
 	  params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:asset])
   end
 
