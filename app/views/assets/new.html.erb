@@ -1,14 +1,28 @@
-<h4>New asset to <%#= link_to @smc.title, @smc %></h4>
+<h4>New asset for <%= link_to @sm_content.title, @content %></h4>
 
 <p>
 	<ol class="file-list">
-    <%# @smc.assets.each do |opt| %>
-      <li>
-        <%#= link_to opt.asset_file_name, opt.asset.url %><%#= opt.asset_file_name %>
-      </li>
-    <%# end %>
+		<% @asts = get_assets(@sm_content) %>
+    <% @asts.each do |opt| %>
+      <li><%= link_to opt.asset_file_name, opt.asset.url %></li>
+    <% end %>
 	</ol>
 </p>
+
+<%= form_for @sm_content, :html => { multipart: true } do |f| %>
+
+  <div class="actions">
+    <%= f.fields_for :assets do |asset_fields| %>
+      <% if asset_fields.object.new_record? %>
+        <p><%= asset_fields.file_field :asset, multiple: true, :name => 'sm_content[assets_attributes][][asset]' %></p>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create files", class: "btn" %>
+  </div>
+<% end %>
 
   <!-- <%#= form_for @asset, :html => { :multipart => true } do |f| %>
     <%#= f.text_field :sm_content_id, type: "hidden", value: @smc.id %>
@@ -26,8 +40,8 @@
       <%#= f.submit "Create files", class: "btn" %>
     </div>
 	<%# end %> -->
-
-<%= form_for [@smc, @assets], :html => { :multipart => true } do |f| %>
+<!--
+<%#= form_for [@smc, @assets], :html => { :multipart => true } do |f| %>
   <%#= f.text_field :sm_content_id, type: "hidden", value: @smc.id %>
   <%#= f.text_field :sm_content_id, type: "hidden", value: @sm_id %>
 
@@ -35,11 +49,11 @@
     <div class="actions">
       <%#= f.file_field :asset, :multiple => true %>
       <%#= f.file_field :asset, :multiple => true %>
-      <%= f.file_field :asset, :multiple => true, :name => '[sm_content][][asset]' %>
+      <%#= f.file_field :asset, :multiple => true, :name => '[sm_content][][asset]' %>
     </div>
   </p>
 
   <div class="actions">
-    <%= f.submit "Create files", class: "btn" %>
+    <%#= f.submit "Create files", class: "btn" %>
   </div>
-<% end %>
+<%# end %> -->

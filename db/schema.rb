@@ -23,16 +23,6 @@ ActiveRecord::Schema.define(version: 20140316085032) do
     t.datetime "updated_at"
   end
 
-  create_table "attaches", force: true do |t|
-    t.integer  "sm_content_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "attache_file_name"
-    t.string   "attache_content_type"
-    t.integer  "attache_file_size"
-    t.datetime "attache_updated_at"
-  end
-
   create_table "genmenus", force: true do |t|
     t.string   "genmenuname"
     t.datetime "created_at"

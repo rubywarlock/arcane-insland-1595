@@ -48,11 +48,19 @@ class AssetsController < ApplicationController
   end
 
   def new
-	  @smc = SmContent.find(params[:sm_content_id])
-	  @assets = Asset.new
+	  #@smc = SmContent.find(params[:sm_content_id])
+	  #@assets = Asset.new
 	  #@allassets = Asset.where(:sm_content_id => params[:sm_content_id])
 
-		@sm_id = params[:sm_content_id]
+		#@sm_id = params[:sm_content_id]
+
+	  @sm_content = SmContent.find(params[:sm_content_id])
+	  @sm_content.assets.build
+
+	  respond_to do |format|
+		  format.html # new.html.erb
+		  format.json { render json: @asset }
+	  end
 
   end
 
