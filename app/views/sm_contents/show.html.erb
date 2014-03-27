@@ -14,7 +14,7 @@
 		    <% @smc.assets.each do |opt| %>
 		      <li>
 		        <%#= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original) %>
-		        <%= link_to opt.asset_file_name, opt.attach.url %><%#= opt.asset_file_name %>
+		        <%= link_to opt.asset_file_name, opt.asset.url %><%#= opt.asset_file_name %>
 		      </li>
 		    <% end %>
 			</ol>

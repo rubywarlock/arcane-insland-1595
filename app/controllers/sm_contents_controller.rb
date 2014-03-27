@@ -86,7 +86,7 @@ class SmContentsController < ApplicationController
 	end
 
 	def content_update_params
-		#params.require(:sm_content).permit(:title, :content, :submenu_id, attaches_attributes: [:attach])
+		params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:asset])
 	end
 
 
