@@ -19,41 +19,22 @@
     <% end %>
   </div>
 
+  <h4>Old Files</h4>
   <div class="actions">
-    <%= f.submit "Create files", class: "btn" %>
+    <%= f.fields_for :assets do |asset_fields| %>
+      <% unless asset_fields.object.new_record? %>
+        <div class="thumb">
+          <%= asset_fields.object.asset_file_name %>
+          <%#= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original) %>
+          <%= asset_fields.check_box :_destroy, :name => 'sm_content[assets_attributes][asset][][id][_destroy]' %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
+
+	<p>
+    <div class="actions">
+      <%= f.submit "Create files", class: "btn" %>
+    </div>
+	</p>
 <% end %>
-
-  <!-- <%#= form_for @asset, :html => { :multipart => true } do |f| %>
-    <%#= f.text_field :sm_content_id, type: "hidden", value: @smc.id %>
-    <%#= f.text_field :sm_content_id, type: "hidden", value: @smc_id %>
-
-    <p>
-      <div class="actions">
-        <%#= f.file_field :asset, :multiple => true %>
-        <%#= f.file_field :asset, :multiple => true %>
-      <%#= f.file_field :asset, :multiple => true, :name => 'assets_attributes[][asset][]' %>
-      </div>
-    </p>
-
-    <div class="actions">
-      <%#= f.submit "Create files", class: "btn" %>
-    </div>
-	<%# end %> -->
-<!--
-<%#= form_for [@smc, @assets], :html => { :multipart => true } do |f| %>
-  <%#= f.text_field :sm_content_id, type: "hidden", value: @smc.id %>
-  <%#= f.text_field :sm_content_id, type: "hidden", value: @sm_id %>
-
-  <p>
-    <div class="actions">
-      <%#= f.file_field :asset, :multiple => true %>
-      <%#= f.file_field :asset, :multiple => true %>
-      <%#= f.file_field :asset, :multiple => true, :name => '[sm_content][][asset]' %>
-    </div>
-  </p>
-
-  <div class="actions">
-    <%#= f.submit "Create files", class: "btn" %>
-  </div>
-<%# end %> -->
