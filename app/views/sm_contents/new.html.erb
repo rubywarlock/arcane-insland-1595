@@ -1,36 +1,35 @@
 <%#= tinymce_assets %>
 <%= tinymce %>
 
-<%= form_for @smc, html: { multipart: true } do |f| %>
-  <% if @smc.errors.any? %>
-    <ul>
-      <% @smc.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
+<%= form_for @smc do |f| %>
+  <%# if @smc.errors.any? %>
+    <!-- <ul>
+      <%# @smc.errors.full_messages.each do |msg| %>
+        <li><%#= msg %></li>
+      <%# end %>
+    </ul> -->
+  <%# end %>
 
-<div class="actions">
-  <%= f.text_field :submenu_id, type: "hidden", value: @submenu_id %>
-  <%= f.text_field :title, placeholder: "Title", class: "span13", style: "min-width:200px" %>
-</div>
-<div class="actions">
-  <%= f.text_area :content, placeholder: "Content text", :class => "span13 tinymce", style: "min-width:200px" %>
-</div>
+	<div class="actions">
+    <%= f.text_field :submenu_id, type: "hidden", value: @submenu_id %>
+    <%= f.text_field :title, placeholder: "Title", class: "span13", style: "min-width:200px" %>
+	</div>
+	<div class="actions">
+    <%= f.text_area :content, placeholder: "Content text", :class => "span13 tinymce", style: "min-width:200px" %>
+	</div>
 
 
 	<p>
-    <%#= f.fields_for :attach do |asset_fields| %>
-      <%# if asset_fields.object.new_record? %>
-      <div class="actions">
-        <%#= asset_fields.file_field :attach, :multiple => true, :name => 'sm_content[attaches_attributes][][attach]' %>
-        <%#= asset_fields.file_field :attach, :multiple => true %>
-      </div>
-      <%# end %>
-    <%# end %>
+    <%= f.fields_for :assets do |asset_fields| %>
+      <% if asset_fields.object.new_record? %>
+        <div class="actions"><%= asset_fields.file_field :asset, :multiple => true, :name => 'sm_content[assets_attributes][][asset]' %></div>
+      <% end %>
+    <% end %>
 	</p>
 
-<div class="actions">
-  <%= f.submit "Create", class: "btn" %>
-</div>
+	<p>
+		<div class="actions">
+      <%= f.submit "Create", class: "btn" %>
+		</div>
+	</p>
 <% end %>

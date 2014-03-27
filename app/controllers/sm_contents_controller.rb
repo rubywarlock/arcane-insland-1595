@@ -74,9 +74,11 @@ class SmContentsController < ApplicationController
   def get_content
 	  #params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:tempfile, :original_filename, :content_type, :headers])
 	  #params.require(:sm_content).permit(:title, :content, :submenu_id, attaches_attributes: [:attach])
-	  params.require(:sm_content).permit(:title, :content, :submenu_id)
+	  #params.require(:sm_content).permit(:title, :content, :submenu_id)
 	  #params.permit(:sm_contents => [ :title, :content, :submenu_id ], :attaches => :attach)
 	  #params.permit(:name, {:emails => []}, :friends => [ :name, { :family => [ :name ], :hobbies => [] }])
+	  #params.require(:sm_content).permit(:title, :content, :submenu_id)
+	  params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:asset])
   end
 
 	def get_submenu_id
