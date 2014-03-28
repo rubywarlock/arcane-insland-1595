@@ -21,6 +21,9 @@ class AssetsController < ApplicationController
 
   # GET /assets/1/edit
   def edit
+	  @smc = SmContent.find(params[:id])
+	  @assets = Asset.where(:sm_content_id => @smc.id)
+	  @submenu_id = get_submenu_id
   end
 
   # PATCH/PUT /assets/1

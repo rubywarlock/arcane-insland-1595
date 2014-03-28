@@ -24,7 +24,7 @@
     <p>
       <%#= link_to "New files", sm_content_new_assets_path(@smc), class: "btn btn-primary" %>
       <%= link_to "Add files", new_sm_content_asset_path(@smc), class: "btn btn-primary" %>
-      <%#= link_to "Delete files", sm_content_delete_assets_path(@smc), class: "btn btn-primary" %>
+      <%= link_to "Delete files", delete_assets_path(:sm_content_id => @smc), class: "btn btn-primary" %>
       <%#= link_to "edit", edit_sm_content_path(:submenu_id => @smc.submenu_id), class: "btn btn-primary", :method => :get %>
       <%#= link_to "delete", sm_content_path(:submenu_id => @smc.submenu_id), class: "btn btn-primary", :method => :delete %>
     </p>
