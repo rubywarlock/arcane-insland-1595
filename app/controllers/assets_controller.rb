@@ -15,15 +15,26 @@ class AssetsController < ApplicationController
 
 
   def deleteassets
-	  @assets = Asset.where(:sm_content_id => params[:sm_content_id])
+	  #@assets = Asset.find(params[:sm_content_id])
+	  #@smc = SmContent.find(params[:sm_content_id])
+		#@assets = @smc.assets
+  end
+
+  def show
+	  #@smc = SmContent.find(params[:id])
+	  #@assets = Asset.where(:sm_content_id => @smc.id)
+
 	  @smc = SmContent.find(params[:sm_content_id])
+	  @assets = @smc.assets
   end
 
   # GET /assets/1/edit
   def edit
-	  @smc = SmContent.find(params[:id])
-	  @assets = Asset.where(:sm_content_id => @smc.id)
-	  @submenu_id = get_submenu_id
+	  #@smc = SmContent.find(params[:id])
+	  #@assets = Asset.where(:sm_content_id => @smc.id)
+
+	  #@smc = SmContent.find(params[:sm_content_id])
+	  #@assets = @smc.assets
   end
 
   # PATCH/PUT /assets/1
@@ -43,6 +54,7 @@ class AssetsController < ApplicationController
   # DELETE /assets/1
   # DELETE /assets/1.json
   def destroy
+		#@asset = Asset.find
     @asset.destroy
     respond_to do |format|
       format.html { redirect_to assets_url }
