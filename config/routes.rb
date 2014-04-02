@@ -25,6 +25,7 @@ Testapp::Application.routes.draw do
 		resources :assets
 		#match '/assets/deleteassets' => 'assets#deleteassets', :as => 'delete_assets', via: :delete
 		match '/assets/edit' => 'assets#edit', :as => 'edit_assets', via: :get
+		match '/assets/edit' => 'assets#destroy', via: :post
 
 
 		#match '/assets/addassets' => 'assets#addassets', :as => 'add_assets', via: :get
@@ -39,7 +40,7 @@ Testapp::Application.routes.draw do
 
 
 
-	get 'sm_contents/new/:id' => 'sm_contents#new', :as => 'smcontent_new'
+	match 'sm_contents/create' => 'sm_contents#create', via: :post
 
 
 	#match "/sm_contents/new/:id" => "sm_contents#new", via: :get

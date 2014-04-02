@@ -23,7 +23,11 @@
 .text-block-full {
   //font-family: 12px "Helvetica Neue",Arial,sans-serif;
   //white-space: pre-wrap;
-  //word-wrap: break-word;
+  word-wrap: break-word;
+
   //position:relative;
   font:12px Arial;
+  p{
+    line-height: 1.2;
+  }
 }

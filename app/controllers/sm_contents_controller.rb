@@ -1,17 +1,6 @@
 class SmContentsController < ApplicationController
 	#before_action only: [:show, :update, :destroy]
 
-	def new
-		@smc = SmContent.new#(:submenu_id => params[:id)
-		#@smc.attaches.build
-		@submenu_id = params[:id]
-
-		respond_to do |format|
-			format.html # index.html.erb
-			format.json { render json: @smc }
-		end
-	end
-
   def index
 	  @smc = SmContent.find_by_submenu_id(:submenu_id)
 
@@ -54,6 +43,14 @@ class SmContentsController < ApplicationController
 			end
 		end
 	end
+
+  def new
+	  @sm_content = SmContent.new
+	  @sm_content.assets.build
+	  @submenu_id = params[:id]
+
+
+  end
 
 	def create
 		@content = SmContent.new(get_content)

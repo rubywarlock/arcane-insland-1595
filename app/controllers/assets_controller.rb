@@ -1,23 +1,9 @@
 class AssetsController < ApplicationController
   #before_action :set_asset, only: [:show, :edit, :update, :destroy]
 
-  # GET /assets
-  # GET /assets.json
   def index
     #@assets = Asset.where(:sm_content_id => params[:sm_content_id])
 		#@smc = SmContent.find(params[:sm_content_id])
-  end
-
-  # GET /assets/1
-  # GET /assets/1.json
-
-  # GET /assets/new
-
-
-  def deleteassets
-	  #@assets = Asset.find(params[:sm_content_id])
-	  #@smc = SmContent.find(params[:sm_content_id])
-		#@assets = @smc.assets
   end
 
   def show
@@ -54,10 +40,10 @@ class AssetsController < ApplicationController
   # DELETE /assets/1
   # DELETE /assets/1.json
   def destroy
-		#@asset = Asset.find
-    @asset.destroy
+		@asset = Asset.where(params[:destroy])
+    @asset.destroy_all
     respond_to do |format|
-      format.html { redirect_to assets_url }
+      format.html { redirect_to sm_content_path(params[:sm_content_id]) }
       format.json { head :no_content }
     end
   end

@@ -1,43 +1,30 @@
 <h4>Delete files <%= link_to @smc.title, @smc %></h4>
 
-<!--<p>
-	<ol class="file-list">
-    <%# @assets.each do |opt| %>
-      <li>
-        <%#= link_to opt.asset_file_name, opt.asset.url %><%#= opt.asset_file_name %>
-      </li>
-    <%# end %>
-	</ol>
-</p>-->
-
-
 <h5>Select files for delete</h5>
 <div class="actions">
-  <%#= form_for @assets, :html => { multipart: true } do |asset_fields| %>
-  <%# unless asset_fields.object.new_record? %>
-  <!--<div class="thumb">
-        <%#= asset_fields.object.asset_file_name %>
-        <%#= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original) %>
-        <%#= asset_fields.check_box :_destroy, :name => 'assets_attributes[id][_destroy]' %>
-      </div> -->
-  <%# end %>
-  <%# end %>
-
-  <%= form_for :assets, method: "delete" do |form| %>
-
+  <%= form_for(:assets, html: { :multipart => true }) do |form| %>
+    <%#= form.hidden_field :sm_content_id, :value => @smc.id %>
     <p>
     <table>
       <%# for assets in @assets %>
       <% @smc.assets.each do |asset| %>
         <tr>
-          <td><%= link_to asset.asset_file_name, asset.asset.url %></td><td style="position:relative; bottom:3px; padding-left: 10px;"><%= form.check_box :destroy %></td>
+          <td>
+            <%= link_to asset.asset_file_name, asset.asset.url %>
+          </td>
+          <td style="position:relative; bottom:3px; padding-left: 10px;">
+            <%#= form.input :destroy, value: asset.id, multiple: true %>
+
+            <input name="destroy[id][]" type="checkbox" value="<%= asset.id %>">
+
+          </td>
         </tr>
       <% end %>
     </table>
     </p>
 
-    <%= form.submit "update", class: "btn" %>
-
+    <p><%= form.submit "Update", class: "btn" %></p>
   <% end %>
+
 
 </div>

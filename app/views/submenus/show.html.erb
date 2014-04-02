@@ -5,7 +5,10 @@ TEST START
 
 <div>
   <div class="actions">
-    <p><%= link_to "Add Content", smcontent_new_path(:id => @smenu) %></p>
+    <p>
+      <%#= link_to "Add Content", smcontent_new_path(:id => @smenu) %>
+      <%= link_to "Add Content", new_sm_content_path(:id => @smenu) %>
+    </p>
   </div>
 </div>
 

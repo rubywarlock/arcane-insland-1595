@@ -1,5 +1,7 @@
 invalid_elements: "relative,script,mailto,href"
 valid_elements: "em,li,ul,p,strong,ol,i,b,span,h1,h2,h3,h4,h5,h6,div"
-#convert_newlines_to_brs : false
+#convert_newlines_to_brs: true
+#paste_text_linebreaktype: 'br'
+
 #remove_linebreaks : true
 #force_br_newlines : true
