@@ -55,7 +55,7 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  database: faetonvs_test_app
+  database: d5585ud2hnj0m9
   pool: 5
-  username: faetonvs@gmail.com
-  password: f0udl7z6A
+  username: wsoaqfjfotxryo
+  password: zX0Enq5RifzLzpIAKATMxoyXFQ
