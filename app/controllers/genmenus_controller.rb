@@ -1,5 +1,5 @@
 class GenmenusController < ApplicationController
-	before_action :set_mmenu, :new_main_menu, only: [:show, :edit, :update, :destroy]
+	before_action :set_mmenu, :new_main_menu#, only: [:show, :edit, :update, :destroy]
 	add_breadcrumb "home", :root_path
 	add_breadcrumb "admin tools", :admintools_path
 
@@ -40,7 +40,7 @@ class GenmenusController < ApplicationController
 	  @gmenu = Genmenu.new(main_menu_params)
 	  if @gmenu.save
 		  flash[:success] = "Main menu created!"
-		  redirect_to genmenus_path
+		  redirect_to @gmenu
 	  else
 		  render 'static_pages/home'
 	  end
@@ -70,10 +70,33 @@ class GenmenusController < ApplicationController
   def submenuadd
 	  @gmenu = Genmenu.find(params[:id])
 	  @submenu = @gmenu.submenus.build(get_submenu)
-	  if @submenu.save
-		  @submenu = Submenu.new
+	  #if @submenu.save
+		#  @submenu = Submenu.new
+	  #end
+	  #render :action => :show
+
+
+	  #if @submenu.save
+		#  flash[:success] = "Main menu created!"
+		#  redirect_to @gmenu
+	  #else
+		#  flash[:error] = "sub menu no creates"
+		#  render 'static_pages/home'
+	  #end
+
+
+	  respond_to do |format|
+		  if @submenu.save
+			  format.html { redirect_to @gmenu, notice: 'Survey was successfully created.' }
+			  format.json { render action: 'show', status: :created, location: @gmenu }
+		  else
+			  format.html { render action: 'new' }
+			  format.json { render json: @gmenu.errors, status: :unprocessable_entity }
+		  end
 	  end
-	  render :action => :show
+
+
+
   end
 
 
