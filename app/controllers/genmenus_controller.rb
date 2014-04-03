@@ -108,7 +108,7 @@ class GenmenusController < ApplicationController
 	end
 
 	def set_mmenu
-		@gmenu = Genmenu.find(params[:id])
+		#@gmenu = Genmenu.find(params[:id])
 	end
 
 	def get_submenu
