@@ -55,7 +55,7 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  database: testapp_production
+  database: faetonvs_test_app
   pool: 5
-  username: rails_user
-  password: rails_user
+  username: faetonvs@gmail.com
+  password: f0udl7z6A
