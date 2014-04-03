@@ -8,6 +8,15 @@ module ApplicationHelper
 		end
 	end
 
+	def get_route
+		path = Rails.application.routes.recognize_path(request.env['PATH_INFO'])
+
+		controller = path[:controller]
+		action = path[:action]
+		controller
+		#Rails::ActiveRecord.
+	end
+
 	def get_assets(content)
 		@assets = Asset.where(:sm_content_id => content)
 	end

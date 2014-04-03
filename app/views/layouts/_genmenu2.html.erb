@@ -11,7 +11,7 @@
           <% if n % 2 == 0 %>
             <li class="nav-header my-gen-menu-name"><span><%= menu.genmenuname %></span></li>
             <% menu.submenus.each do |smenu| %>
-              <li><%= link_to smenu.sname, smenu %></li>
+              <li><%= link_to smenu.sname, submenus_path(:id => smenu) %></li>
             <% end %>
           <% end %>
         <% end %>
@@ -24,7 +24,7 @@
           <% if n % 2 != 0 %>
             <li class="nav-header my-gen-menu-name"><span><%= menu.genmenuname %></span></li>
             <% menu.submenus.each do |smenu| %>
-              <li><%= link_to smenu.sname, smenu %></li>
+              <li><%= link_to smenu.sname, submenus_path(:id => smenu) %></li>
             <% end %>
           <% end %>
         <% end %>

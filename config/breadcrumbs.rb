@@ -1,35 +1,35 @@
-crumb :root do
-	link "Home", root_path
-end
+#crumb :root do
+#	link "Home", root_path
+#end
 
 #crumb :home do
 #  link "Home", home_path
 #end
 
-crumb :help do
-	link "Help", help_path
-end
+#crumb :help do
+#	link "Help", help_path
+#end
 
-crumb :about do
-	link "About", about_path
-end
+#crumb :about do
+#	link "About", about_path
+#end
 
-crumb :contact do
-	link "Contact", contact_path
-end
+#crumb :contact do
+#	link "Contact", contact_path
+#end
 
-crumb :admt do
-	link "Admin tools", admintools_path
-end
+#crumb :admt do
+#	link "Admin tools", admintools_path
+#end
 
-crumb :mainmenuindex do
-	link "Main menu list", genmenus_path
-	parent :admt
-end
+#crumb :mainmenuindex do
+#	link "Main menu list", genmenus_path
+#	parent :admt
+#end
 
-crumb :submenu do
-	link "Subs", submenu_path
-end
+#crumb :submenu do
+#	link "Subs", submenu_path
+#end
 
 #crumb :content do
 #	link "Content", sm_content_path

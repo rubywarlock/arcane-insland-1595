@@ -1,26 +1,23 @@
-<!--<h1><#%= @smenu.sname %> Show</h1>-->
+find me in submenus/show.html.erb
 <p><%= @smenu.sname %> <%= render "menu" %></p>
 TEST START
-<h1><%= @smenu.sname %></h1>
+<h2><%= @smenu.sname %></h2>
 
 <div>
   <div class="actions">
-    <p>
-      <%#= link_to "Add Content", smcontent_new_path(:id => @smenu) %>
-      <%= link_to "Add Content", new_sm_content_path(:id => @smenu) %>
-    </p>
+    <p><%= link_to "Add Content", new_sm_content_path(:id => @smenu) %></p>
   </div>
 </div>
 
 <%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 6) %>
 
 <% @smenu.sm_contents.paginate(page: params[:page], :per_page => 6).each do |c| %>
- <div class="well-box-my">
+  <div class="well-box-my">
     <div class="well-center-my">
       <div class="text-block">
         <div class="text-image-gradient"></div>
         <h3><%= c.title %></h3>
-        <%= raw c.content %>
+        <%= c.content.html_safe %>
       </div>
 
       <p>
@@ -31,7 +28,7 @@ TEST START
           <% end %>
         </ol>
       </p>
-      <p><%= link_to "learn more", sm_content_path(c, submenu_id: c.submenu_id ), class: "btn btn-primary", :method => :get %></p>
+      <p><%= link_to "learn more", sm_content_path(c, submenu_id: c.submenu_id), class: "btn btn-primary", :method => :get %></p>
     </div>
     <div class="well-foot-my"><%= time_ago_in_words c.updated_at %></div>
   </div>

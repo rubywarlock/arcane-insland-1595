@@ -1,6 +1,9 @@
 class SmContentsController < ApplicationController
 	#before_action only: [:show, :update, :destroy]
 
+	add_breadcrumb "home", :root_path
+
+
   def index
 	  @smc = SmContent.find_by_submenu_id(:submenu_id)
 
@@ -12,7 +15,12 @@ class SmContentsController < ApplicationController
 
   def show
 		@smc = SmContent.find(params[:id])
+		@submenu = Submenu.find(@smc.submenu_id)
 		@submenu_id = params[:submenu_id]
+
+
+		add_breadcrumb @submenu.sname, submenus_path(:id => @submenu.id)
+		add_breadcrumb @smc.title
   end
 
 	def edit
@@ -70,11 +78,7 @@ class SmContentsController < ApplicationController
 	private
   def get_content
 	  #params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:tempfile, :original_filename, :content_type, :headers])
-	  #params.require(:sm_content).permit(:title, :content, :submenu_id, attaches_attributes: [:attach])
-	  #params.require(:sm_content).permit(:title, :content, :submenu_id)
-	  #params.permit(:sm_contents => [ :title, :content, :submenu_id ], :attaches => :attach)
 	  #params.permit(:name, {:emails => []}, :friends => [ :name, { :family => [ :name ], :hobbies => [] }])
-	  #params.require(:sm_content).permit(:title, :content, :submenu_id)
 	  params.require(:sm_content).permit(:title, :content, :submenu_id, assets_attributes: [:asset])
   end
 

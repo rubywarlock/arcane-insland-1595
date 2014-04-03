@@ -1,1 +1,37 @@
-<h1>INDEX from index.html.erb</h1>
+find me in submenus/index.html.erb
+<p><%= @smenu.sname %> <%= render "menu" %></p>
+
+<h3><%= @smenu.sname %></h3>
+
+<div>
+  <div class="actions">
+    <p><%= link_to "Add Content", new_sm_content_path(:id => @smenu) %></p>
+  </div>
+</div>
+
+<%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 6) %>
+
+<% @smenu.sm_contents.paginate(page: params[:page], :per_page => 6).each do |c| %>
+  <div class="well-box-my">
+    <div class="well-center-my">
+      <div class="text-block">
+        <div class="text-image-gradient"></div>
+        <h3><%= c.title %></h3>
+        <%= raw c.content %>
+      </div>
+
+      <p>
+      <ol class="file-list">
+        <% @assets = get_assets(c) %>
+        <% @assets.each_with_index do |a,n| %>
+          <li><%= link_to a.asset_file_name, a.asset.url %></li>
+        <% end %>
+      </ol>
+      </p>
+      <p><%= link_to "learn more", sm_content_path(c, submenu_id: c.submenu_id ), class: "btn btn-primary", :method => :get %></p>
+    </div>
+    <div class="well-foot-my"><%= time_ago_in_words c.updated_at %></div>
+  </div>
+<% end %>
+
+<%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 6) %>

@@ -1,13 +1,26 @@
 class SubmenusController < ApplicationController
 	before_action :set_smenu, only: [:show, :edit, :update, :destroy]
 
+	add_breadcrumb "home", :root_path
+
 	def index
-		@smenus = Submenu.find_by_genmenu_id(:genmenu_id)
+		#@smenus = Submenu.find_by_genmenu_id(:genmenu_id)
+
+		#respond_to do |format|
+		#	format.html # index.html.erb
+		#	format.json { render json: @smenus }
+		#end
+
+		@smenu = Submenu.find(params[:id])
+
+		#add_breadcrumb "home", :root_path
+		add_breadcrumb @smenu.sname, submenus_path(:id => @smenu.id)
 
 		respond_to do |format|
-			format.html # index.html.erb
-			format.json { render json: @smenus }
+			format.html # show.html.erb
+			format.json { render json: @smenu }
 		end
+
 	end
 
 	def new
@@ -45,6 +58,9 @@ class SubmenusController < ApplicationController
 
 	def show
 		@smenu = Submenu.find(params[:id])
+
+		#add_breadcrumb "home", :root_path
+		add_breadcrumb @smenu.sname, submenus_path(:id => @smenu.id)
 
 		respond_to do |format|
 			format.html # show.html.erb

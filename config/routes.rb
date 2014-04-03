@@ -39,7 +39,7 @@ Testapp::Application.routes.draw do
 	#match '/assets/new' => 'assets#create', :as => 'assets', via: :post
 
 
-
+	#match "/submenus/show/:id" => "submenus#show", via: :get
 	match 'sm_contents/create' => 'sm_contents#create', via: :post
 
 

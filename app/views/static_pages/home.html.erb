@@ -1,8 +1,8 @@
 <%# breadcrumb :home, @home_path %>
-<%= tinymce_assets %>
-<%= tinymce %>
+<%#= tinymce_assets %>
+<%#= tinymce %>
 
-<h1>Home page</h1>
+<h3>Home page</h3>
 
 <%= will_paginate @allcontent.paginate(page: params[:page], :per_page => 6) %>
 

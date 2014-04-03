@@ -1,8 +1,12 @@
 class GenmenusController < ApplicationController
 	before_action :set_mmenu, :new_main_menu, only: [:show, :edit, :update, :destroy]
+	add_breadcrumb "home", :root_path
+	add_breadcrumb "admin tools", :admintools_path
 
   def index
 		@gmenus = Genmenu.all
+
+		add_breadcrumb "main menu list", genmenus_path
 
 		respond_to do |format|
 			format.html # index.html.erb
@@ -13,6 +17,9 @@ class GenmenusController < ApplicationController
   def show
     @gmenu = Genmenu.find(params[:id])
     @submenus = Submenu.new(get_gmenu_id)
+
+    add_breadcrumb "main menu list", genmenus_path(:id => @gmenu)
+    add_breadcrumb "sub menus"
 
     respond_to do |format|
 	    format.html # show.html.erb
