@@ -24,6 +24,8 @@ gem 'tinymce-rails'
 
 gem 'paperclip', '~> 3'#:git => 'git://github.com/thoughtbot/paperclip.git'
 
+gem 'russian', '~> 0.6.0'
+
 group :doc do
 	# bundle exec rake doc:rails generates the API under doc/api.
 	gem 'sdoc', require: false
@@ -31,7 +33,7 @@ end
 
 group :production do
 	#gem 'pg'
-	gem 'mysql'
+	gem 'mysql2'
 	gem 'rails_12factor', '0.0.2'
 	#gem 'capybara', '2.1.0'
 	gem 'thread_safe', '0.3.1'

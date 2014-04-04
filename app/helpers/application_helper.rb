@@ -1,7 +1,7 @@
 module ApplicationHelper
 	def full_title(page_title)
-		base_title = "asd"
-		base_title.to_s.force_encoding("UTF-8")
+		base_title = "Page name"
+		#base_title.to_s.force_encoding("UTF-8")
 		if page_title.empty?
 			base_title
 		else
