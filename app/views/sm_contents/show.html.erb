@@ -27,7 +27,7 @@
       <%= link_to "Edit text", edit_sm_content_path(@smc), class: "btn btn-primary" %>
       <%= link_to "Add files", new_sm_content_asset_path(@smc), class: "btn btn-primary" %>
       <%= link_to "Delete files", sm_content_edit_assets_path(@smc), class: "btn btn-primary", :method => :get %>
-      <%= link_to "Delete All", sm_content_path(:submenu_id => @smc.submenu_id), class: "btn btn-danger", :method => :delete, :confirm => "Контет будет удален безвозвратно. Вы уверены что хотите удалить контент?" %>
+      <%= link_to "Delete All", sm_content_path(:submenu_id => @smc.submenu_id), class: "btn btn-danger", :method => :delete, :confirm => "Are you sure?" %>
     </p>
 
   </div>

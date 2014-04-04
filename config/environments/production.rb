@@ -24,7 +24,7 @@ Testapp::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -75,6 +75,9 @@ Testapp::Application.configure do
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
+
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+  config.gem "paperclip", :version => "~> 3"
 
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false

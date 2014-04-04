@@ -24,7 +24,7 @@ Testapp::Application.configure do
   # Raise an error on page load if there are pending migrations
   config.active_record.migration_error = :page_load
   Paperclip.options[:command_path] = "/usr/local/bin/"
-  config.gem "paperclip", :version => "~> 4.1.1"
+  config.gem "paperclip", :version => "~> 3"
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large

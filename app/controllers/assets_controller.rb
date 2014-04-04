@@ -62,7 +62,7 @@ class AssetsController < ApplicationController
   # POST /assets
   # POST /assets.json
   def create
-	  @asset = Asset.new(params.permit([:asset]))#(asset_params)
+	  @asset = Asset.new(_params.permit([:asset]))#(asset_params)
 	  @smc = SmContent.find(params[:sm_content_id])
 
 
@@ -88,7 +88,7 @@ class AssetsController < ApplicationController
   private
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def asset_params
+  def asset_params_
 	  #params.require(:sm_content).permit(:title, :content, :sm_content_id, :assets)
 	  #params.require(:asset).permit(:sm_content_id, asset:[])
 		params.require(:sm_content).permit(:asset => [])

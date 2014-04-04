@@ -30,7 +30,8 @@ group :doc do
 end
 
 group :production do
-	gem 'pg'
+	#gem 'pg'
+	gem 'mysql'
 	gem 'rails_12factor', '0.0.2'
 	#gem 'capybara', '2.1.0'
 	gem 'thread_safe', '0.3.1'
