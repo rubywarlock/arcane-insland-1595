@@ -1,7 +1,9 @@
 Testapp::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-	config.assets.precompile << "tinymce-jquery.js"
+	#config.assets.precompile = ['*.js.coffee', '*.scss', '*.js', '*.css', '*.css.erb']
+	#config.assets.precompile << "tinymce-jquery.js"
+	#config.assets.precompile += %w[tinymce/tiny_mce.js tinymce/langs/en.js tinymce/themes/advanced/editor_template.js]
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -29,7 +31,7 @@ Testapp::Application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
