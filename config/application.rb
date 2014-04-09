@@ -12,8 +12,6 @@ module Testapp
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-
-
 	  #I18n.locale = :ru
 
 	  #config.i18n.default_locale = :ru
@@ -28,6 +26,7 @@ module Testapp
     config.i18n.default_locale = :ru
     config.i18n.fallbacks = true
     config.encoding = "UTF-8"
+    I18n.enforce_available_locales = false
 	  #config.active_record.whitelist_attributes = true
   end
 end

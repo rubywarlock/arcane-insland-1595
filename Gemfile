@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 gem 'rails', '4.0.1'
-#gem 'rails', '4.1.0.rc1' #paper clip not work on this version
 
 gem 'sass-rails', '~> 4.0.1'
 gem 'uglifier', '>= 1.3.0'
@@ -47,12 +46,12 @@ group :development, :test do
 	#gem 'spork-rails', '4.0.0'
 	#gem 'guard-spork', '1.5.0'
 	#gem 'childprocess', '0.3.6'
-	gem 'mysql'
+	#gem 'mysql'
+  gem 'sqlite3', '~> 1.3.9'
 end
 
 group :test do
 	gem 'selenium-webdriver', '2.35.1'
 	gem 'capybara', '2.1.0'
 	gem 'factory_girl_rails', '4.3.0'
-	gem 'mysql'
 end

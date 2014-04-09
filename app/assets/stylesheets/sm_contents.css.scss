@@ -26,7 +26,7 @@
   -moz-box-shadow:  0 1px 1px rgba(0, 0, 0, 0.03);
   box-shadow:  0 1px 1px rgba(0, 0, 0, 0.03);
 
-  .well-head-my, .well-center-my, .well-foot-my{
+  .well-head-my, .well-center-my{
     padding-left: 19px;
     padding-bottom: 19px;
     padding-right: 19px;
@@ -46,6 +46,7 @@
 .well-foot-my{
   /*height:60px;
   width:100%;*/
+  padding:5px;
   border-top:1px solid #e8e8e8;
 
   border-bottom-left-radius: 4px;

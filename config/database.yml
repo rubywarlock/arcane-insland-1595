@@ -15,8 +15,24 @@
 # gem 'pg'
 #
 
+#development:
+#  adapter: mysql
+#  encoding: utf8
+#  database: testapp_development
+#  pool: 5
+#  username: rails_user
+#  password: rails_user
+
+#test:
+#  adapter: mysql
+#  encoding: utf8
+#  database: testapp_test
+#  pool: 5
+#  username: rails_user
+#  password: rails_user
+
 development:
-  adapter: mysql
+  adapter: sqlite3
   encoding: utf8
   database: testapp_development
   pool: 5
@@ -24,7 +40,7 @@ development:
   password: rails_user
 
 test:
-  adapter: mysql
+  adapter: sqlite3
   encoding: utf8
   database: testapp_test
   pool: 5
@@ -39,10 +55,8 @@ production:
   username: wsoaqfjfotxryo
   password: zX0Enq5RifzLzpIAKATMxoyXFQ
 
-
-
 #production:
-#  adapter: mysql
+#  adapter: sqlite3
 #  encoding: utf8
 #  database: testapp_production
 #  pool: 5

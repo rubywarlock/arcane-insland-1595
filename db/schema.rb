@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140316085032) do
   end
 
   create_table "sm_contents", force: true do |t|
-    t.text     "content"
+    t.text     "content",    limit: 255
     t.integer  "submenu_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -44,6 +44,6 @@ ActiveRecord::Schema.define(version: 20140316085032) do
     t.datetime "updated_at"
   end
 
-  add_index "submenus", ["genmenu_id", "created_at"], name: "index_submenus_on_genmenu_id_and_created_at", using: :btree
+  add_index "submenus", ["genmenu_id", "created_at"], name: "index_submenus_on_genmenu_id_and_created_at"
 
 end
