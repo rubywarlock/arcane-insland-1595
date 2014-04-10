@@ -36,10 +36,6 @@
 		        <% if opt.asset_content_type == 'text/plain' %>
 		          <%= link_to opt.asset_file_name, download_txt_path(:asset_id => opt.id)  %>
 		        <% end %>
-
-		        <%#= link_to opt.asset_file_name, opt.asset.url  %>
-		        | <%= opt.asset_file_name %> | type = <%= opt.asset_content_type %> | id = <%= opt.id %>
-		        <%#= send_file(opt.asset.url, :type =>  'application/msword', :disposition => 'attachment', :streaming => 'true', :buffer_size => '4096') %>
 		      </li>
 		    <% end %>
 			</ol>
