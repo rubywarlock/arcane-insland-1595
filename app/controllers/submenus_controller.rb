@@ -3,26 +3,6 @@ class SubmenusController < ApplicationController
 
 	add_breadcrumb "home", :root_path
 
-	def index
-		#@smenus = Submenu.find_by_genmenu_id(:genmenu_id)
-
-		#respond_to do |format|
-		#	format.html # index.html.erb
-		#	format.json { render json: @smenus }
-		#end
-
-		@smenu = Submenu.find(params[:id])
-
-		#add_breadcrumb "home", :root_path
-		add_breadcrumb @smenu.sname, submenus_path(:id => @smenu.id)
-
-		respond_to do |format|
-			format.html # show.html.erb
-			format.json { render json: @smenu }
-		end
-
-	end
-
 	def new
 		@smenu = Submenu.new
 		respond_to do |format|
@@ -60,7 +40,7 @@ class SubmenusController < ApplicationController
 		@smenu = Submenu.find(params[:id])
 
 		#add_breadcrumb "home", :root_path
-		add_breadcrumb @smenu.sname, submenus_path(:id => @smenu.id)
+		add_breadcrumb @smenu.sname, submenu_path(:id => @smenu.id)
 
 		respond_to do |format|
 			format.html # show.html.erb
@@ -68,23 +48,21 @@ class SubmenusController < ApplicationController
 		end
 	end
 
-	def SmContentAdd
-		@smenu = Submenu.find(params[:id])
-		@content = SmContent.new(get_content)
-		#@content.testoptions.build
+	#def SmContentAdd
+	#	@smenu = Submenu.find(params[:id])
+	#	@content = SmContent.new(get_content)
+	#	#@content.testoptions.build
 
-		respond_to do |format|
-			if @content.save
-				format.html { redirect_to @content, notice: 'Survey was successfully created.' }
-				format.json { render action: 'show', status: :created, location: @content }
-			else
-				format.html { render action: 'new' }
-				format.json { render json: @content.errors, status: :unprocessable_entity }
-			end
-		end
-
-
-	end
+	#	respond_to do |format|
+	#		if @content.save
+	#			format.html { redirect_to @content, notice: 'Survey was successfully created.' }
+	#			format.json { render action: 'show', status: :created, location: @content }
+	#		else
+	#			format.html { render action: 'new' }
+	#			format.json { render json: @content.errors, status: :unprocessable_entity }
+	#		end
+	#	end
+	#end
 
 	private
   # Use callbacks to share common setup or constraints between actions.

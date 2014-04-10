@@ -18,8 +18,8 @@ class GenmenusController < ApplicationController
     @gmenu = Genmenu.find(params[:id])
     @submenus = Submenu.new(get_gmenu_id)
 
-    add_breadcrumb "main menu list", genmenus_path(:id => @gmenu)
-    add_breadcrumb "sub menus"
+    add_breadcrumb "main menu list", genmenus_path
+    add_breadcrumb @gmenu.genmenuname
 
     respond_to do |format|
 	    format.html # show.html.erb

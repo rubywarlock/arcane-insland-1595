@@ -16,7 +16,30 @@
 		    <% @smc.assets.each do |opt| %>
 		      <li>
 		        <%#= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original) %>
-		        <%= link_to opt.asset_file_name, opt.asset.url %><%#= opt.asset_file_name %>
+		        <%#= link_to opt.asset_file_name, opt.asset.url  %>
+			      <% if opt.asset_content_type == 'application/pdf' %>
+		          <%= link_to opt.asset_file_name, download_pdf_path(opt.id)  %>
+			      <% end %>
+
+		        <% if opt.asset_content_type == 'application/zip' %>
+		          <%= link_to opt.asset_file_name, download_pdf_path(opt.id)  %>
+		        <% end %>
+
+		        <% if opt.asset_content_type == 'application/doc' %>
+		          <%= link_to opt.asset_file_name, download_pdf_path(opt.id)  %>
+		        <% end %>
+
+		        <% if opt.asset_content_type == 'image/jpg' %>
+		          <%= link_to opt.asset_file_name, download_pdf_path(opt.id)  %>
+		        <% end %>
+
+		        <% if opt.asset_content_type == 'text/plain' %>
+		          <%= link_to opt.asset_file_name, download_txt_path(:asset_id => opt.id)  %>
+		        <% end %>
+
+		        <%#= link_to opt.asset_file_name, opt.asset.url  %>
+		        | <%= opt.asset_file_name %> | type = <%= opt.asset_content_type %> | id = <%= opt.id %>
+		        <%#= send_file(opt.asset.url, :type =>  'application/msword', :disposition => 'attachment', :streaming => 'true', :buffer_size => '4096') %>
 		      </li>
 		    <% end %>
 			</ol>
@@ -27,7 +50,8 @@
       <%= link_to "Edit text", edit_sm_content_path(@smc), class: "btn btn-primary" %>
       <%= link_to "Add files", new_sm_content_asset_path(@smc), class: "btn btn-primary" %>
       <%= link_to "Delete files", sm_content_edit_assets_path(@smc), class: "btn btn-primary", :method => :get %>
-      <%= link_to "Delete All", sm_content_path(:submenu_id => @smc.submenu_id), class: "btn btn-danger", :method => :delete, :confirm => "Are you sure?" %>
+      <%#= link_to "Delete All", sm_content_path(:submenu_id => @smc.submenu_id), class: "btn btn-danger", :method => :delete, :confirm => "Are you sure?" %>
+      <%= link_to "Delete All", sm_content_path, class: "btn btn-danger", :method => :delete, :confirm => "Are you sure?" %>
     </p>
 
   </div>

@@ -1,10 +1,10 @@
 Testapp::Application.routes.draw do
-  #get "attaches/index"
-  #get "attaches/edit"
-  #get "attaches/new"
-
-  #resources :attaches
-
+  get "download/zip"
+  get "download/pdf"
+  get "download/doc"
+  get "download/xls"
+  get "download/jpg"
+  get "download/txt"
 
   #get "sm_contents/index"
   #get "sm_contents/show"

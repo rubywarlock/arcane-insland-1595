@@ -10,8 +10,6 @@
         <div class="text-image-gradient"></div>
         <h3><%= c.title %></h3>
 
-        <%#= raw c.content %>
-
         <div class="text-block-full">
           <%= c.content.html_safe %>
         </div>
@@ -26,7 +24,7 @@
           <% end %>
 			  </ol>
 	    </p>
-      <p><%= link_to "learn more", sm_content_path(c, submenu_id: c.submenu_id ), class: "btn btn-primary", :method => :get %></p>
+      <p><%= link_to "learn more", sm_content_path(c), class: "btn btn-primary" %></p>
     </div>
     <div class="well-foot-my"><%= time_ago_in_words c.updated_at %></div>
   </div>

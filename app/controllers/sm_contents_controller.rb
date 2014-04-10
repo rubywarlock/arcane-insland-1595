@@ -16,17 +16,17 @@ class SmContentsController < ApplicationController
   def show
 		@smc = SmContent.find(params[:id])
 		@submenu = Submenu.find(@smc.submenu_id)
-		@submenu_id = params[:submenu_id]
+		@submenu_id = @smc.submenu_id
 
 
-		add_breadcrumb @submenu.sname, submenus_path(:id => @submenu.id)
+		add_breadcrumb @submenu.sname, submenu_path(:id => @submenu.id)
 		add_breadcrumb @smc.title
   end
 
 	def edit
 		@smc = SmContent.find(params[:id])
 		#@smc.assets.build
-		@submenu_id = get_submenu_id
+		@submenu_id = @smc.submenu_id
 	end
 
 	def update
@@ -42,7 +42,7 @@ class SmContentsController < ApplicationController
 
 	def destroy
 		@smc = SmContent.find(params[:id])
-		@submenu_id = params[:submenu_id]
+		@submenu_id = @smc.submenu_id
 		respond_to do |format|
 			if @smc.destroy
 				format.html { redirect_to submenu_path(@submenu_id), notice: 'Second menu was successfully updated.' }
