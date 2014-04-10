@@ -50,7 +50,7 @@ TEST START
           <% end %>
         </ol>
       </p>
-      <p><%= link_to "learn more", sm_content_path(c, submenu_id: c.submenu_id), class: "btn btn-primary", :method => :get %></p>
+      <p><%= link_to "learn more", sm_content_path(c), class: "btn btn-primary" %></p>
     </div>
     <div class="well-foot-my"><%= time_ago_in_words c.updated_at %></div>
   </div>
