@@ -1,14 +1,16 @@
-<div class="span3">
-  <div class="well sidebar-nav">
-    <ul class="nav nav-list">
-      <% @main_menu_items.each_with_index do |menu,n| %>
-        <li class="nav-header"><%= menu.genmenuname %></li>
-        <% menu.submenus.each do |smenu| %>
-          <li class="<%= get_active_submenu(smenu.id) %>">
-            <%= link_to smenu.sname, smenu %>
-          </li>
+  <div class="span3">
+    <% if @main_menu_items.count > 0 %>
+    <div class="my-well sidebar-nav">
+      <ul class="nav nav-list">
+        <% @main_menu_items.each_with_index do |menu,n| %>
+          <li class="nav-header"><%= menu.genmenuname %></li>
+          <% menu.submenus.each do |smenu| %>
+            <li class="<%= get_active_submenu(smenu.id) %>">
+              <%= link_to smenu.sname, smenu %>
+            </li>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
+    <% end %>
   </div>
-</div>

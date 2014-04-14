@@ -28,3 +28,22 @@ footer ul li {
   float: left;
   margin-left: 10px;
 }
+
+.footer-nav{
+	small{
+		color: #c6c6c6;
+	}
+	ul a{
+		color: #999999;
+		//text-shadow: 0px 0px 0px;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.9);
+		text-decoration: none;
+	}
+	ul a:hover{
+		color:#FFF;
+	}
+	ul li{
+		display:inline;
+		padding: 10px;
+	}
+}

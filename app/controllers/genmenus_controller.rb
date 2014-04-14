@@ -47,6 +47,14 @@ class GenmenusController < ApplicationController
   end
 
   def destroy
+    @gm = Genmenu.find(params[:id])
+    respond_to do |format|
+      if @gm.destroy
+        format.html { redirect_to genmenus_path, notice: 'Second menu was successfully updated.' }
+      else
+        format.html { render action: "edit" }
+      end
+    end
   end
 
   def edit

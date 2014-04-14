@@ -9,22 +9,17 @@
   <%= tinymce_assets %>
   <%= render 'layouts/shim' %>
 </head>
-<body>
+<body style="background:#ffffff;">
+
 	<%= render 'layouts/header' %>
 
-	<div class="container-fluid">
-
-    <%#= breadcrumbs style: :bootstrap, separator: " &rsaquo; " %>
-
-
+	<div class="wrap container-fluid" style="margin-bottom:200px; background:#ffffff">
 
 		<div class="row-fluid">
 
-			<%#= if leftbar exist %>
-			<%= render "layouts/leftbar" %>
+		  <%= render "layouts/leftbar" %>
 
-	    <div class="span6">
-		    <%#= render "layouts/beadcrumb" %>
+	    <div class="span6" style="background:#FFF; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
 	      <ol class="breadcrumb">
 	        <%= render_breadcrumbs :tag => :li, :separator => " \\ " %>
 	      </ol>
@@ -40,30 +35,17 @@
 		        <li><a href="#">Link</a></li>
 		        <li><a href="#">Link</a></li>
 		        <li><a href="#">Link</a></li>
-		        <li class="nav-header">Sidebar</li>
-		        <li><a href="#">Link</a></li>
-		        <li><a href="#">Link</a></li>
-		        <li><a href="#">Link</a></li>
-		        <li><a href="#">Link</a></li>
-		        <li><a href="#">Link</a></li>
-		        <li><a href="#">Link</a></li>
-		        <li class="nav-header">Sidebar</li>
-		        <li><a href="#">Link</a></li>
-		        <li><a href="#">Link</a></li>
-		        <li><a href="#">Link</a></li>
 		      </ul>
 		    </div>
 		  </div> -->
 
 		</div>
 
-
-		<footer>
-	  <%= render 'layouts/footer' %>
-	  <%= debug(params) if Rails.env.development? %>
-		</footer>
-
-
 	</div>
+
+	<div class="navbar navbar-fixed-bottom" style="z-index: -1; background:#000000; padding-left:20px; padding-right:20px;">
+		<%= render 'layouts/footer' %>
+	</div>
+
 </body>
 </html>

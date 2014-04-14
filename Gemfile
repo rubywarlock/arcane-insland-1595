@@ -19,7 +19,7 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'breadcrumbs_on_rails'
 
-gem 'tinymce-rails'
+gem 'tinymce-rails', '~> 4'
 
 gem 'paperclip', '~> 3'#:git => 'git://github.com/thoughtbot/paperclip.git'
 

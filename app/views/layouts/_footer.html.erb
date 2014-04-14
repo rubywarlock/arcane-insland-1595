@@ -1,11 +1,11 @@
-<footer class="footer">
-  <small>
-    Test App By VS
-  </small>
-  <nav>
-    <ul>
-      <li><%= link_to "About",   about_path %></li>
-      <li><%= link_to "Contact", contact_path %></li>
+
+  <div class="container footer-nav" style="">
+    <small class="navbar-text">
+      Test App By VS
+    </small>
+    <ul class="pull-right navbar-text">
+      <li><%= link_to "About",   about_path, class: "navbar-btn" %></li>
+      <li><%= link_to "Contact", contact_path, class: "navbar-btn" %></li>
     </ul>
-  </nav>
-</footer>
+    <%= debug(params) if Rails.env.development? %>
+  </div>
