@@ -1,10 +1,10 @@
-<h4>New asset for <%= link_to @sm_content.title, sm_content_path(@sm_content) %></h4>
+<h4>Добавление файлов для статьи <%= link_to @sm_content.title, sm_content_path(@sm_content) %></h4>
 
 <p>
 	<ol class="file-list">
 		<% @asts = get_assets(@sm_content) %>
     <% @asts.each do |opt| %>
-      <li><%= link_to opt.asset_file_name, opt.asset.url %></li>
+      <li><%= link_to opt.asset_file_name, download_file_path(:asset_id => opt.id) %></li>
     <% end %>
 	</ol>
 </p>
@@ -22,7 +22,7 @@
 
 	<p>
     <div class="actions">
-      <%= f.submit "Create files", class: "btn" %>
+      <%= f.submit "Добавить файлы", class: "btn" %>
     </div>
 	</p>
 <% end %>

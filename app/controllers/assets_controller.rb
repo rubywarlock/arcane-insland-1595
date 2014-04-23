@@ -1,6 +1,8 @@
 class AssetsController < ApplicationController
   #before_action :set_asset, only: [:show, :edit, :update, :destroy]
 
+	add_breadcrumb "home", :root_path
+
   def index
     #@assets = Asset.where(:sm_content_id => params[:sm_content_id])
 		#@smc = SmContent.find(params[:sm_content_id])
@@ -12,6 +14,10 @@ class AssetsController < ApplicationController
 
 	  @smc = SmContent.find(params[:sm_content_id])
 	  @assets = @smc.assets
+
+	  add_breadcrumb @smc.submenu.sname, submenu_path(:id => @smc.submenu.id)
+	  add_breadcrumb @smc.title, sm_content_path(:id => @smc.id)
+	  add_breadcrumb "Deleting files"
   end
 
   # GET /assets/1/edit
@@ -26,15 +32,15 @@ class AssetsController < ApplicationController
   # PATCH/PUT /assets/1
   # PATCH/PUT /assets/1.json
   def update
-    respond_to do |format|
-      if @asset.update(asset_params)
-        format.html { redirect_to @asset, notice: 'Asset was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @asset.errors, status: :unprocessable_entity }
-      end
-    end
+    #respond_to do |format|
+    #  if @asset.update(asset_params)
+    #    format.html { redirect_to @asset, notice: 'Asset was successfully updated.' }
+    #    format.json { head :no_content }
+    #  else
+    #    format.html { render action: 'edit' }
+    #    format.json { render json: @asset.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # DELETE /assets/1
@@ -52,6 +58,10 @@ class AssetsController < ApplicationController
 	  @sm_content = SmContent.find(params[:sm_content_id])
 	  @sm_content.assets.build
 
+	  add_breadcrumb @sm_content.submenu.sname, submenu_path(:id => @sm_content.submenu.id)
+	  add_breadcrumb @sm_content.title, sm_content_path(:id => @sm_content.id)
+	  add_breadcrumb "Adding files"
+
 	  respond_to do |format|
 		  format.html # new.html.erb
 		  format.json { render json: @asset }
@@ -62,8 +72,9 @@ class AssetsController < ApplicationController
   # POST /assets
   # POST /assets.json
   def create
-	  @asset = Asset.new(_params.permit([:asset]))#(asset_params)
-	  @smc = SmContent.find(params[:sm_content_id])
+	  #@asset = Asset.new(params.require(:asset).permit(assets: [:asset))#(asset_params)
+	  #@asset = Asset.new(_params.permit([:asset]))#(asset_params)
+	  #@smc = SmContent.find(params[:sm_content_id])
 
 
 	  #@smc = SmContent.find(asset_params)

@@ -9,51 +9,63 @@ TEST START
   </div>
 </div>
 
-<%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 6) %>
+<%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 6), :previous_label => " « ", :next_label => " » " %>
 
 <% @smenu.sm_contents.paginate(page: params[:page], :per_page => 6).each do |c| %>
+  <section id="sm_contents_<%= c.id %>" class="section_content_block">
+    <div class="">
+
+      <div class="text-block">
+        <div class="text-image-gradient"></div>
+        <h3><%= c.title %></h3>
+
+        <div class="text-block-full">
+          <%= c.content.html_safe %>
+        </div>
+
+      </div>
+
+      <p>
+      <ol class="file-list">
+        <% @assets = get_assets(c) %>
+        <% @assets.each_with_index do |opt,n| %>
+          <li><%= link_to opt.asset_file_name, download_file_path(:asset_id => opt.id) %></li>
+        <% end %>
+      </ol>
+      </p>
+
+      <p class="well-foot-my">
+        <%= time_ago_in_words c.updated_at %> <br/>
+        <%= link_to "показать полностью", sm_content_path(c) %>
+      </p>
+    </div>
+    <!--<div class="well-foot-my"><%#= time_ago_in_words c.updated_at %></div>-->
+  </section>
+<% end %>
+
+<%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 6), :previous_label => " « ", :next_label => " » " %>
+
+<!--
   <div class="well-box-my">
     <div class="well-center-my">
       <div class="text-block">
         <div class="text-image-gradient"></div>
-        <h3><%= c.title %></h3>
-        <%= c.content.html_safe %>
+        <h3><%#= c.title %></h3>
+        <%#= c.content.html_safe %>
       </div>
 
       <p>
         <ol class="file-list">
-	        <% @assets = get_assets(c) %>
-          <% @assets.each_with_index do |opt,n| %>
+	        <%# @assets = get_assets(c) %>
+<%# @assets.each_with_index do |opt,n| %>
             <li>
-              <%#= link_to image_tag(asset_fields.object.asset.url(:thumb)), asset_fields.object.asset.url(:original) %>
-              <%#= link_to opt.asset_file_name, opt.asset.url  %>
-              <% if opt.asset_content_type == 'application/pdf' %>
-                <%= link_to opt.asset_file_name, download_pdf_path(opt.id)  %>
-              <% end %>
-
-              <% if opt.asset_content_type == 'application/zip' %>
-                <%= link_to opt.asset_file_name, download_pdf_path(opt.id)  %>
-              <% end %>
-
-              <% if opt.asset_content_type == 'application/doc' %>
-                <%= link_to opt.asset_file_name, download_pdf_path(opt.id)  %>
-              <% end %>
-
-              <% if opt.asset_content_type == 'image/jpg' %>
-                <%= link_to opt.asset_file_name, download_pdf_path(opt.id)  %>
-              <% end %>
-
-              <% if opt.asset_content_type == 'text/plain' %>
-                <%= link_to opt.asset_file_name, download_txt_path(:asset_id => opt.id)  %>
-              <% end %>
+              <%#= link_to opt.asset_file_name, download_file_path(asset_id: opt.id)  %>
             </li>
-          <% end %>
+          <%# end %>
         </ol>
       </p>
-      <p><%= link_to "learn more", sm_content_path(c), class: "btn btn-primary" %></p>
+      <p><%#= link_to "learn more", sm_content_path(c), class: "btn btn-primary" %></p>
     </div>
-    <div class="well-foot-my"><%= time_ago_in_words c.updated_at %></div>
+    <div class="well-foot-my"><%#= time_ago_in_words c.updated_at %></div>
   </div>
-<% end %>
-
-<%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 6) %>
+-->

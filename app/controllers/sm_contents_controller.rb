@@ -19,14 +19,18 @@ class SmContentsController < ApplicationController
 		@submenu_id = @smc.submenu_id
 
 
-		add_breadcrumb @submenu.sname, submenu_path(:id => @submenu.id)
+		add_breadcrumb @submenu.sname, submenu_path(:id => @smc.submenu_id)
 		add_breadcrumb @smc.title
   end
 
 	def edit
 		@smc = SmContent.find(params[:id])
-		#@smc.assets.build
+		@submenu = Submenu.find(@smc.submenu_id)
 		@submenu_id = @smc.submenu_id
+
+		add_breadcrumb @submenu.sname, submenu_path(:id => @smc.submenu_id)
+		add_breadcrumb @smc.title, sm_content_path(:id => @smc.id)
+		add_breadcrumb "edit"
 	end
 
 	def update
@@ -36,6 +40,7 @@ class SmContentsController < ApplicationController
 				format.html { redirect_to @smc, notice: 'Second menu was successfully updated.' }
 			else
 				format.html { render action: "edit" }
+				#format.html { redirect_to @smc_error_page, notice: 'Second menu was successfully updated.' }
 			end
 		end
 	end

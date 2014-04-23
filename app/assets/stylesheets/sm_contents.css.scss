@@ -2,14 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
 .hero-unit-my{
 
 }
 
 .hero-unit-foot{
 
+}
+
+.section_content_block{
+	margin-bottom: 40px;
+	//border-bottom:1px solid #e8e8e8;
+
+	-webkit-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.3);
+
+	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.3);
+}
+
+.shadow_content_block{
+	//-webkit-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+	//-moz-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+	//box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+
+	//-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	//-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	//box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	//width:100%;
+	//height:6px;
 }
 
 .well-box-my {
@@ -49,12 +69,12 @@
   padding:5px;
   border-top:1px solid #e8e8e8;
 
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  //border-bottom-left-radius: 4px;
+  //border-bottom-right-radius: 4px;
 
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  //-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  //-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  //box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 
   font-size: 13px;
   color: #8899a6;

@@ -1,30 +1,30 @@
-<h4>Delete files <%= link_to @smc.title, @smc %></h4>
+<!--<h4>Delete files <%#= link_to @smc.title, @smc %></h4>
 
 <h5>Select files for delete</h5>
 <div class="actions">
-  <%= form_for(:assets, html: { :multipart => true }) do |form| %>
+  <%#= form_for(:assets, html: { :multipart => true }) do |form| %>
     <%#= form.hidden_field :sm_content_id, :value => @smc.id %>
     <p>
     <table>
       <%# for assets in @assets %>
-      <% @smc.assets.each do |asset| %>
+      <%# @smc.assets.each do |asset| %>
         <tr>
           <td>
-            <%= link_to asset.asset_file_name, asset.asset.url %>
+            <%#= link_to asset.asset_file_name, asset.asset.url %>
           </td>
           <td style="position:relative; bottom:3px; padding-left: 10px;">
             <%#= form.input :destroy, value: asset.id, multiple: true %>
 
-            <input name="destroy[id][]" type="checkbox" value="<%= asset.id %>">
+            <input name="destroy[id][]" type="checkbox" value="<%#= asset.id %>">
 
           </td>
         </tr>
-      <% end %>
+      <%# end %>
     </table>
     </p>
 
-    <p><%= form.submit "Update", class: "btn" %></p>
-  <% end %>
+    <p><%#= form.submit "Update", class: "btn" %></p>
+  <%# end %>
 
 
-</div>
+</div> -->

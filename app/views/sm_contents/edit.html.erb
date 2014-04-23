@@ -4,8 +4,8 @@
 
 <%= form_for @smc, html: { multipart: true } do |f| %>
   <% if @smc.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@smc.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <div id="error_explanation" class="alert alert-error">
+      <h3><%= pluralize(@smc.errors.count, "error") %> prohibited this post from being saved:</h3>
 
       <ul>
         <% @smc.errors.full_messages.each do |msg| %>
@@ -13,7 +13,7 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
+  <% else %>
 
   <div class="actions">
     <%= f.text_field :submenu_id, type: "hidden", value: @smc.submenu_id %>
@@ -30,6 +30,7 @@
       <%= f.submit "Update", class: "btn" %>
     </div>
 	</p>
+	<% end %>
 
 
 <% end %>

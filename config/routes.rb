@@ -1,10 +1,5 @@
 Testapp::Application.routes.draw do
-  get "download/zip"
-  get "download/pdf"
-  get "download/doc"
-  get "download/xls"
-  get "download/jpg"
-  get "download/txt"
+  get "download/file" #all types
 
   #get "sm_contents/index"
   #get "sm_contents/show"

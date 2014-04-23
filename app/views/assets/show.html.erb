@@ -20,7 +20,7 @@
         <% @smc.assets.each do |asset| %>
           <tr>
             <td>
-              <%= link_to asset.asset_file_name, asset.asset.url %>
+              <%= link_to asset.asset_file_name, download_file_path(:asset_id => asset.id) %>
             </td>
             <td style="position:relative; bottom:3px; padding-left: 10px;">
               <%#= form.input :destroy, value: asset.id, multiple: true %>
