@@ -2,20 +2,32 @@ ru:
  datetime:
   distance_in_words:
    about_x_hours:
-    other: okolo %{count} chasov
-    few: okolo %{count} chasov
-    many: okolo %{count} chasov
-    one: okolo %{count} chasa
+    other: опубликовано около %{count} часов
+    few: опубликовано около %{count} часов
+    many: опубликовано около %{count} часов
+    one: опубликовано около %{count} часа
 
    half_a_minute: menshe minuti
    less_than_x_minutes:
-    few: menshe %{count} minut
-    many: menshe %{count} minut
-    one: menshe %{count} minuti
-    other: menshe %{count} minuti
+    few: опубликовано меньше %{count} минут
+    many: опубликовано меньше %{count} минут
+    one: опубликовано меньше %{count} минуты
+    other: опубликовано меньше %{count} минут
 
    x_minutes:
-    few: ! '%{count} minuti'
-    many: ! '%{count} minut'
-    one: ! '%{count} minutu'
-    other: ! '%{count} minut'
+    few: ! 'опубликовано %{count} минуты назад'
+    many: ! 'опубликовано около %{count} минут назад'
+    one: ! 'опубликовано %{count} минуту назад'
+    other: ! 'опубликовано около %{count} минут назад'
+
+   x_days:
+    few: ! 'опубликовано %{count} дня назад'
+    many: ! 'опубликовано %{count} дней назад'
+    one: ! 'опубликовано %{count} день назад'
+    other: ! 'опубликовано %{count} дней назад'
+
+   x_months:
+    few: ! 'опубликовано %{count} месяца назад'
+    many: ! 'опубликовано %{count} месяцев назад'
+    one: ! 'опубликовано %{count} месяц назад'
+    other: ! 'опубликовано %{count} месяцев назад'

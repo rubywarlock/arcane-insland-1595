@@ -8,7 +8,7 @@
 
       <div class="text-block">
         <div class="text-image-gradient"></div>
-        <h3><%= c.title %></h3>
+        <h4 style="border-bottom:1px solid #ededed; padding-bottom:10px" class="text"><%= c.title %></h4>
 
         <div class="text-block-full">
           <%= c.content.html_safe %>
@@ -16,18 +16,58 @@
 
       </div>
 
-	    <p>
-		    <ol class="file-list">
-			    <% @assets = get_assets(c) %>
-	        <% @assets.each_with_index do |opt,n| %>
-            <li><%= link_to opt.asset_file_name, download_file_path(:asset_id => opt.id) %></li>
-          <% end %>
-			  </ol>
-	    </p>
+
+
+      <% @assets = get_assets(c) %>
+	    <% if @assets.count > 0 %>
+
+        <div class="accordion" id="sm_contents_accordion_<%= c.id %>" style="padding-left: 10px; padding-right: 10px; padding-top:20px; padding-bottom: 0px; margin-bottom: 0px">
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <div class="accordion-toggle" data-toggle="collapse" data-parent="#sm_contents_accordion_<%= c.id %>" onclick="js_show('#sm_contents_files_<%= c.id %>')">
+                <span style="color:#3399ff; font-size: 13px;">показать файлы</span>
+              </div>
+            </div>
+
+            <div id="sm_contents_files_<%= c.id %>" class="dropdown_box">
+              <div class="accordion-inner">
+
+
+                <ul class="file-list">
+                  <% @assets.each_with_index do |opt,n| %>
+                    <% if n % 2 == 0 %>
+                      <li class="file-line"><span><%= link_to opt.asset_file_name, download_file_path(:asset_id => opt.id) %></span></li>
+                    <% end %>
+                  <% end %>
+                </ul>
+
+                <ul class="file-list">
+                  <% @assets.each_with_index do |opt,n| %>
+                    <% if n % 2 != 0 %>
+                      <li class="file-line"><span><%= link_to opt.asset_file_name, download_file_path(:asset_id => opt.id) %></span></li>
+                    <% end %>
+                  <% end %>
+                </ul>
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+		  <% end %>
+
+
+
+
+      <p class="well-foot-my02">
+        <%= link_to "показать полностью", sm_content_path(c) %>
+        |
+        <%= link_to "перейти к коментариям", sm_content_path(c) %>
+      </p>
 
       <p class="well-foot-my">
         <%= time_ago_in_words c.updated_at %> <br/>
-        <%= link_to "показать полностью", sm_content_path(c) %>
       </p>
     </div>
     <!--<div class="well-foot-my"><%#= time_ago_in_words c.updated_at %></div>-->
@@ -70,3 +110,6 @@
     <div class="well-foot-my"><%#= time_ago_in_words c.updated_at %></div>
   </div>
 -->
+
+
+

@@ -1,34 +1,107 @@
-<%# breadcrumb :submenus, @submenus_path %>
-
-<div class="well-box-my">
+<!--<div class="well-box-my">
   <div class="well-center-my">
     <div class="text-block-full">
       <div class="text-image-gradient2"></div>
-      <h3><%= @smc.title %></h3>
+      <h3><%#= @smc.title %></h3>
       <%#= raw @smc.content %>
 	    <div class="text-block-full">
-        <%= @smc.content.html_safe %>
+        <%#= @smc.content.html_safe %>
 		  </div>
     </div>
 
 	  <p>
 		  <ol class="file-list">
-		    <% @smc.assets.each do |opt| %>
+		    <%# @smc.assets.each do |opt| %>
 		      <li>
-		        <%= link_to opt.asset_file_name, download_file_path(:asset_id => opt.id) %>
+		        <%#= link_to opt.asset_file_name, download_file_path(:asset_id => opt.id) %>
 		      </li>
-		    <% end %>
+		    <%# end %>
 			</ol>
 	  </p>
 
 
     <p>
-      <%= link_to "Edit text", edit_sm_content_path(@smc), class: "btn btn-primary" %>
-      <%= link_to "Add files", new_sm_content_asset_path(@smc), class: "btn btn-primary" %>
-      <%= link_to "Delete files", sm_content_edit_assets_path(@smc), class: "btn btn-primary", :method => :get %>
-      <%= link_to "Delete All", sm_content_path, class: "btn btn-danger", :method => :delete, :confirm => "Вы уверены что хотите удалить эту статью полностью?" %>
+      <%#= link_to "Edit text", edit_sm_content_path(@smc), class: "btn btn-primary" %>
+      <%#= link_to "Add files", new_sm_content_asset_path(@smc), class: "btn btn-primary" %>
+      <%#= link_to "Delete files", sm_content_edit_assets_path(@smc), class: "btn btn-primary", :method => :get %>
+      <%#= link_to "Delete All", sm_content_path, class: "btn btn-danger", :method => :delete, :confirm => "Вы уверены что хотите удалить эту статью полностью?" %>
     </p>
 
   </div>
-  <div class="well-foot-my"><%= time_ago_in_words @smc.updated_at %></div>
-</div>
+  <div class="well-foot-my"><%#= time_ago_in_words @smc.updated_at %></div>
+</div>-->
+
+
+<section id="sm_contents_<%= @smc.id %>" class="section_content_block">
+  <div class="">
+
+    <div class="text-block2">
+      <!--<div class="text-image-gradient"></div>-->
+      <h4 style="border-bottom:1px solid #ededed; padding-bottom:10px" class="text"><%= @smc.title %></h4>
+
+      <div class="text-block-full">
+        <%= @smc.content.html_safe %>
+      </div>
+
+    </div>
+
+    <% if @smc.assets.count > 0 %>
+
+      <div class="accordion" id="sm_contents_accordion_<%= @smc.id %>" style="padding-left: 10px; padding-right: 10px; padding-top:20px; padding-bottom: 0px; margin-bottom: 0px">
+        <div class="accordion-group">
+          <div class="accordion-heading">
+            <div class="accordion-toggle" data-toggle="collapse" data-parent="#sm_contents_accordion_<%= @smc.id %>" onclick="js_show('#sm_contents_files_<%= @smc.id %>')">
+              <span style="color:#3399ff; font-size: 13px;">показать файлы</span>
+            </div>
+          </div>
+
+          <div id="sm_contents_files_<%= @smc.id %>" class="dropdown_box">
+            <div class="accordion-inner">
+
+								<ul class="file-list">
+                  <% @smc.assets.each_with_index do |opt,n| %>
+                    <% if n % 2 == 0 %>
+                      <li class="file-line"><span><%= link_to opt.asset_file_name, download_file_path(:asset_id => opt.id) %></span></li>
+                    <% end %>
+                  <% end %>
+	              </ul>
+
+	              <ul class="file-list">
+                  <% @smc.assets.each_with_index do |opt,n| %>
+                    <% if n % 2 != 0 %>
+                      <li class="file-line"><span><%= link_to opt.asset_file_name, download_file_path(:asset_id => opt.id) %></span></li>
+                    <% end %>
+                  <% end %>
+		            </ul>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+
+
+
+
+    <!--<p class="well-foot-my02">
+      <span class="my-badge"><%#= link_to "Редактировать текст", edit_sm_content_path(@smc), class: "my-link" %></span>
+      <span class="my-badge"><%#= link_to "Добавление файлов", new_sm_content_asset_path(@smc), class: "my-link" %></span>
+      <span class="my-badge"><%#= link_to "Удаление файлов", sm_content_edit_assets_path(@smc), class: "my-link", :method => :get %></span>
+      <span class="my-badge-danger"><#%= link_to "Удалить публикацию полностью", sm_content_path, class: "my-link-danger", :method => :delete, :confirm => "Вы уверены что хотите удалить эту статью полностью?" %></span>
+    </p>-->
+
+    <p class="well-foot-my02">
+      <%= link_to "Редактировать текст", edit_sm_content_path(@smc) %> |
+      <%= link_to "Добавление файлов", new_sm_content_asset_path(@smc) %> |
+      <%= link_to "Удаление файлов", sm_content_edit_assets_path(@smc), :method => :get %> |
+      <%= link_to "Удалить публикацию полностью", sm_content_path, :method => :delete, :confirm => "Вы уверены что хотите удалить эту статью полностью?" %>
+    </p>
+
+    <p class="well-foot-my">
+      <%= time_ago_in_words @smc.updated_at %> <br/>
+    </p>
+  </div>
+
+</section>

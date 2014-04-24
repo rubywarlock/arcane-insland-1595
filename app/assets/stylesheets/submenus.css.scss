@@ -6,10 +6,65 @@
   color:#FFF;
   &:hover{
     color:#FFF;
-
-
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
-
     text-decoration:none;
   }
+}
+
+.my-link-danger{
+	color: #000000;
+	&:hover{
+		color: #000000;
+		text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+		text-decoration:none;
+	}
+}
+
+.my-badge{
+	display: inline-block;
+	padding: 2px 4px;
+	font-size: 11.844px;
+	font-weight: bold;
+	line-height: 14px;
+	color: white;
+	vertical-align: baseline;
+	white-space: nowrap;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #999999;
+
+
+
+	padding-left: 9px;
+	padding-right: 9px;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+
+	&:hover{
+		background-color: #aeaeae;
+	}
+}
+
+.my-badge-danger{
+	display: inline-block;
+	padding: 2px 4px;
+	font-size: 11.844px;
+	font-weight: bold;
+	line-height: 14px;
+	color: #000000;
+	vertical-align: baseline;
+	white-space: nowrap;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #f68000;
+
+
+
+	padding-left: 9px;
+	padding-right: 9px;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+	&:hover{
+		background-color: #eb1400;
+	}
 }

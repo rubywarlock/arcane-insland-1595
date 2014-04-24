@@ -10,14 +10,78 @@
 
 }
 
+.text{
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
 .section_content_block{
 	margin-bottom: 40px;
 	//border-bottom:1px solid #e8e8e8;
 
-	-webkit-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.3);
+	//-webkit-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.3);
+	//-moz-box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.3);
+	//box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.3);
 
-	box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.3);
+
+  -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.text-block {
+	min-height: 100px;
+	max-height: 200px;
+	position:relative;
+	font:12px arial;
+	//padding:10px;
+	//margin:5px;
+	overflow: hidden;
+	padding-left: 10px;
+	padding-right:10px;
+}
+
+.text-block2 {
+	min-height: 100px;
+	position:relative;
+	font:12px arial;
+	//padding:10px;
+	//margin:5px;
+	overflow: hidden;
+	padding-left: 10px;
+	padding-right:10px;
+}
+
+.file-list{
+	//list-style:none;
+	//margin-left:16px;
+	list-style-type:circle;
+	//padding-left:10px;
+	//padding-right:10px;
+	//padding:0px;
+	//margin:15px;
+	//font-size: 13px;
+	//line-spacing:1px;
+	display:inline-block;
+	vertical-align:top;
+	padding-left:0px;
+	margin-left:15px;
+	margin-right:20px;
+	margin-bottom:0px;
+	width:45%;
+}
+
+.file-line{
+	font-size: 13px;
+	line-height: 15px;
+	word-wrap: break-word;
+	//width:350px;
+}
+
+.dropdown_box{
+	display: none;
 }
 
 .shadow_content_block{
@@ -72,10 +136,23 @@
   //border-bottom-left-radius: 4px;
   //border-bottom-right-radius: 4px;
 
-  //-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  //-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  //box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.05);
 
   font-size: 13px;
   color: #8899a6;
+}
+
+.well-foot-my02{
+	/*height:60px;
+	width:100%;*/
+	padding:5px;
+	padding-left:10px;
+	padding-top:12px;
+	margin-top:20px;
+	border-top:1px solid #e8e8e8;
+
+	font-size: 13px;
+	color: #8899a6;
 }
