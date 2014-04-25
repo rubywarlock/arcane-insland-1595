@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140411051205) do
+ActiveRecord::Schema.define(version: 20140425100331) do
 
   create_table "assets", force: true do |t|
     t.string   "asset_file_name"
@@ -51,6 +51,9 @@ ActiveRecord::Schema.define(version: 20140411051205) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
