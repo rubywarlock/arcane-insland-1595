@@ -4,11 +4,15 @@
 
 <% @allcontent.paginate(page: params[:page], :per_page => 6).each do |c| %>
   <section id="sm_contents_<%= c.id %>" class="section_content_block">
-    <div class="">
+    <div class="well-foot-my">
+      <%= time_ago_in_words c.updated_at %> <br/>
+    </div>
+
+    <div class="content-block">
 
       <div class="text-block">
         <div class="text-image-gradient"></div>
-        <h4 style="border-bottom:1px solid #ededed; padding-bottom:10px" class="text"><%= c.title %></h4>
+        <h4 style="border-bottom:1px solid #ededed; padding-bottom:10px" class="text"><%#= c.title %><%= link_to c.title, sm_content_path(c) %></h4>
 
         <div class="text-block-full">
           <%= c.content.html_safe %>
@@ -64,10 +68,6 @@
         <%= link_to "показать полностью", sm_content_path(c) %>
         |
         <%= link_to "перейти к коментариям", sm_content_path(c) %>
-      </p>
-
-      <p class="well-foot-my">
-        <%= time_ago_in_words c.updated_at %> <br/>
       </p>
     </div>
     <!--<div class="well-foot-my"><%#= time_ago_in_words c.updated_at %></div>-->

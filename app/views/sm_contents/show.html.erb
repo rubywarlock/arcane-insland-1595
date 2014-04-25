@@ -32,8 +32,11 @@
 </div>-->
 
 
-<section id="sm_contents_<%= @smc.id %>" class="section_content_block">
-  <div class="">
+<section id="sm_contents_<%= @smc.id %>" class="section_content_block sm-content-show">
+  <div class="well-foot-my">
+    <%= time_ago_in_words @smc.updated_at %> <br/>
+  </div>
+  <div class="content-block">
 
     <div class="text-block2">
       <!--<div class="text-image-gradient"></div>-->
@@ -97,10 +100,6 @@
       <%= link_to "Добавление файлов", new_sm_content_asset_path(@smc) %> |
       <%= link_to "Удаление файлов", sm_content_edit_assets_path(@smc), :method => :get %> |
       <%= link_to "Удалить публикацию полностью", sm_content_path, :method => :delete, :confirm => "Вы уверены что хотите удалить эту статью полностью?" %>
-    </p>
-
-    <p class="well-foot-my">
-      <%= time_ago_in_words @smc.updated_at %> <br/>
     </p>
   </div>
 
