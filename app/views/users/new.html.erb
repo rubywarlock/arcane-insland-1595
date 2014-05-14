@@ -1,0 +1,38 @@
+<% provide(:title, "Sign up") %>
+
+
+<div class="row">
+  <div class="span6 offset3">
+    <h3>Sign up</h3>
+    <%= form_for(@user) do |f| %>
+
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-error">
+            The form contains <%= pluralize(@user.errors.count, "error") %>.
+          </div>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li>* <%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <span class="badge my-badge2">name</span>
+      <%= f.text_field :name, placeholder: "name" %>
+
+      <span class="badge my-badge2">email</span>
+
+      <%= f.text_field :email, placeholder: "email" %>
+
+      <span class="badge my-badge2">password</span>
+      <%= f.password_field :password, placeholder: "password" %>
+
+      <span class="badge my-badge2">password confirmation</span>
+      <%= f.password_field :password_confirmation, placeholder: "password confirmation" %> <br/>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

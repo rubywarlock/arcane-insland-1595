@@ -11,6 +11,9 @@ Testapp::Application.routes.draw do
   #get "submenus/edit"
   #get "submenus/transfer"
 
+  resources :users
+  match '/signup', to: 'users#new', via: :get
+
 	resources :genmenus
 	match "/genmenus/:id" => "genmenus#submenuadd", via: :post
 
