@@ -15,6 +15,11 @@ describe User do
 
 	it { should be_valid }
 
+	describe "remember token" do
+		before { @user.save }
+		its(:remember_token) { should_not be_blank }
+	end
+
 	describe "when user name is not present" do
 		before { @user.name = "" }
 		it     { should_not be_valid }
