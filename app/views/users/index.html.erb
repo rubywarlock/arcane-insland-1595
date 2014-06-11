@@ -1,20 +1,28 @@
 <% @users.each do |user| %>
 
-	<div>
-	  <div style="display:inline-table"><%= link_to user.name + ", " + user.email, user_path(user) %></div>
+	<div style="display:inline-block; width:100%;">
+	  <div style="display:inline-block; width:35%;"><%= link_to user.name + ", " + user.email, user_path(user) %></div>
 			<% if (signed_in? and current_user?(user)) or admin?(current_user) %>
-	      <div style="display:inline-table; float:right;">
-	        <%= link_to "Edit", "#" %>
-	        <span class="breadcrumb-separator"> | </span>
+	      <!--<div>-->
+	        <div style="width:50px; background:#3399ff;display:inline-block;">
+	          <%= link_to "Edit", "#" %>
 
-	        <%= link_to "Delete user", user_path(user), method: :delete %>
-	        <span class="breadcrumb-separator"> | </span>
+		      </div>
 
-		      admin? <%= admin?(user) %>
-	        <span class="breadcrumb-separator"> | </span>
+	        <div style="width:100px; background:#3399ff; display:inline-block;">
+	          <%= link_to "Delete user", user_path(user), method: :delete %>
 
-	        current_user? <%= current_user?(user) %>
-	      </div>
+		      </div>
+
+	        <div style="width:100px; background:#3399ff; display:inline-block;">
+		        admin? <%= admin?(user) %>
+
+		      </div>
+
+	        <div style="width:140px; background:#3399ff; display:inline-block;">
+	          current_user? <%= current_user?(user) %>
+		      </div>
+	      <!--</div>-->
 			<% end %>
 	</div>
 
