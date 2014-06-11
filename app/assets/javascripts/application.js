@@ -20,7 +20,8 @@
 //= require bootstrap-popover
 /////= require bootstrap-collapse
 
-/////= require tinymce-jquery
+/////// require tinymce-jquery
+//= require bootstrap-wysihtml5
 
 //= require_tree .
 

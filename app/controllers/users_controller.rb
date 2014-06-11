@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	before_action :signed_in_user, only: [:edit, :update, :destroy]
 	before_action :correct_user,   only: [:edit, :update, :destroy]
+	before_action :admin_user,     only: :destroy
 
 	add_breadcrumb "home", :root_path
 
@@ -35,17 +36,9 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-		@user = User.find(params[:id])
-		@user.destroy
-
-		respond_to do |format|
-			if @user.destroy
-				#flash[:success] = "User was successfully deleted."
-				format.html { redirect_to users_path, notice: 'User was successfully updated.' }
-			else
-				format.html { render action: "index" }
-			end
-		end
+		User.find(params[:id]).destroy
+		flash[:success] = "User deleted."
+		redirect_to users_url
 	end
 
 	private
@@ -60,6 +53,10 @@ class UsersController < ApplicationController
 		def correct_user
 			@user = User.find(params[:id])
 			redirect_to(root_url) unless current_user?(@user)
+		end
+
+		def admin_user
+			redirect_to(users_url) unless current_user.admin?
 		end
 
 end
