@@ -37,10 +37,10 @@ class SmContentsController < ApplicationController
 		@smc = SmContent.find(params[:id])
 		respond_to do |format|
 			if @smc.update_attributes(content_update_params)
-				format.html { redirect_to @smc, notice: 'Second menu was successfully updated.' }
+				format.html { redirect_to @smc, notice: 'Content was successfully updated.' }
 			else
 				format.html { render action: "edit" }
-				#format.html { redirect_to @smc_error_page, notice: 'Second menu was successfully updated.' }
+				#format.html { redirect_to @smc_error_page, notice: 'Content was successfully updated.' }
 			end
 		end
 	end
@@ -50,7 +50,7 @@ class SmContentsController < ApplicationController
 		@submenu_id = @smc.submenu_id
 		respond_to do |format|
 			if @smc.destroy
-				format.html { redirect_to submenu_path(@submenu_id), notice: 'Second menu was successfully updated.' }
+				format.html { redirect_to submenu_path(@submenu_id), notice: 'Content was successfully deleted.' }
 			else
 				format.html { render action: "edit" }
 			end
@@ -71,7 +71,7 @@ class SmContentsController < ApplicationController
 
 		respond_to do |format|
 			if @content.save
-				format.html { redirect_to sm_content_path(@content, params: {submenu_id: @content.submenu_id} ), notice: 'Survey was successfully created.' }
+				format.html { redirect_to sm_content_path(@content, params: {submenu_id: @content.submenu_id} ), notice: 'Content was successfully created.' }
 				format.json { render action: 'show', status: :created, location: @content }
 			else
 				format.html { render action: 'new' }
