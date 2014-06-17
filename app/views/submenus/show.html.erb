@@ -1,13 +1,18 @@
-find me in submenus/show.html.erb
-<p><%= @smenu.sname %> <%= render "menu" %></p>
-TEST START
+<% if signed_in? && current_user.admin? %>
+	find me in submenus/show.html.erb
+	<p><%= @smenu.sname %> <%= render "menu" %></p>
+	TEST START
+<% end %>
+
 <h2><%= @smenu.sname %></h2>
 
-<div>
-  <div class="actions">
-    <p><%= link_to "Add Content", new_sm_content_path(:id => @smenu) %></p>
-  </div>
-</div>
+<% if signed_in? && current_user.admin? %>
+	<div>
+    <div class="actions">
+      <p><%= link_to "Add Content", new_sm_content_path(:id => @smenu) %></p>
+    </div>
+	</div>
+<% end %>
 
 <%= will_paginate @smenu.sm_contents.paginate(page: params[:page], :per_page => 6), :previous_label => " « ", :next_label => " » " %>
 

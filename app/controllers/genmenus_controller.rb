@@ -1,5 +1,8 @@
 class GenmenusController < ApplicationController
 	before_action :set_mmenu, :new_main_menu#, only: [:show, :edit, :update, :destroy]
+
+	before_action :check_admin, only: [:index, :show, :new, :create, :update, :destroy, :edit, :submenuadd]
+
 	add_breadcrumb "home", :root_path
 	add_breadcrumb "admin tools", :admintools_path
 
@@ -92,7 +95,6 @@ class GenmenusController < ApplicationController
 		#  render 'static_pages/home'
 	  #end
 
-
 	  respond_to do |format|
 		  if @submenu.save
 			  format.html { redirect_to @gmenu, notice: 'Survey was successfully created.' }
@@ -102,8 +104,6 @@ class GenmenusController < ApplicationController
 			  format.json { render json: @gmenu.errors, status: :unprocessable_entity }
 		  end
 	  end
-
-
 
   end
 
@@ -128,4 +128,9 @@ class GenmenusController < ApplicationController
   def main_menu_params
 	  params.require(:genmenu).permit(:genmenuname)
   end
+
+	def check_admin
+		redirect_to(root_url) unless (signed_in? && current_user.admin?)
+	end
+
 end

@@ -9,8 +9,4 @@ module UsersHelper
 		end
 	end
 
-	def admin?(user)
-		user.admin == true
-	end
-
 end

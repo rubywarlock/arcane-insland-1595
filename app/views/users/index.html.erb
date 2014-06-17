@@ -1,27 +1,33 @@
+<style>
+	.user-index-booton-tools{
+		background: #f8f8f8;display:inline-block; float:right; margin-left:2px; padding-left:4px; text-shadow: 1px 1px 1px #ffffff;
+		box-shadow:1px 1px 1px rgba(0,0,0,0.2);
+	}
+
+	.user-index-booton-tools-left{
+		border-bottom-left-radius:3px;
+		border-top-left-radius:3px;
+	}
+
+	.user-index-booton-tools-right{
+		border-bottom-right-radius:3px;
+		border-top-right-radius:3px;
+	}
+</style>
+
 <% @users.each do |user| %>
 
-	<div style="display:inline-block; width:100%;">
+	<div style="display:inline-block; width:100%; margin-bottom:5px;">
 	  <div style="display:inline-block; width:35%;"><%= link_to user.name + ", " + user.email, user_path(user) %></div>
-			<% if (signed_in? and current_user?(user)) or admin?(current_user) %>
+			<% if signed_in? && (current_user?(user) || current_user.admin?) %>
 	      <!--<div>-->
-	        <div style="width:50px; background:#3399ff;display:inline-block;">
-	          <%= link_to "Edit", "#" %>
+	        <div class="user-index-booton-tools user-index-booton-tools-right" style="width:50px;"><%= link_to "Edit", "#" %></div>
 
-		      </div>
+	        <div class="user-index-booton-tools" style="width:100px;"><%= link_to "Delete user", user_path(user), method: :delete %></div>
 
-	        <div style="width:100px; background:#3399ff; display:inline-block;">
-	          <%= link_to "Delete user", user_path(user), method: :delete %>
+	        <div class="user-index-booton-tools" style="width:100px;">admin? <%= user.admin? %></div>
 
-		      </div>
-
-	        <div style="width:100px; background:#3399ff; display:inline-block;">
-		        admin? <%= admin?(user) %>
-
-		      </div>
-
-	        <div style="width:140px; background:#3399ff; display:inline-block;">
-	          current_user? <%= current_user?(user) %>
-		      </div>
+	        <div class="user-index-booton-tools user-index-booton-tools-left" style="width:140px;">current_user? <%= current_user?(user) %></div>
 	      <!--</div>-->
 			<% end %>
 	</div>

@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+	before_action :check_admin, only: :cnm
 
 	add_breadcrumb "home", :root_path
 	#add_breadcrumb "submenus", submenus_path
@@ -23,5 +24,10 @@ class StaticPagesController < ApplicationController
 	def cnm
 		#@genmenusall = Genmenu.all
 		add_breadcrumb "admin tools", admintools_path
+	end
+
+	private
+	def check_admin
+		redirect_to(root_url) unless current_user.admin?
 	end
 end

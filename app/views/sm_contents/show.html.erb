@@ -95,11 +95,15 @@
       <span class="my-badge-danger"><#%= link_to "Удалить публикацию полностью", sm_content_path, class: "my-link-danger", :method => :delete, :confirm => "Вы уверены что хотите удалить эту статью полностью?" %></span>
     </p>-->
 
+
     <p class="well-foot-my02">
-      <%= link_to "Редактировать текст", edit_sm_content_path(@smc) %> |
-      <%= link_to "Добавление файлов", new_sm_content_asset_path(@smc) %> |
-      <%= link_to "Удаление файлов", sm_content_edit_assets_path(@smc), :method => :get %> |
-      <%= link_to "Удалить публикацию полностью", sm_content_path, :method => :delete, :confirm => "Вы уверены что хотите удалить эту статью полностью?" %>
+      <% if signed_in? && current_user.admin? %>
+        <%= link_to "Редактировать текст", edit_sm_content_path(@smc) %> |
+        <%= link_to "Добавление файлов", new_sm_content_asset_path(@smc) %> |
+        <%= link_to "Удаление файлов", sm_content_edit_assets_path(@smc), :method => :get %> |
+        <%= link_to "Удалить публикацию полностью", sm_content_path, :method => :delete, :confirm => "Вы уверены что хотите удалить эту статью полностью?" %> |
+      <% end %>
+      <%= "Коментарии" %>
     </p>
   </div>
 
