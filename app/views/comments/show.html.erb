@@ -1,0 +1,37 @@
+<h4><%= @smc.title %></h4>
+
+<% if signed_in? and current_user.admin? %>
+	<p>Find me in app/views/comments/show.html.erb</p>
+<% end %>
+
+<%= will_paginate @comments.paginate(page: params[:page], :per_page => @comments_per_page), :previous_label => " « ", :next_label => " » " %>
+
+<p><%= link_to "Добавить комментарий", new_comment_path(:sm_content_id => @smc) %></p>
+
+<% @comments.paginate(page: params[:page], :per_page => @comments_per_page).each do |comment| %>
+  <div class="comment-box-time_ago">
+    <%= time_ago_in_words comment.updated_at %> <br/>
+  </div>
+	<p class="comment-box">USER <%= comment.user_id %>, <%= comment.text %>
+
+
+	  <% if signed_in? and ((current_user.id == comment.user_id) or (current_user.admin?)) %>
+			<br />
+	    <%= link_to "редактировать", edit_comment_path %>
+	    <span class="cmt-box-lnk-sep"> | </span>
+	    <%= link_to "удалить", comment_path, method: :delete, :confirm => "Вы, уверены что хотите удалить коментарий?" %>
+    <% end %>
+
+	  <% if signed_in? and (current_user.id != comment.user_id) %>
+	    <br />
+	    <%= link_to "ответить", new_comment_path(:sm_content_id => @smc, :to_author => comment.user_id, :comment_id => comment) %>
+		<% end %>
+
+	</p>
+<% end %>
+
+<% if @comments.count > 0 %>
+  <p><%= link_to "Добавить комментарий", new_comment_path(:sm_content_id => @smc) %></p>
+<% end %>
+
+<%= will_paginate @comments.paginate(page: params[:page], :per_page => @comments_per_page), :previous_label => " « ", :next_label => " » " %>

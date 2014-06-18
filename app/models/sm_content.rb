@@ -1,5 +1,6 @@
 class SmContent < ActiveRecord::Base
 	belongs_to :submenu
+	has_many :comments
 
 	default_scope order: { :updated_at => :desc }
 

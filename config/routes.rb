@@ -1,5 +1,12 @@
 Testapp::Application.routes.draw do
+  #get "comments/index"
+  #get "comments/show"
+  #get "comments/edit"
+  #get "comments/destroy"
+  #get "comments/new"
   get "download/file" #all types
+
+  resources :comments
 
   #get "sm_contents/index"
   #get "sm_contents/show"

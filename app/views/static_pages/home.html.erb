@@ -67,7 +67,7 @@
       <p class="well-foot-my02">
         <%= link_to "показать полностью", sm_content_path(c) %>
         |
-        <%= link_to "перейти к коментариям", sm_content_path(c) %>
+        <%= link_to "перейти к обсуждению", comment_path(c) %> (<%= c.comments.count %>)
       </p>
     </div>
     <!--<div class="well-foot-my"><%#= time_ago_in_words c.updated_at %></div>-->

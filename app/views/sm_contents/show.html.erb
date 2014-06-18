@@ -103,7 +103,7 @@
         <%= link_to "Удаление файлов", sm_content_edit_assets_path(@smc), :method => :get %> |
         <%= link_to "Удалить публикацию полностью", sm_content_path, :method => :delete, :confirm => "Вы уверены что хотите удалить эту статью полностью?" %> |
       <% end %>
-      <%= "Коментарии" %>
+      <%= link_to "обсуждения", comment_path(@smc) %> (<%= @smc.comments.count %>)
     </p>
   </div>
 
