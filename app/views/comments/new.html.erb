@@ -1,9 +1,27 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+<h4 style="font-weight: 500;"><%= @smc.title %></h4>
+Добавление комментария
+
+<% if signed_in? and current_user.admin? %>
+	<p>Find me in app/views/comments/new.html.erb</p>
+<% end %>
 
 <%= form_for @comment do |c| %>
   <%= c.text_field :sm_content_id, type: "hidden", value: @smc.id %>
 	<%= c.text_field :user_id, type: "hidden", value: current_user.id %>
-	<%= c.text_area :text, placeholder: "Ваш текст" %>
+
+  <div class="actions" style="border-bottom-right-radius:2px; border-top-right-radius: 2px;">
+    <%= c.text_area :text, placeholder: "Ваше сообщение", :id => "some-textarea", :class => "wysihtml5" %>
+
+    <script type="text/javascript">
+	    $(document).ready(function(){
+
+		    $('.wysihtml5').each(function(i, elem) {
+			    $(elem).wysihtml5();
+		    });
+
+	    })
+    </script>
+  </div>
+
 	<p><%= c.submit "отправить" %></p>
 <% end %>

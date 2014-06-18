@@ -1,4 +1,4 @@
-<h4><%= @smc.title %></h4>
+<h4 style="font-weight: 500;"><%= @smc.title %></h4>
 
 <% if signed_in? and current_user.admin? %>
 	<p>Find me in app/views/comments/show.html.erb</p>
@@ -12,7 +12,9 @@
   <div class="comment-box-time_ago">
     <%= time_ago_in_words comment.updated_at %> <br/>
   </div>
-	<p class="comment-box">USER <%= comment.user_id %>, <%= comment.text %>
+	<p class="comment-box"><span class="comment-user-name">
+	  От пользователя <%= link_to comment.user.name, user_path(comment.user) %></span><br />
+	  <%= comment.text %>
 
 
 	  <% if signed_in? and ((current_user.id == comment.user_id) or (current_user.admin?)) %>

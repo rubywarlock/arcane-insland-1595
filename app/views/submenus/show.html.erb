@@ -1,10 +1,10 @@
 <% if signed_in? && current_user.admin? %>
 	find me in submenus/show.html.erb
 	<p><%= @smenu.sname %> <%= render "menu" %></p>
-	TEST START
+	TEST STRING
 <% end %>
 
-<h2><%= @smenu.sname %></h2>
+<h4><%= @smenu.sname %></h4>
 
 <% if signed_in? && current_user.admin? %>
 	<div>
