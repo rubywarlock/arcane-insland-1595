@@ -51,7 +51,8 @@ class CommentsController < ApplicationController
 
 	private
 	def get_user
-		redirect_to(signup_path) unless signed_in?
+		session[:target_page] = session[:current_request]
+		redirect_to(signin_path) unless signed_in?
 	end
 
 	def correct_author

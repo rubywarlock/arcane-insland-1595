@@ -24,6 +24,14 @@
 	        <%= render_breadcrumbs :tag => :li, :separator => " <span class=\"breadcrumb-separator\"> » </span> " %>
 	      </ol>
 
+	      <% if signed_in? && current_user.admin? %>
+	        <div class="alert">
+	          Session last URI<br /><%= session[:last_uri] %><br />
+		        Session current URI<br /><%= session[:current_uri] %><br />
+		        Session target page<br /><%= session[:target_page] %>
+	        </div>
+	      <% end %>
+
 	      <%# flash.each do |key, value| %>
 	        <!--<div class="alert alert-<%#= key %>"><%#= value %></div> -->
 	      <%# end %>

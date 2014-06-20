@@ -9,6 +9,23 @@ module SessionsHelper
 	def sign_out
 		current_user.update_attribute(:remember_token, User.encrypt(User.new_remember_token))
 		cookies.delete(:remember_token)
+
+		#cookies.delete(:last_uri)
+		#cookies.delete(:current_request)
+		#cookies.delete(:target_page)
+
+		#cookies[:last_uri] = nil
+		#cookies[:current_request] = nil
+		#cookies[:target_page] = nil
+
+		#session.delete(:last_uri)
+		#session.delete(:current_request)
+		#session.delete(:target_page)
+
+		#session[:last_uri] = nil
+		#session[:current_request] = nil
+		#session[:target_page] = nil
+
 		self.current_user = nil
 	end
 

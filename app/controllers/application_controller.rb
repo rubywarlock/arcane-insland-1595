@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
 	private
 
 	def main_menu
+		session[:last_uri] = request.referer
+		session[:current_request] = request.url
 		@main_menu_items = Genmenu.order("created_at desc")
 		@a_submenus = Submenu.order("created_at desc")
 		@allcontent = SmContent.order("updated_at desc")
