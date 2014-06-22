@@ -24,7 +24,7 @@
 	        <%= render_breadcrumbs :tag => :li, :separator => " <span class=\"breadcrumb-separator\"> » </span> " %>
 	      </ol>
 
-	      <% if signed_in? && current_user.admin? %>
+	      <% if (signed_in? && current_user.admin?) || Rails.env.development? %>
 	        <div class="alert">
 	          Session last URI<br /><%= session[:last_uri] %><br />
 		        Session current URI<br /><%= session[:current_uri] %><br />
