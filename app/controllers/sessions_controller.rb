@@ -15,10 +15,11 @@ class SessionsController < ApplicationController
 				path = session[:target_page]
 
 				#session[:last_uri] = user
-				session[:target_page] = user_path(user)
+				session[:target_page] = root_path
 
 				redirect_to path
 			else
+				session[:target_page] = root_path
 				redirect_to user
 			end
 		else
@@ -28,6 +29,7 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
+		session[:target_page] = root_path
 		sign_out
 		redirect_to root_url
 	end
