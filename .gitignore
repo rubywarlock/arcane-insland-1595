@@ -23,6 +23,8 @@ idea/*.xml
 .idea/*.iml
 idea/*.iml
 
+test_development
+
 # Ignore the default SQLite database.
 #/db/*.sqlite3
 #/db/*.sqlite3-journal
