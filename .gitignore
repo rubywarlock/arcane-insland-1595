@@ -24,6 +24,8 @@ idea/*.xml
 idea/*.iml
 
 test_development
+test_production
+test_test
 
 # Ignore the default SQLite database.
 #/db/*.sqlite3
