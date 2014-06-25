@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :signed_in_user, only: [:edit, :update, :destroy]
+	#before_action :signed_in_user, only: [:edit, :update, :destroy]
 	before_action :correct_user,   only: [:edit, :update, :destroy]
 	before_action :admin_user,     only: :destroy
 
@@ -10,6 +10,18 @@ class UsersController < ApplicationController
 
 		add_breadcrumb "users", users_path#, submenu_path(:id => @smc.submenu_id)
 		add_breadcrumb @user.name
+	end
+
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def settings
+
+	end
+
+	def update
+
 	end
 
 	def index
@@ -52,7 +64,7 @@ class UsersController < ApplicationController
 
 		def correct_user
 			@user = User.find(params[:id])
-			redirect_to(root_url) unless current_user?(@user)
+			redirect_to(root_url) unless signed_in? && current_user?(@user)
 		end
 
 		def admin_user

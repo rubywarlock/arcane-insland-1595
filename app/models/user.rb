@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 
 	has_many :comments
+	belongs_to :user_setting
 
 
 	def User.new_remember_token

@@ -27,7 +27,7 @@
 
 <div class="user-page-header-tools">
 	<% if signed_in? && current_user?(@user) %>
-    <%= link_to "Settings", "#" %><span class="cmt-box-lnk-sep"> | </span>
+    <%= link_to "Settings", user_settings_path(:user_id => @user) %><span class="cmt-box-lnk-sep"> | </span>
 	<% end %>
   <%= link_to "Photos", "#" %><span class="cmt-box-lnk-sep"> | </span>
   <%= link_to "Friends", "#" %>

@@ -4,6 +4,7 @@ describe "User pages" do
 
 	subject { page }
 
+=begin
 	describe "signup page" do
 		before { visit signup_path }
 		let(:submit) { "Create my account" }
@@ -42,5 +43,6 @@ describe "User pages" do
 		it { should have_content(user.name) }
 		it { should have_title(user.name) }
 	end
+=end
 
 end

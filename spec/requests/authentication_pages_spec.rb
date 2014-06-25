@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Authentication" do
+describe "Authentication;" do
 
 	subject { page }
 
@@ -15,7 +15,7 @@ describe "Authentication" do
 		end
 
 
-		describe "with valid information" do
+		describe "with valid information;" do
 			#let(:user) { FactoryGirl.create(:user) }
 			let(:user) { User.create(name: "Name", password: "123456", password_confirmation: "123456", email: 'admin2@railstutorial.org') }
 			#let(:user) { User.find_by(email: 'admin2@railstutorial.org') }
@@ -29,6 +29,12 @@ describe "Authentication" do
 			#it { should have_link('Profile',     href: user_path(user)) }
 			it { should have_link('Sign out',    href: signout_path) }
 			it { should_not have_link('Sign in', href: signin_path) }
+
+			it { should have_link("Settings", href: user_settings_path(:user_id => user)) }
+
+			describe "vitis settings page" do
+				it { visit user_settings_path(:user_id => user) }
+			end
 		end
 
 

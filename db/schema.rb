@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618061310) do
+ActiveRecord::Schema.define(version: 20140625053106) do
 
   create_table "assets", force: true do |t|
     t.string   "asset_file_name"
@@ -53,6 +53,12 @@ ActiveRecord::Schema.define(version: 20140618061310) do
   end
 
   add_index "submenus", ["genmenu_id", "created_at"], name: "index_submenus_on_genmenu_id_and_created_at"
+
+  create_table "user_settings", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

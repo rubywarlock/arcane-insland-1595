@@ -10,10 +10,12 @@
 
 <% @comments.paginate(page: params[:page], :per_page => @comments_per_page).each do |comment| %>
   <div class="comment-box-time_ago">
-    <%= time_ago_in_words comment.updated_at %> <br/>
+    <span class="comment-user-name">
+	    От пользователя <%= link_to comment.user.name, user_path(comment.user) %>
+    </span>
+    <%= time_ago_in_words comment.updated_at %>
   </div>
-	<p class="comment-box"><span class="comment-user-name">
-	  От пользователя <%= link_to comment.user.name, user_path(comment.user) %></span><br />
+	<p class="comment-box">
 	  <%= comment.text %>
 
 

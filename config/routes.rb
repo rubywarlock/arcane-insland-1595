@@ -18,7 +18,10 @@ Testapp::Application.routes.draw do
   #get "submenus/edit"
   #get "submenus/transfer"
 
-  resources :users
+  resources :users do
+	  #resources :settings
+	  match "/settings", to: "user_settings#index", via: :get
+  end
   match '/signup', to: 'users#new', via: :get
 
   resources :sessions, only: [:new, :create, :destroy]
