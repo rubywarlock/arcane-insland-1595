@@ -4,6 +4,7 @@ Testapp::Application.configure do
 	#config.assets.precompile = ['*.js.coffee', '*.scss', '*.js', '*.css', '*.css.erb']
 	#config.assets.precompile << "tinymce-jquery.js"
 	#config.assets.precompile += %w[tinymce/tiny_mce.js tinymce/langs/en.js tinymce/themes/advanced/editor_template.js]
+	#config.assets.precompile += %w[bootstrap-wysihtml5.css bootstrap-wysihtml5-all.js bootstrap-wysihtml5/wysiwyg-color.css]
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -31,7 +32,7 @@ Testapp::Application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true
+  config.assets.compile = false
 
   # Generate digests for assets URLs.
   config.assets.digest = true

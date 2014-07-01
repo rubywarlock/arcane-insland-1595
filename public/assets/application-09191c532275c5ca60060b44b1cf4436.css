@@ -10,7 +10,42 @@
  *
 
 
+
  */
+/* line 5, C:/Sites/testapp/app/assets/stylesheets/comments.css.scss */
+.comment-box {
+  padding: 5px;
+  padding-left: 10px;
+  font-size: 13px;
+}
+
+/* line 15, C:/Sites/testapp/app/assets/stylesheets/comments.css.scss */
+.cmt-box-lnk-sep {
+  color: #8899a6;
+  font-size: 13px;
+}
+
+/* line 20, C:/Sites/testapp/app/assets/stylesheets/comments.css.scss */
+.comment-box-time_ago {
+  	/*height:60px;
+    width:100%;*/
+  padding: 5px;
+  border-top: 1px solid #e8e8e8;
+  background: #fdfdfd;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #8899a6;
+}
+
+/* line 39, C:/Sites/testapp/app/assets/stylesheets/comments.css.scss */
+.comment-user-name {
+  font-size: 13px;
+  color: #7f8184;
+}
+/* line 43, C:/Sites/testapp/app/assets/stylesheets/comments.css.scss */
+.comment-user-name a:hover {
+  text-decoration: none;
+}
 /*!
  * Bootstrap v2.3.2
  *
@@ -1604,160 +1639,204 @@ input[type="checkbox"][readonly] {
 }
 
 /* line 164, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.warning .control-label,
+.control-group.warning .control-label, .warning.field_with_errors .control-label,
 .control-group.warning .help-block,
-.control-group.warning .help-inline {
+.warning.field_with_errors .help-block,
+.control-group.warning .help-inline,
+.warning.field_with_errors .help-inline {
   color: #c09853;
 }
 /* line 172, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.warning .checkbox,
+.control-group.warning .checkbox, .warning.field_with_errors .checkbox,
 .control-group.warning .radio,
+.warning.field_with_errors .radio,
 .control-group.warning input,
+.warning.field_with_errors input,
 .control-group.warning select,
-.control-group.warning textarea {
+.warning.field_with_errors select,
+.control-group.warning textarea,
+.warning.field_with_errors textarea {
   color: #c09853;
 }
 /* line 177, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.warning input,
+.control-group.warning input, .warning.field_with_errors input,
 .control-group.warning select,
-.control-group.warning textarea {
+.warning.field_with_errors select,
+.control-group.warning textarea,
+.warning.field_with_errors textarea {
   border-color: #c09853;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 /* line 180, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.warning input:focus,
+.control-group.warning input:focus, .warning.field_with_errors input:focus,
 .control-group.warning select:focus,
-.control-group.warning textarea:focus {
+.warning.field_with_errors select:focus,
+.control-group.warning textarea:focus,
+.warning.field_with_errors textarea:focus {
   border-color: #a47e3c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
 }
 /* line 187, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.warning .input-prepend .add-on,
-.control-group.warning .input-append .add-on {
+.control-group.warning .input-prepend .add-on, .warning.field_with_errors .input-prepend .add-on,
+.control-group.warning .input-append .add-on,
+.warning.field_with_errors .input-append .add-on {
   color: #c09853;
   background-color: #fcf8e3;
   border-color: #c09853;
 }
 
 /* line 164, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.error .control-label,
+.control-group.error .control-label, .field_with_errors .control-label,
 .control-group.error .help-block,
-.control-group.error .help-inline {
+.field_with_errors .help-block,
+.control-group.error .help-inline,
+.field_with_errors .help-inline {
   color: #b94a48;
 }
 /* line 172, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.error .checkbox,
+.control-group.error .checkbox, .field_with_errors .checkbox,
 .control-group.error .radio,
+.field_with_errors .radio,
 .control-group.error input,
+.field_with_errors input,
 .control-group.error select,
-.control-group.error textarea {
+.field_with_errors select,
+.control-group.error textarea,
+.field_with_errors textarea {
   color: #b94a48;
 }
 /* line 177, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.error input,
+.control-group.error input, .field_with_errors input,
 .control-group.error select,
-.control-group.error textarea {
+.field_with_errors select,
+.control-group.error textarea,
+.field_with_errors textarea {
   border-color: #b94a48;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 /* line 180, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.error input:focus,
+.control-group.error input:focus, .field_with_errors input:focus,
 .control-group.error select:focus,
-.control-group.error textarea:focus {
+.field_with_errors select:focus,
+.control-group.error textarea:focus,
+.field_with_errors textarea:focus {
   border-color: #953b39;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
 }
 /* line 187, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.error .input-prepend .add-on,
-.control-group.error .input-append .add-on {
+.control-group.error .input-prepend .add-on, .field_with_errors .input-prepend .add-on,
+.control-group.error .input-append .add-on,
+.field_with_errors .input-append .add-on {
   color: #b94a48;
   background-color: #f2dede;
   border-color: #b94a48;
 }
 
 /* line 164, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.success .control-label,
+.control-group.success .control-label, .success.field_with_errors .control-label,
 .control-group.success .help-block,
-.control-group.success .help-inline {
+.success.field_with_errors .help-block,
+.control-group.success .help-inline,
+.success.field_with_errors .help-inline {
   color: #468847;
 }
 /* line 172, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.success .checkbox,
+.control-group.success .checkbox, .success.field_with_errors .checkbox,
 .control-group.success .radio,
+.success.field_with_errors .radio,
 .control-group.success input,
+.success.field_with_errors input,
 .control-group.success select,
-.control-group.success textarea {
+.success.field_with_errors select,
+.control-group.success textarea,
+.success.field_with_errors textarea {
   color: #468847;
 }
 /* line 177, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.success input,
+.control-group.success input, .success.field_with_errors input,
 .control-group.success select,
-.control-group.success textarea {
+.success.field_with_errors select,
+.control-group.success textarea,
+.success.field_with_errors textarea {
   border-color: #468847;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 /* line 180, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.success input:focus,
+.control-group.success input:focus, .success.field_with_errors input:focus,
 .control-group.success select:focus,
-.control-group.success textarea:focus {
+.success.field_with_errors select:focus,
+.control-group.success textarea:focus,
+.success.field_with_errors textarea:focus {
   border-color: #356635;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
 }
 /* line 187, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.success .input-prepend .add-on,
-.control-group.success .input-append .add-on {
+.control-group.success .input-prepend .add-on, .success.field_with_errors .input-prepend .add-on,
+.control-group.success .input-append .add-on,
+.success.field_with_errors .input-append .add-on {
   color: #468847;
   background-color: #dff0d8;
   border-color: #468847;
 }
 
 /* line 164, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.info .control-label,
+.control-group.info .control-label, .info.field_with_errors .control-label,
 .control-group.info .help-block,
-.control-group.info .help-inline {
+.info.field_with_errors .help-block,
+.control-group.info .help-inline,
+.info.field_with_errors .help-inline {
   color: #3a87ad;
 }
 /* line 172, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.info .checkbox,
+.control-group.info .checkbox, .info.field_with_errors .checkbox,
 .control-group.info .radio,
+.info.field_with_errors .radio,
 .control-group.info input,
+.info.field_with_errors input,
 .control-group.info select,
-.control-group.info textarea {
+.info.field_with_errors select,
+.control-group.info textarea,
+.info.field_with_errors textarea {
   color: #3a87ad;
 }
 /* line 177, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.info input,
+.control-group.info input, .info.field_with_errors input,
 .control-group.info select,
-.control-group.info textarea {
+.info.field_with_errors select,
+.control-group.info textarea,
+.info.field_with_errors textarea {
   border-color: #3a87ad;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 /* line 180, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.info input:focus,
+.control-group.info input:focus, .info.field_with_errors input:focus,
 .control-group.info select:focus,
-.control-group.info textarea:focus {
+.info.field_with_errors select:focus,
+.control-group.info textarea:focus,
+.info.field_with_errors textarea:focus {
   border-color: #2d6987;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7ab5d3;
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7ab5d3;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7ab5d3;
 }
 /* line 187, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.control-group.info .input-prepend .add-on,
-.control-group.info .input-append .add-on {
+.control-group.info .input-prepend .add-on, .info.field_with_errors .input-prepend .add-on,
+.control-group.info .input-append .add-on,
+.info.field_with_errors .input-append .add-on {
   color: #3a87ad;
   background-color: #d9edf7;
   border-color: #3a87ad;
@@ -2107,29 +2186,29 @@ input.search-query {
 }
 
 /* line 632, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_forms.scss */
-.control-group {
+.control-group, .field_with_errors {
   margin-bottom: 10px;
 }
 
 /* line 637, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_forms.scss */
-legend + .control-group {
+legend + .control-group, legend + .field_with_errors {
   margin-top: 20px;
   -webkit-margin-top-collapse: separate;
 }
 
 /* line 647, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_forms.scss */
-.form-horizontal .control-group {
+.form-horizontal .control-group, .form-horizontal .field_with_errors {
   margin-bottom: 20px;
   *zoom: 1;
 }
 /* line 15, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.form-horizontal .control-group:before, .form-horizontal .control-group:after {
+.form-horizontal .control-group:before, .form-horizontal .field_with_errors:before, .form-horizontal .control-group:after, .form-horizontal .field_with_errors:after {
   display: table;
   content: "";
   line-height: 0;
 }
 /* line 22, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_mixins.scss */
-.form-horizontal .control-group:after {
+.form-horizontal .control-group:after, .form-horizontal .field_with_errors:after {
   clear: both;
 }
 /* line 652, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_forms.scss */
@@ -2428,7 +2507,7 @@ table th[class*="span"],
   background-color: #dff0d8;
 }
 /* line 210, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_tables.scss */
-.table tbody tr.error > td {
+.table tbody tr.error > td, .table tbody tr.field_with_errors > td {
   background-color: #f2dede;
 }
 /* line 213, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_tables.scss */
@@ -2445,7 +2524,7 @@ table th[class*="span"],
   background-color: #d0e9c6;
 }
 /* line 226, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_tables.scss */
-.table-hover tbody tr.error:hover > td {
+.table-hover tbody tr.error:hover > td, .table-hover tbody tr.field_with_errors:hover > td {
   background-color: #ebcccc;
 }
 /* line 229, C:/Rails3/Ruby2.0.0/lib/ruby/gems/2.0.0/gems/bootstrap-sass-2.3.2.2/vendor/assets/stylesheets/bootstrap/_tables.scss */
@@ -6870,6 +6949,47 @@ textarea {
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); */
 }
+
+/* line 61, C:/Sites/testapp/app/assets/stylesheets/custom.css.scss */
+.breadcrumb-separator {
+  color: #a4a4a4;
+}
+
+/* line 65, C:/Sites/testapp/app/assets/stylesheets/custom.css.scss */
+.my-badge2 {
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+/* forms */
+/* line 72, C:/Sites/testapp/app/assets/stylesheets/custom.css.scss */
+input, textarea, select, .uneditable-input {
+  width: 100%;
+  margin-bottom: 15px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 79, C:/Sites/testapp/app/assets/stylesheets/custom.css.scss */
+.mce-edit-area {
+  border-right: 1px solid #999;
+}
+
+/* line 83, C:/Sites/testapp/app/assets/stylesheets/custom.css.scss */
+input {
+  height: auto !important;
+}
+
+/* line 87, C:/Sites/testapp/app/assets/stylesheets/custom.css.scss */
+#error_explanation {
+  color: #f00;
+}
+/* line 89, C:/Sites/testapp/app/assets/stylesheets/custom.css.scss */
+#error_explanation ul {
+  list-style: none;
+  margin: 0 0 18px 0;
+}
 /* footer */
 /* line 4, C:/Sites/testapp/app/assets/stylesheets/footer.css.scss */
 footer {
@@ -7037,18 +7157,175 @@ footer ul li {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #878787;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
+  text-shadow: 1px 1px 1px #ccc;
 }
 
-/* line 15, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+/* line 16, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
 #logo:hover {
-  color: #fff;
+  color: #5e8ccc;
   text-decoration: none;
+}
+
+/* line 22, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.my-navbar-fixed-top {
+  top: 0;
+}
+
+/* line 26, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.my-navbar-fixed-top, .my-navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  margin-bottom: 0;
+}
+
+/* line 34, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.my-navbar {
+  overflow: visible;
+  margin-bottom: 20px;
+}
+
+/* line 39, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+/********************************************************************************************************************/
+/* line 45, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.my-navbar-inverse {
+  /*background-color: #1b1b1b;
+  background-image: -moz-linear-gradient(top, #222222, #111111);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+  background-image: -webkit-linear-gradient(top, #222222, #111111);
+  background-image: -o-linear-gradient(top, #222222, #111111);
+  background-image: linear-gradient(to bottom, #222222, #111111);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF222222', endColorstr='#FF111111', GradientType=0);
+  border-color: #252525;*/
+  border-bottom: 1px solid #c5c5c5;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* line 65, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.my-navbar-inverse .navbar-inner {
+  border-color: #b3b3b3;
+}
+/* line 70, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.my-navbar-inverse .brand,
+.my-navbar-inverse .nav > li > a {
+  color: #5e8ccc;
+}
+/* line 74, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.my-navbar-inverse .brand:hover, .my-navbar-inverse .brand:focus,
+.my-navbar-inverse .nav > li > a:hover,
+.my-navbar-inverse .nav > li > a:focus {
+  text-shadow: 0 1px 0 #ffffff;
+  color: #2381cc;
+}
+
+/* line 88, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover,
+.nav-pills > .active > a:focus {
+  color: #fff;
+  background-color: #002a80;
+}
+
+/* line 93, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.navbar .nav > li > a:hover {
+  background: #e8e8e8;
+  color: #6a6a6a;
+}
+
+/* line 98, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* line 104, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+  padding-left: 0;
+  padding-right: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+/* line 112, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+  border-width: 0 0 1px;
+}
+
+/* line 116, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.navbar-inner {
+  min-height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #f9f9f9;
+  background-image: -moz-linear-gradient(top, white, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, white, #f2f2f2);
+  background-image: -o-linear-gradient(top, white, #f2f2f2);
+  background-image: linear-gradient(to bottom, white, #f2f2f2);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2', GradientType=0);
+  border: 1px solid #d4d4d4;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
+
+/* line 136, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+div {
+  display: block;
+}
+
+/* line 140, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.navbar-inner:before, .navbar-inner:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+/* line 146, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.navbar-inner:after {
+  clear: both;
+}
+
+/* line 150, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.navbar-inner:before, .navbar-inner:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+/* TRIANGLE */
+/* line 158, C:/Sites/testapp/app/assets/stylesheets/header.css.scss */
+.article_tags_overview_list_item em {
+  position: absolute;
+  top: 0;
+  right: -6px;
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-left: 6px solid #f1f1f1;
+  border-bottom: 11px solid transparent;
+  z-index: 2;
 }
 /* line 13, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
 .text {
@@ -7058,15 +7335,16 @@ footer ul li {
   color: inherit;
 }
 
-/* line 20, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
+/* line 26, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
 .section_content_block {
-  margin-bottom: 40px;
-  -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0px;
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: -1px;
+  border-left: 1px solid #e8e8e8;
+  border-right: 1px solid #e8e8e8;
 }
 
-/* line 34, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
+/* line 44, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
 .text-block {
   min-height: 100px;
   max-height: 200px;
@@ -7077,12 +7355,48 @@ footer ul li {
   padding-right: 10px;
 }
 
-/* line 46, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
-.file-list {
-  list-style-type: circle;
+/* line 56, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
+.text-block2 {
+  min-height: 100px;
+  position: relative;
+  font: 12px arial;
+  overflow: hidden;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-/* line 66, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
+/* line 67, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
+.file-list {
+  list-style-type: circle;
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 0px;
+  margin-left: 15px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  width: 45%;
+}
+
+/* line 86, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
+.file-line {
+  font-size: 13px;
+  line-height: 15px;
+  word-wrap: break-word;
+}
+
+/* line 93, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
+.dropdown_box {
+  display: none;
+}
+
+/* line 109, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
+.content-block {
+  -webkit-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.09);
+  -moz-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.09);
+}
+
+/* line 115, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
 .well-box-my {
   min-height: 20px;
   margin-bottom: 20px;
@@ -7095,43 +7409,45 @@ footer ul li {
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
 }
-/* line 80, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
+/* line 129, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
 .well-box-my .well-head-my, .well-box-my .well-center-my {
   padding-left: 19px;
   padding-bottom: 19px;
   padding-right: 19px;
 }
 
-/* line 87, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
+/* line 136, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
 .well-head-my {
   background: #fEfEfE;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
 
-/* line 93, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
+/* line 142, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
 .well-center-my {
   background: #fEfEfE;
 }
 
-/* line 97, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
+/* line 146, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
 .well-foot-my {
   /*height:60px;
   width:100%;*/
   padding: 5px;
   border-top: 1px solid #e8e8e8;
-  -webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.05);
+  background: #fdfdfd;
   font-size: 13px;
   color: #8899a6;
 }
 
-/* line 114, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
+/* line 164, C:/Sites/testapp/app/assets/stylesheets/sm_contents.css.scss */
 .well-foot-my02 {
   /*height:60px;
   width:100%;*/
   padding: 5px;
+  padding-left: 10px;
+  padding-top: 12px;
+  margin-top: 20px;
+  border-top: 1px solid #e8e8e8;
   font-size: 13px;
   color: #8899a6;
 }
@@ -7164,6 +7480,63 @@ footer ul li {
   color: #FFF;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
   text-decoration: none;
+}
+
+/* line 14, C:/Sites/testapp/app/assets/stylesheets/submenus.css.scss */
+.my-link-danger {
+  color: #000000;
+}
+/* line 16, C:/Sites/testapp/app/assets/stylesheets/submenus.css.scss */
+.my-link-danger:hover {
+  color: #000000;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+}
+
+/* line 23, C:/Sites/testapp/app/assets/stylesheets/submenus.css.scss */
+.my-badge {
+  display: inline-block;
+  padding: 2px 4px;
+  font-size: 11.844px;
+  font-weight: bold;
+  line-height: 14px;
+  color: white;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #999999;
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+/* line 43, C:/Sites/testapp/app/assets/stylesheets/submenus.css.scss */
+.my-badge:hover {
+  background-color: #aeaeae;
+}
+
+/* line 48, C:/Sites/testapp/app/assets/stylesheets/submenus.css.scss */
+.my-badge-danger {
+  display: inline-block;
+  padding: 2px 4px;
+  font-size: 11.844px;
+  font-weight: bold;
+  line-height: 14px;
+  color: #000000;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #f68000;
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+/* line 67, C:/Sites/testapp/app/assets/stylesheets/submenus.css.scss */
+.my-badge-danger:hover {
+  background-color: #eb1400;
 }
 /* typography */
 /* line 4, C:/Sites/testapp/app/assets/stylesheets/typography.css.scss */
@@ -7203,3 +7576,122 @@ p {
   font-size: 14px;
   line-height: 18px;
 }
+ul.wysihtml5-toolbar {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+ul.wysihtml5-toolbar::after {
+	clear: both;
+	display: table;
+	content: "";
+}
+
+ul.wysihtml5-toolbar > li {
+	float: left;
+	display: list-item;
+	list-style: none;
+	margin: 0 5px 10px 0;
+}
+
+ul.wysihtml5-toolbar a[data-wysihtml5-command=bold] {
+	font-weight: bold;
+}
+
+ul.wysihtml5-toolbar a[data-wysihtml5-command=italic] {
+	font-style: italic;
+}
+
+ul.wysihtml5-toolbar a[data-wysihtml5-command=underline] {
+	text-decoration: underline;
+}
+
+ul.wysihtml5-toolbar a.btn.wysihtml5-command-active {
+	background-image: none;
+	-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15),0 1px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15),0 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15),0 1px 2px rgba(0, 0, 0, 0.05);
+	background-color: #E6E6E6;
+	background-color: #D9D9D9;
+	outline: 0;
+}
+
+ul.wysihtml5-commands-disabled .dropdown-menu {
+	display: none !important;
+}
+
+ul.wysihtml5-toolbar div.wysihtml5-colors {
+  display:block;
+  width: 50px;
+  height: 20px;
+  margin-top: 2px;
+  margin-left: 5px;
+  position: absolute;
+  pointer-events: none;
+}
+
+ul.wysihtml5-toolbar a.wysihtml5-colors-title {
+  padding-left: 70px;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="black"] {
+  background: black !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="silver"] {
+  background: silver !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="gray"] {
+  background: gray !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="maroon"] {
+  background: maroon !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="red"] {
+  background: red !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="purple"] {
+  background: purple !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="green"] {
+  background: green !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="olive"] {
+  background: olive !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="navy"] {
+  background: navy !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="blue"] {
+  background: blue !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="orange"] {
+  background: orange !important;
+}
+
+.glyphicon-quote:before {
+  content: "\201C";
+  font-family: Georgia, serif;
+  font-size: 50px;
+  position: absolute;
+  top: -4px;
+  left: -3px;
+  max-height: 100%;
+}
+
+.glyphicon-quote:after {
+  content: "\0000a0";
+}
+/*
+
+*/

@@ -1,4 +1,4 @@
-<%#= tinymce %>
+<%= tinymce %>
 
 <%= form_for(@sm_content, html: { multipart: true }) do |f| %>
   <%# if @smc.errors.any? %>
@@ -15,26 +15,28 @@
 	</div>
 
 
-	<!--
+
 	<div class="actions" style="border-bottom-right-radius:2px; border-top-right-radius: 2px;">
-    <%#= f.text_area :content, placeholder: "Content text", :class => "tinymce", style: "min-width:200px;" %>
-	</div>-->
+    <%= f.text_area :content, placeholder: "Content text", :class => "tinymce", style: "min-width:200px;" %>
+	</div>
 
-
-
-  <div class="actions" style="border-bottom-right-radius:2px; border-top-right-radius: 2px;">
-    <%= f.text_area :content, placeholder: "Content text", :id => "some-textarea", :class => "wysihtml5" %>
+  <!--<div class="actions" style="border-bottom-right-radius:2px; border-top-right-radius: 2px;">
+    <%#= f.text_area :content, placeholder: "Content text", :id => "some-textarea", :class => "wysihtml5" %>
 
     <script type="text/javascript">
+
 	    $(document).ready(function(){
 
 		    $('.wysihtml5').each(function(i, elem) {
 			    $(elem).wysihtml5();
 		    });
 
-	    })
+	    });
+
+
+
     </script>
-	</div>
+	</div>-->
 
 
 	<p>

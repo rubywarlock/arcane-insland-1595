@@ -14,13 +14,13 @@ gem 'jbuilder', '~> 1.2'
 #gem 'bootstrap-sass', '~> 3.0.2.1'
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'bcrypt-ruby', '3.1.2'
-#gem 'gretel' #breadcrumbs lassebunk
+
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'breadcrumbs_on_rails'
 
-#gem 'tinymce-rails', '~> 4'
-gem 'bootstrap-wysihtml5-rails', '~> 0.3.1.24'
+gem 'tinymce-rails', '~> 4'
+#gem 'bootstrap-wysihtml5-rails', '~> 0.3.1.24'
 
 gem 'paperclip', '~> 3'#:git => 'git://github.com/thoughtbot/paperclip.git'
 
