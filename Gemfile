@@ -32,8 +32,8 @@ group :doc do
 end
 
 group :production do
-	#gem 'sqlite3', '~> 1.3.9'
-	gem 'pg'
+	gem 'sqlite3', '~> 1.3.9'
+	#gem 'pg'
 	gem 'rails_12factor', '0.0.2'
 	#gem 'capybara', '2.1.0'
 	gem 'thread_safe', '0.3.1'
