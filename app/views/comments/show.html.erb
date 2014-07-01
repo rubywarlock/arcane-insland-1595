@@ -15,9 +15,8 @@
     </span>
     <%= time_ago_in_words comment.updated_at %>
   </div>
-	<p class="comment-box">
-	  <span><%= comment.text.html_safe %></span>
-
+	<div class="comment-box">
+	  <%= raw(comment.text) %>
 
 	  <% if signed_in? and ((current_user.id == comment.user_id) or (current_user.admin?)) %>
 			<br />
@@ -31,7 +30,7 @@
 	    <%= link_to "ответить", new_comment_path(:sm_content_id => @smc, :to_author => comment.user_id, :comment_id => comment) %>
 		<% end %>
 
-	</p>
+	</div>
 <% end %>
 
 <% if @comments.count > 0 %>
