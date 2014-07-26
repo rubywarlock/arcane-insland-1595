@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.2'
 gem 'rails', '4.0.1'
-gem 'thin'
+#gem 'thin'
 
 gem 'sass-rails', '~> 4.0.1'
 gem 'uglifier', '>= 1.3.0'
@@ -33,8 +33,10 @@ group :doc do
 end
 
 group :production do
-	gem 'sqlite3', '~> 1.3.9'
-	#gem 'pg'
+	#gem 'sqlite3', '~> 1.3.9'
+	gem 'execjs'
+	gem 'therubyracer'
+	gem 'pg'
 	gem 'rails_12factor', '0.0.2'
 	#gem 'capybara', '2.1.0'
 	gem 'thread_safe', '0.3.1'
