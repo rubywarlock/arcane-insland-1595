@@ -1,3 +1,4 @@
  README
 
-Demo Blog
+Demo blog.
+My first application which was deployed to heroku.
