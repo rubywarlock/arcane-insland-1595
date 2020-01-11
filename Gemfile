@@ -23,7 +23,7 @@ gem 'breadcrumbs_on_rails'
 gem 'tinymce-rails', '~> 4'
 #gem 'bootstrap-wysihtml5-rails', '~> 0.3.1.24'
 
-gem 'paperclip', '~> 3'#:git => 'git://github.com/thoughtbot/paperclip.git'
+gem 'paperclip', '~> 4'#:git => 'git://github.com/thoughtbot/paperclip.git'
 
 gem 'russian', '~> 0.6.0'
 
